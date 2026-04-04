@@ -26,9 +26,10 @@ namespace TileManager
         //NOTE: Game window is about 30x17 tiles
 
         //---CONSTRUCTOR---
-        public TileManager()
+        public TileManager(Texture2D spriteSheet, SpriteBatch spriteBatch)
         {
-            
+            this.spriteSheet = spriteSheet;
+            this.spriteBatch = spriteBatch;
         }
 
         //---METHODS---
@@ -56,44 +57,39 @@ namespace TileManager
                 // Line 1: How large should the level tiles be?
                 line = reader.ReadLine();
                 splitData = line.Split(',');
-                int tileWidth = int.Parse(splitData[1]);
-                int tileHeight = int.Parse(splitData[2]);
+                int tileWidth = int.Parse(splitData[0]);
+                int tileHeight = int.Parse(splitData[1]);
 
                 // Line 2: How many tiles are there?
                 line = reader.ReadLine();
                 splitData = line.Split(',');
-                int tilesetColumns = int.Parse(splitData[1]);
-                int tilesetRows = int.Parse(splitData[2]);
+                int tilesetColumns = int.Parse(splitData[0]);
+                int tilesetRows = int.Parse(splitData[1]);
 
                 // Initialize the tileSet array to the correct size
-                tileSet = new LevelTile[tilesetColumns, tilesetRows];
+                tileList = new Tile[tilesetColumns, tilesetRows];
 
                 // ***READ TILE TEXTURE INFORMATION TO GENERATE LEVELTILES ***
                 // ------------------------------------------------------------------------------------
                 // Read data line by line for tiles
                 while ((line = reader.ReadLine()) != null)
                 {
-                    // Get this line of tile data and split by comma.
-                    // That gives us data like: "WATER-inner,GRASS-1,DIRT-2"
+                    // Get the upper left corner of the source rectangle in the spritesheet
                     splitData = line.Split(',');
+                    int upperLeftX = int.Parse(splitData[0]);
+                    int upperLeftY = int.Parse(splitData[1]);
 
                     // For each of the tiles across a row...
                     for (int c = 0; c < splitData.Length; c++)
                     {
-                        // ************************************************************************
-                        // TODO: Create a new LevelTile object based on the information read from the file
-                        // ^^ Position it correctly within the 2D array and with appropriate calculated positions within the game window
-                        // TODO: Place tile in the 2D tileSet array at the correct row & column indices
-                        LevelTile myTile = new LevelTile(
+                        //tile is placed in 2D tileList array at correct placement
+                        Tile myTile = new Tile(
                             spriteSheet,
-                            new Rectangle(64, 0, intendedSize, intendedSize),
-                            c,
-                            currentRow);
+                            new Rectangle(64, 0, tileWidth, tileHeight),
+                            new Rectangle(upperLeftX,upperLeftY,tileWidth,tileHeight),
+                            spriteBatch);
 
-                        tileSet[c, currentRow] = myTile;
-
-
-                        // ************************************************************************
+                        tileList[c, currentRow] = myTile;
                     }
 
                     // Increase the row

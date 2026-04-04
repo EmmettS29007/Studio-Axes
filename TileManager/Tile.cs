@@ -15,11 +15,13 @@ namespace TileManager
         //---FIELDS---
         private Texture2D spriteSheet;
         private Rectangle sourceRect;
+        private SpriteBatch sb;
 
         //---CONSTRUCTOR---
-        public Tile(Texture2D spriteSheet)
+        public Tile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb)
         {
             this.spriteSheet = spriteSheet;
+            this.sb = sb;
         }
         //---METHODS---
 

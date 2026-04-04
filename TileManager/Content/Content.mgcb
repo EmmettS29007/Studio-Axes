@@ -25,3 +25,6 @@
 /processorParam:TextureFormat=Color
 /build:1_Industrial_Tileset_1B.png
 
+#begin textureMappingData.txt
+/copy:textureMappingData.txt
+

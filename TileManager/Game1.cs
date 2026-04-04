@@ -11,6 +11,7 @@ namespace TileManager
 
         //Tile Manager 
         Texture2D tileSet;
+        //TileManager myTileManager;
         TileManager myTileManager;
 
         public Game1()
@@ -37,8 +38,11 @@ namespace TileManager
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //
+            //Tile Mapping
             tileSet = Content.Load<Texture2D>("1_Industrial_Tileset_1B");
+            myTileManager = new TileManager(tileSet,_spriteBatch);
+            myTileManager.AssignTiles("../../../Content/textureMappingData.txt");
+           
         }
 
         protected override void Update(GameTime gameTime)
@@ -55,7 +59,9 @@ namespace TileManager
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            _spriteBatch.Begin();
             myTileManager.DisplayTiles();
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
