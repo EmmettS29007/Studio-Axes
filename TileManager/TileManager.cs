@@ -80,12 +80,12 @@ namespace TileManager
                     int upperLeftY = int.Parse(splitData[1]);
 
                     // For each of the tiles across a row...
-                    for (int c = 0; c < splitData.Length; c++)
+                    for (int c = 0; c < tilesetColumns; c++)
                     {
                         //tile is placed in 2D tileList array at correct placement
                         Tile myTile = new Tile(
                             spriteSheet,
-                            new Rectangle(64, 0, tileWidth, tileHeight),
+                            new Rectangle(c*tileWidth, currentRow*tileWidth, tileWidth, tileHeight),
                             new Rectangle(upperLeftX,upperLeftY,tileWidth,tileHeight),
                             spriteBatch);
 

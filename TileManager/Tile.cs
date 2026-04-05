@@ -22,6 +22,7 @@ namespace TileManager
         {
             this.spriteSheet = spriteSheet;
             this.sb = sb;
+            this.sourceRect = sourceRect;
         }
         //---METHODS---
 
