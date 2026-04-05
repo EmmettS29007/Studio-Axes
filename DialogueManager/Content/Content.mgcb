@@ -13,3 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin example_dialogue.txt
+/copy:example_dialogue.txt
+
