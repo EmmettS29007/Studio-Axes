@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager\\DialogueManager.csproj": {}
+    "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager\\DialogueManager.csproj": {
+    "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager\\DialogueManager.csproj",
+        "projectUniqueName": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.csproj",
         "projectName": "DialogueManager",
-        "projectPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager\\DialogueManager.csproj",
-        "packagesPath": "C:\\Users\\Misty\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager\\obj\\",
+        "projectPath": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.csproj",
+        "packagesPath": "D:\\Profiles\\men6930\\.nuget\\packages\\",
+        "outputPath": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Profiles\\men6930\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

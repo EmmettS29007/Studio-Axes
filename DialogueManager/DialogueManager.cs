@@ -84,19 +84,10 @@ namespace DialogueManager
                     if (reader != null)
                     {
                         reader.Close();
-                        filename = null;
                     }
                 }
             }
             
-        }
-
-        /// <summary>
-        /// Work in progress method that draws a dialogue box for the dialogue.
-        /// </summary>
-        private void DrawDialogueBox()
-        {
-               
         }
         // Read dialogue with File.IO and save it to list.
         // ^ List b/c we do not know how many lines the dialogue will be.
