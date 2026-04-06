@@ -36,6 +36,7 @@ namespace AXES_Player
         private CollisionTypes xRightCollision;
         private CollisionTypes yBottomCollision;
         private bool canJump;
+        private bool yesFloor;
         private int collisionChange;
 
         /// <summary>
@@ -56,7 +57,8 @@ namespace AXES_Player
             currentYSpeed = 0;
             maxYSpeed = 24;
             myColor = Color.Black;
-            canJump = true;
+            canJump = false;
+            yesFloor = false;
         }
 
         /// <summary>
@@ -93,14 +95,13 @@ namespace AXES_Player
             //If BottomCollision is Nothing, Gravity
             if(yBottomCollision == CollisionTypes.None)
             {
-                if (currentYSpeed + gravity < maxYSpeed)
+                if (!yesFloor) { canJump = false; }
+                if (currentYSpeed + gravity < maxYSpeed && !canJump)
                 {
                     currentYSpeed += gravity;
                 }
-                canJump = false;
             } else //If else: it must be touching floor
             {
-                canJump = true;
                 currentYSpeed = 0;
             }
 
@@ -115,7 +116,7 @@ namespace AXES_Player
 
             //If W & can jump, Jump         
             if (keyboard.IsKeyDown(Keys.W) && canJump )
-            { currentYSpeed = -32; }
+            { currentYSpeed = -32; canJump = false; }
             destination.Y += (int)currentYSpeed;
         }
 
@@ -126,12 +127,13 @@ namespace AXES_Player
         /// <returns>Collisions vs not</returns>
         public void DetectCollision(ICollidable otherObject)
         {
-            //New Bounding Box For Tile
-            Rectangle newRect = new Rectangle(
-                otherObject.Position.X -1,
-                otherObject.Position.Y -1,
-                otherObject.Position.Width +1,
-                otherObject.Position.Height +1);
+            Rectangle bottom = new Rectangle(
+                destination.X,
+                destination.Y + destination.Height - 2,
+                destination.Width,
+                10);
+
+            /*
 
             //Anti-Corner X
             Rectangle middleRectX = new Rectangle(
@@ -145,63 +147,129 @@ namespace AXES_Player
                 destination.Y,
                 destination.Width / 10 * 8,
                 destination.Height);
-            
+
+            bool floor = false;
+            bool wall = false;
+
             //If it intersects
-            if (destination.Intersects(newRect))
+            if (bottom.Intersects(otherObject.Position))
             {
+                yesFloor = true;
+            }
+
+            
+            if (destination.Intersects(otherObject.Position))
+            {
+                
                 //Player's Bottom Y is further downscreen than the object's Top
-                if (destination.Y + destination.Height >= newRect.Y &&
+                if (destination.Y + destination.Height >= otherObject.Position.Y &&
                     //Player's Top is Higher than the object's top
-                    destination.Y <= newRect.Y &&
+                    destination.Y <= otherObject.Position.Y &&
                     //Player's Left Side is Left of the object's right side
-                    destination.X <= newRect.X + newRect.Width - 6 &&
+                    destination.X <= otherObject.Position.X + otherObject.Position.Width - 6 &&
                     //Player's Right side is Right of the object's left side
-                    destination.X + destination.Width >= newRect.X + 6 &&
-                    !middleRectX.Intersects(newRect))
+                    destination.X + destination.Width >= otherObject.Position.X + 6 &&
+                    !middleRectX.Intersects(otherObject.Position))
                 {
-                    Push(0, (otherObject.Position.Y - destination.Y - destination.Height));
+                    if(canJump == false)
+                    {
+                        Push(0, (otherObject.Position.Y - destination.Y - destination.Height));
+                        canJump = true;
+                    }
                     
                     yBottomCollision = CollisionTypes.Floor;
-                }
-
-                //Player's Top is Lower than Object's Top
-                if(destination.Y >= newRect.Y &&
-                //Player's Left Side is Left of the object's right side
-                destination.X <= newRect.X + newRect.Width - 6 &&
-                //Player's Right side is Right of the object's left side
-                destination.X + destination.Width >= newRect.X + 6 &&
-                !middleRectX.Intersects(newRect))
-                {
-                    Push(0, 24);
-                    currentYSpeed = 4;
-                    yTopCollision = CollisionTypes.Ceiling;
+                    floor = true;
                 }
 
                 //Player's Left Side is Right of the Object's Left Side
                 if (destination.X >= otherObject.Position.X &&
                 //Player's Top is Higher than Other Object's Bottom
-                destination.Y <= newRect.Y + newRect.Height &&
+                destination.Y <= otherObject.Position.Y + otherObject.Position.Height &&
                 //Player's Bottom is Lower than Other Object's Top
-                destination.Y + destination.Height >= newRect.Y &&
-                !middleRectY.Intersects(newRect))
+                destination.Y + destination.Height >= otherObject.Position.Y &&
+                !floor &&
+                !middleRectY.Intersects(otherObject.Position))
                 {
                     //Push(otherObject.Position.X + otherObject.Position.Width - destination.X - 1, 0);
                     xLeftCollision = CollisionTypes.LeftWall;
+                    wall = true;
                 }
 
                 //Player's Right Side is Left of the Object's Right Side
                 if (destination.X + destination.Width <= otherObject.Position.X + 
                     otherObject.Position.Width &&
                 //Player's Top is Higher than Other Object's Bottom
-                destination.Y <= newRect.Y + newRect.Height &&
+                destination.Y <= otherObject.Position.Y + otherObject.Position.Height &&
                 //Player's Bottom is Lower than Other Object's Top
-                destination.Y + destination.Height >= newRect.Y &&
-                !middleRectY.Intersects(newRect))
+                destination.Y + destination.Height >= otherObject.Position.Y &&
+                !floor&&
+                !middleRectY.Intersects(otherObject.Position))
                 {
                     xRightCollision = CollisionTypes.RightWall;
+                    wall = true;
                 }
 
+                //Player's Top is Lower than Object's Top
+                if (destination.Y >= otherObject.Position.Y &&
+                //Player's Left Side is Left of the object's right side
+                destination.X <= otherObject.Position.X + otherObject.Position.Width - 6 &&
+                //Player's Right side is Right of the object's left side
+                destination.X + destination.Width >= otherObject.Position.X + 6 &&
+                !wall &&
+                !middleRectX.Intersects(otherObject.Position))
+                {
+                    Push(0, 24);
+                    currentYSpeed = 4;
+                    yTopCollision = CollisionTypes.Ceiling;
+                }
+
+            }*/
+
+            if (destination.Intersects(otherObject.Position))
+            {
+                if (bottom.Intersects(otherObject.Position))
+                {
+                    yesFloor = true;
+                }
+
+                int yPush = 0;
+                int xPush = 0;
+                Rectangle overlap = Rectangle.Intersect(destination, otherObject.Position);
+                if (overlap.Width >= overlap.Height)
+                {
+                    yPush = otherObject.Position.Y - destination.Y;
+                    if (yPush < 0) 
+                    { 
+                        yPush = overlap.Height;
+                        Push(0, 4);
+                        yTopCollision = CollisionTypes.Ceiling;
+                    } 
+                    else if (yPush > 0) 
+                    {
+                        yPush = -overlap.Height + 1;
+                        yBottomCollision = CollisionTypes.Floor;
+                        canJump = true;
+                    }
+                    
+                    
+                    
+                }
+                else
+                {
+                    xPush = otherObject.Position.X - destination.X;
+                    if (xPush < 0) {
+                        xPush = overlap.Width; xLeftCollision = CollisionTypes.LeftWall; 
+                    } else if (xPush > 0) {
+                        xPush = -overlap.Width; xRightCollision = CollisionTypes.RightWall; }
+                }
+                Push(xPush, yPush);
             }
+                
+              
+                
+                
+                
+            
         }
 
         /// <summary>
@@ -225,6 +293,7 @@ namespace AXES_Player
             yBottomCollision = CollisionTypes.None;
             xRightCollision = CollisionTypes.None;
             collisionChange = 0;
+            yesFloor = false;
         }
     }
 }

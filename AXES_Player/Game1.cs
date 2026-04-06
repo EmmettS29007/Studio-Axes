@@ -31,11 +31,12 @@ namespace AXES_Player
             _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
             tempTileManager = new List<Tile>();
-            tempTileManager.Add(new Tile(new Rectangle(0, screenHeight / 3 * 2, screenWidth, 256)));
-            tempTileManager.Add(new Tile(new Rectangle(0, screenHeight / 2, 256, screenHeight)));
-            tempTileManager.Add(new Tile(new Rectangle(0, screenHeight / 3, screenWidth / 3, 256)));
-            tempTileManager.Add(new Tile(new Rectangle(screenWidth - 256, screenHeight / 2, 256, screenHeight)));
-            tempTileManager.Add(new Tile(new Rectangle(screenWidth / 3 * 2, screenWidth / 3, 256, 256)));
+            tempTileManager.Add(new Tile(new Rectangle(0, 1200, 2400, 256))); //floor
+            tempTileManager.Add(new Tile(new Rectangle(0, 600, 256, 1200))); //Left wall
+            tempTileManager.Add(new Tile(new Rectangle(0, 400, 800, 256))); //Top
+            tempTileManager.Add(new Tile(new Rectangle(2400 - 256, 600, 256, 1200))); //right wall
+            tempTileManager.Add(new Tile(new Rectangle(1600, 800, 256, 256))); //right block
+            tempTileManager.Add(new Tile(new Rectangle(1000, 500, 128,128))); //left block
 
             base.Initialize();
         }
@@ -44,7 +45,7 @@ namespace AXES_Player
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playerTexture = Content.Load<Texture2D>("_Run");
-            player = new Player(playerTexture, 100, new Vector2(screenWidth / 2, -600));//screenHeight / 2));
+            player = new Player(playerTexture, 100, new Vector2(screenWidth / 2, 100));//screenHeight / 2));
 
 
         }
