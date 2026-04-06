@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace AXES_Player
 {
-    internal class Tile
+    internal class Tile : ICollidable
     {
         Rectangle rect;
         public Tile(Rectangle rect)
@@ -17,11 +17,31 @@ namespace AXES_Player
             this.rect = rect;
         }
 
-        public Rectangle Rect { get { return rect; } }
-
+        /// <summary>
+        /// Gets the positioning of the rectangle
+        /// </summary>
+        public Rectangle Position { get { return rect; } }
         public void Draw(SpriteBatch sb)
         {
             DebugLib.DrawRectFill(sb, rect, Color.Red);
+        }
+
+        /// <summary>
+        /// Detects any Collisions with another Collidable object, Calls Push if Needed
+        /// </summary>
+        /// <param name="other">The other collidable</param>
+        public void DetectCollision(ICollidable other)
+        {
+        }
+
+        /// <summary>
+        /// Would normally change the x and y based off being collided with,
+        /// </summary>
+        /// <param name="xAmt">The X axis change</param>
+        /// <param name="yAmt">The Y axis change</param>
+        public void Push(int xAmt, int yAmt)
+        {
+            //This method doesn't need to do anything
         }
 
 

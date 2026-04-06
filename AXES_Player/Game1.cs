@@ -35,6 +35,7 @@ namespace AXES_Player
             tempTileManager.Add(new Tile(new Rectangle(0, screenHeight / 2, 256, screenHeight)));
             tempTileManager.Add(new Tile(new Rectangle(0, screenHeight / 3, screenWidth / 3, 256)));
             tempTileManager.Add(new Tile(new Rectangle(screenWidth - 256, screenHeight / 2, 256, screenHeight)));
+            tempTileManager.Add(new Tile(new Rectangle(screenWidth / 3 * 2, screenWidth / 3, 256, 256)));
 
             base.Initialize();
         }
@@ -43,7 +44,7 @@ namespace AXES_Player
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playerTexture = Content.Load<Texture2D>("_Run");
-            player = new Player(playerTexture, 100, new Vector2(screenWidth / 2, screenHeight / 2));
+            player = new Player(playerTexture, 100, new Vector2(screenWidth / 2, -600));//screenHeight / 2));
 
 
         }
@@ -53,10 +54,11 @@ namespace AXES_Player
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            
+
+            player.PreCollision();
             foreach(Tile tile in tempTileManager)
             {
-                player.CheckCollision(tile);
+                player.DetectCollision(tile);
             }
             player.Update();
 

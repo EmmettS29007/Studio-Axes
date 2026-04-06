@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\",
+  "WorkspaceRootPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|d:\\profiles\\svg1108\\documents\\github\\studio-axes\\axes_player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\axes_player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|d:\\profiles\\svg1108\\documents\\github\\studio-axes\\axes_player\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|d:\\profiles\\svg1108\\documents\\github\\studio-axes\\axes_player\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\axes_player\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|d:\\profiles\\svg1108\\documents\\github\\studio-axes\\axes_player\\debuglib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\axes_player\\debuglib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:debuglib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\axes_player\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\axes_player\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{649BABD4-4F3A-416B-AF7E-25A088F53932}|AXES_Player.csproj|solutionrelative:icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +34,37 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Game1.cs",
+              "RelativeToolTip": "Game1.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAUwCUAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T13:43:45.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICollidable.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\ICollidable.cs",
+              "RelativeDocumentMoniker": "ICollidable.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\ICollidable.cs",
+              "RelativeToolTip": "ICollidable.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T20:25:41.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DebugLib.cs",
-              "DocumentMoniker": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\DebugLib.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\DebugLib.cs",
               "RelativeDocumentMoniker": "DebugLib.cs",
-              "ToolTip": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\DebugLib.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\DebugLib.cs",
               "RelativeToolTip": "DebugLib.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -43,41 +73,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T13:43:45.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Tile.cs",
-              "DocumentMoniker": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Tile.cs",
-              "RelativeDocumentMoniker": "Tile.cs",
-              "ToolTip": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Tile.cs",
-              "RelativeToolTip": "Tile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T13:43:42.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Player.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAUwG0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T13:43:41.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tile.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Tile.cs",
+              "RelativeDocumentMoniker": "Tile.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\Tile.cs",
+              "RelativeToolTip": "Tile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T13:43:42.878Z",
               "EditorCaption": ""
             }
           ]
