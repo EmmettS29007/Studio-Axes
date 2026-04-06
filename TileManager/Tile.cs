@@ -16,13 +16,23 @@ namespace TileManager
         private Texture2D spriteSheet;
         private Rectangle sourceRect;
         private SpriteBatch sb;
+        private Rectangle spriteSheetRect;
 
         //---CONSTRUCTOR---
+
+        /// <summary>
+        /// Ctor for tiles
+        /// </summary>
+        /// <param name="spriteSheet">sprite sheet</param>
+        /// <param name="sourceRect">rectangle this is printed</param>
+        /// <param name="spriteSheetRect">rectangle that is taken from the sprite sheet</param>
+        /// <param name="sb"></param>
         public Tile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb)
         {
             this.spriteSheet = spriteSheet;
             this.sb = sb;
             this.sourceRect = sourceRect;
+            this.spriteSheetRect = spriteSheetRect;
         }
         //---METHODS---
 
@@ -32,7 +42,7 @@ namespace TileManager
         /// <param name="sb"></param>
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(spriteSheet, sourceRect, Color.White);
+            sb.Draw(spriteSheet, sourceRect, spriteSheetRect, Color.White);
         }
     }
 }

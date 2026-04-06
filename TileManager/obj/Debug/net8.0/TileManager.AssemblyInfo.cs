@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TileManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cd040559d96f6adba853c2cc437b3411e321b10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a08368b9a323996b83159fbcbd62e75806f557b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TileManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TileManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
