@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/arial-32.spritefont</SourceFile>
+  <SourceTime>2026-04-06T09:16:03.541206-04:00</SourceTime>
+  <DestFile>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/bin/DesktopGL/Content/arial-32.xnb</DestFile>
+  <DestTime>2026-04-06T09:16:04.3119268-04:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2025-06-02T06:31:02-04:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

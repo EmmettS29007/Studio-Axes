@@ -15,9 +15,13 @@ namespace Enemy_EntityManager_HUD
         private SpriteBatch _spriteBatch;
 
         private Texture2D squirtle;
+        private Texture2D heart;
+        private SpriteFont arial32;
 
         private Enemy evilSquirtle;
+
         private EntityManager entityManager;
+        private HUD hud;
         private List<Enemy> enemies;
 
         public Game1()
@@ -40,10 +44,13 @@ namespace Enemy_EntityManager_HUD
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             squirtle = Content.Load<Texture2D>("squirtle!");
+            heart = Content.Load<Texture2D>("heart");
+            arial32 = Content.Load<SpriteFont>("arial-32");
 
-            evilSquirtle = new Enemy(squirtle, 3, new Vector2(50, 50));
+            evilSquirtle = new Enemy(squirtle, 3, new Vector2(50, 200));
             enemies.Add(evilSquirtle);
             entityManager = new EntityManager(enemies);
+            hud = new HUD(heart, "nothing.", arial32);
         }
 
         protected override void Update(GameTime gameTime)
@@ -64,6 +71,7 @@ namespace Enemy_EntityManager_HUD
             _spriteBatch.Begin();
 
             entityManager.Draw(_spriteBatch);
+            hud.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

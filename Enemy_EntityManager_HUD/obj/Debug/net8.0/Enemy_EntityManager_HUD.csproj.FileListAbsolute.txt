@@ -33,3 +33,5 @@ D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\obj\Deb
 D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\obj\Debug\net8.0\Enemy_EntityManager_HUD.pdb
 D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\obj\Debug\net8.0\Enemy_EntityManager_HUD.genruntimeconfig.cache
 D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\obj\Debug\net8.0\ref\Enemy_EntityManager_HUD.dll
+D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\bin\Debug\net8.0\Content\arial-32.xnb
+D:\Profiles\anv9974\Documents\GitHub\Studio-Axes\Enemy_EntityManager_HUD\bin\Debug\net8.0\Content\heart.xnb

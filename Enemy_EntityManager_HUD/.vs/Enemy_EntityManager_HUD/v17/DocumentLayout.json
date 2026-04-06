@@ -11,12 +11,20 @@
       "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\enemy_entitymanager_hud\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\enemy_entitymanager_hud\\content\\heart.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:content\\heart.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\enemy_entitymanager_hud\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\enemy_entitymanager_hud\\content\\arial-32.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:content\\arial-32.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\enemy_entitymanager_hud\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2B7B586-07A9-4B2B-855F-E56450169149}|Enemy_EntityManager_HUD.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +34,33 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "heart.png",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Content\\heart.png",
+              "RelativeDocumentMoniker": "Content\\heart.png",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Content\\heart.png",
+              "RelativeToolTip": "Content\\heart.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-06T13:39:14.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "arial-32.spritefont",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Content\\arial-32.spritefont",
+              "RelativeDocumentMoniker": "Content\\arial-32.spritefont",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Content\\arial-32.spritefont",
+              "RelativeToolTip": "Content\\arial-32.spritefont",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-06T13:13:10.254Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +69,7 @@
               "RelativeDocumentMoniker": "HUD.cs",
               "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\HUD.cs",
               "RelativeToolTip": "HUD.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-06T12:29:28.635Z",
               "EditorCaption": ""
@@ -49,20 +82,20 @@
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwDQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-06T11:46:54.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\EntityManager.cs",
               "RelativeDocumentMoniker": "EntityManager.cs",
               "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\EntityManager.cs",
               "RelativeToolTip": "EntityManager.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwC8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwD4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-06T11:44:01.228Z",
               "EditorCaption": ""
@@ -75,7 +108,7 @@
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwDIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-06T11:38:37.119Z",
               "EditorCaption": ""
