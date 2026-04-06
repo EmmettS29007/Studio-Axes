@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enemy_EntityManager_HUD", "Enemy_EntityManager_HUD.csproj", "{E2B7B586-07A9-4B2B-855F-E56450169149}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2B7B586-07A9-4B2B-855F-E56450169149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B7B586-07A9-4B2B-855F-E56450169149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B7B586-07A9-4B2B-855F-E56450169149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B7B586-07A9-4B2B-855F-E56450169149}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5494DB8-0EE9-46B9-B5D3-51A6861CC6E5}
+	EndGlobalSection
+EndGlobal
