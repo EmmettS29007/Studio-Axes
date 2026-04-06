@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chlo\\Documents\\GitHub\\105-personal-repo-EmmettS29007\\PEs\\TileManager\\TileManager.csproj": {}
+    "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chlo\\Documents\\GitHub\\105-personal-repo-EmmettS29007\\PEs\\TileManager\\TileManager.csproj": {
+    "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chlo\\Documents\\GitHub\\105-personal-repo-EmmettS29007\\PEs\\TileManager\\TileManager.csproj",
+        "projectUniqueName": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.csproj",
         "projectName": "TileManager",
-        "projectPath": "C:\\Users\\chlo\\Documents\\GitHub\\105-personal-repo-EmmettS29007\\PEs\\TileManager\\TileManager.csproj",
-        "packagesPath": "C:\\Users\\chlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chlo\\Documents\\GitHub\\105-personal-repo-EmmettS29007\\PEs\\TileManager\\obj\\",
+        "projectPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.csproj",
+        "packagesPath": "D:\\Profiles\\cas1899\\.nuget\\packages\\",
+        "outputPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\chlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Profiles\\cas1899\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

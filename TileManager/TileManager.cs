@@ -51,14 +51,17 @@ namespace TileManager
                 // Needed for determining individual tile data placement
                 int currentRow = 0;
 
-                // ***GET DATA FROM FIRST 2 LINES FOR TILE INFORMATION ***
-                // ------------------------------------------------------------------------------------
-                // The first 2 lines give information about this level:
+                // Skip past the informational line
+                reader.ReadLine();
+
                 // Line 1: How large should the level tiles be?
                 line = reader.ReadLine();
                 splitData = line.Split(',');
                 int tileWidth = int.Parse(splitData[0]);
                 int tileHeight = int.Parse(splitData[1]);
+
+                // Skip past the informational line
+                reader.ReadLine();
 
                 // Line 2: How many tiles are there?
                 line = reader.ReadLine();
@@ -66,11 +69,22 @@ namespace TileManager
                 int tilesetColumns = int.Parse(splitData[0]);
                 int tilesetRows = int.Parse(splitData[1]);
 
+                // Skip past the informational line
+                reader.ReadLine();
+
+                // Line 3: How big are the tiles taken from the sprite sheet?
+                line = reader.ReadLine();
+                splitData = line.Split(',');
+                int sheetTileWidth = int.Parse(splitData[0]);
+                int sheetTileHeight = int.Parse(splitData[1]);
+
+                // Skip past the informational line
+                reader.ReadLine();
+
+
                 // Initialize the tileSet array to the correct size
                 tileList = new Tile[tilesetColumns, tilesetRows];
 
-                // ***READ TILE TEXTURE INFORMATION TO GENERATE LEVELTILES ***
-                // ------------------------------------------------------------------------------------
                 // Read data line by line for tiles
                 while ((line = reader.ReadLine()) != null)
                 {
@@ -86,13 +100,13 @@ namespace TileManager
                         Tile myTile = new Tile(
                             spriteSheet,
                             new Rectangle(c*tileWidth, currentRow*tileWidth, tileWidth, tileHeight),
-                            new Rectangle(upperLeftX,upperLeftY,tileWidth,tileHeight),
+                            new Rectangle(upperLeftX,upperLeftY, sheetTileWidth, sheetTileHeight),
                             spriteBatch);
 
                         tileList[c, currentRow] = myTile;
-                    }
+                        reader.ReadLine();
 
-                    // Increase the row
+                    }
                     currentRow++;
                 }
 

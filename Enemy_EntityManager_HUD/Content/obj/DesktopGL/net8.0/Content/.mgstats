@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/arial-32.spritefont","D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/bin/DesktopGL/Content/arial-32.xnb","FontDescriptionProcessor","SpriteFontContent",2068,136217,0.112234
+"D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/heart.png","D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/bin/DesktopGL/Content/heart.xnb","TextureProcessor","Texture2DContent",201,9301,0.0616251
+"D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/squirtle!.png","D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/bin/DesktopGL/Content/squirtle!.xnb","TextureProcessor","Texture2DContent",53913,250085,0.0727676
