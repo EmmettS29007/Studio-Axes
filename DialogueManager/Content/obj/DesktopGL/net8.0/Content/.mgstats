@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Profiles/men6930/Documents/GitHub/Studio-Axes/DialogueManager/Content/arial-12.spritefont","D:/Profiles/men6930/Documents/GitHub/Studio-Axes/DialogueManager/Content/bin/DesktopGL/Content/arial-12.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21529,0.158594
+"D:/Profiles/men6930/Documents/GitHub/Studio-Axes/DialogueManager/Content/example_dialogue.txt","D:\Profiles\men6930\Documents\GitHub\Studio-Axes\DialogueManager\Content\bin\DesktopGL\Content\example_dialogue.txt","CopyItem","File",201,201,0.0011708
+"D:/Profiles/men6930/Documents/GitHub/Studio-Axes/DialogueManager/Content/purple_txt_box.png","D:/Profiles/men6930/Documents/GitHub/Studio-Axes/DialogueManager/Content/bin/DesktopGL/Content/purple_txt_box.xnb","TextureProcessor","Texture2DContent",3577,570485,0.0602949
