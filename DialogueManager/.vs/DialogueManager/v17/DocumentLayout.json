@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\",
+  "WorkspaceRootPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\profiles\\men6930\\documents\\github\\studio-axes\\dialoguemanager\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|solutionrelative:dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\profiles\\men6930\\documents\\github\\studio-axes\\dialoguemanager\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\dialoguemanager\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\profiles\\men6930\\documents\\github\\studio-axes\\dialoguemanager\\content\\example_dialogue.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\dialoguemanager\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|solutionrelative:dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\dialoguemanager\\content\\example_dialogue.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{DC51959E-9C79-4298-92A9-C78BC675E595}|DialogueManager.csproj|solutionrelative:content\\example_dialogue.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -25,44 +25,39 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "example_dialogue.txt",
-              "DocumentMoniker": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Content\\example_dialogue.txt",
+              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Content\\example_dialogue.txt",
               "RelativeDocumentMoniker": "Content\\example_dialogue.txt",
-              "ToolTip": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Content\\example_dialogue.txt",
+              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Content\\example_dialogue.txt",
               "RelativeToolTip": "Content\\example_dialogue.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-04-06T13:07:55.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-06T13:07:55.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DialogueManager.cs",
-              "DocumentMoniker": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.cs",
+              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.cs",
               "RelativeDocumentMoniker": "DialogueManager.cs",
-              "ToolTip": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.cs",
+              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\DialogueManager.cs",
               "RelativeToolTip": "DialogueManager.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAcwI8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAArwBsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-05T01:12:21.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game1.cs",
-              "DocumentMoniker": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Game1.cs",
+              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Game1.cs",
+              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DialogueManager\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-05T01:11:44.037Z",
               "EditorCaption": ""
