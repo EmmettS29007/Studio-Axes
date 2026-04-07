@@ -25,9 +25,10 @@ namespace DialogueManager
         int windowHeight;
         private KeyboardState kbState;
         private KeyboardState kbPrevState;
-        private bool dialogueActivated;
-
-        // Variable used for progressing dialogue
+        /// <summary>
+        /// Private variable used for dialogue line counting
+        /// </summary>
+        private int i;
 
 
         public string FileName
@@ -111,6 +112,8 @@ namespace DialogueManager
             // The filename is nulled, and thus needs to be reassigned
             dialogue.Clear();
             filename = null;
+            currentLine = null;
+            i = 0;
         }
 
         /// <summary>
@@ -126,18 +129,15 @@ namespace DialogueManager
             {
                 ReadDialogue(filename);
 
-                for (int i = 0; i < dialogue.Count;)
+                currentLine = dialogue[i];
+                if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
                 {
-                    currentLine = dialogue[i];
-                    if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
-                    {
-                        i++;
-                    }
-                    // If the dialogue is at it's maximum, and the player presses enter again, the dialogue is exited
-                    if ((i >= dialogue.Count - 1))
-                    {
-                        ExitDialogue();
-                    }
+                    i++;
+                }
+                // If the dialogue is at it's maximum, and the player presses enter again, the dialogue is exited
+                if ((i >= dialogue.Count - 1))
+                {
+                    ExitDialogue();
                 }
             }
 
