@@ -55,13 +55,13 @@ namespace AXES_Player
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-
+            player.Update();
             player.PreCollision();
             foreach(Tile tile in tempTileManager)
             {
                 player.DetectCollision(tile);
             }
-            player.Update();
+            
 
 
             base.Update(gameTime);
