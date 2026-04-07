@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DialogueManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+770cbd253d33ea3a2791d113bbb76082abdda677")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a38feee6d5a0aba33368310d36a67d43dc77d41d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DialogueManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DialogueManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
