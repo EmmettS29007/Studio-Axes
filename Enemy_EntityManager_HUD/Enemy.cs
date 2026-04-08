@@ -22,6 +22,7 @@ namespace Enemy_EntityManager_HUD
         private int health;
         private Vector2 position;
         private bool moving;
+        private float range;
 
         public Texture2D getSprite
         {
@@ -32,6 +33,11 @@ namespace Enemy_EntityManager_HUD
         {
             get { return position; }
             set { position = value; }
+        }
+
+        public float Range
+        {
+            get { return range; }
         }
 
         public bool Moving
@@ -46,11 +52,12 @@ namespace Enemy_EntityManager_HUD
             set { position.X = value; }
         }
 
-        public Enemy(Texture2D enemySprite, int health, Vector2 position)
+        public Enemy(Texture2D enemySprite, int health, Vector2 position, float range)
         {
             this.enemySprite = enemySprite;
             this.health = health;
             this.position = position;
+            this.range = range;
         }
 
 

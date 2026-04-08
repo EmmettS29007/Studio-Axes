@@ -24,6 +24,10 @@ namespace Enemy_EntityManager_HUD
         private HUD hud;
         private List<Enemy> enemies;
 
+        // TEMPORARY FOR TESTING
+        private KeyboardState kbState;
+        private KeyboardState prevKbState;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -47,7 +51,7 @@ namespace Enemy_EntityManager_HUD
             heart = Content.Load<Texture2D>("heart");
             arial32 = Content.Load<SpriteFont>("arial-32");
 
-            evilSquirtle = new Enemy(squirtle, 3, new Vector2(50, 200));
+            evilSquirtle = new Enemy(squirtle, 3, new Vector2(50, 200), 200);
             enemies.Add(evilSquirtle);
             entityManager = new EntityManager(enemies);
             hud = new HUD(heart, "nothing.", arial32);
@@ -60,6 +64,15 @@ namespace Enemy_EntityManager_HUD
 
             // TODO: Add your update logic here
             entityManager.Update(gameTime);
+
+            kbState = Keyboard.GetState();
+
+            if (kbState.IsKeyUp(Keys.B) && prevKbState.IsKeyDown(Keys.B))
+            {
+                hud.TakeDamage();
+            }
+
+            prevKbState = kbState;
 
             base.Update(gameTime);
         }

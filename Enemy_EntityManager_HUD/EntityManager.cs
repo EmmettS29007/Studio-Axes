@@ -33,7 +33,7 @@ namespace Enemy_EntityManager_HUD
                     enemies[i].Moving = true;
                 }
 
-                if (enemies[i].X >= startingPositions[i].X + 200)
+                if (enemies[i].X >= startingPositions[i].X + enemies[i].Range)
                 {
                     enemies[i].Moving = false;
                 }
@@ -48,10 +48,10 @@ namespace Enemy_EntityManager_HUD
                     enemies[i].X -= 2;
                 }
 
-                /* if (player attacked enemy)
+                /* if (player's attack collides with enemy)
                  * - TakeDamage()
                  * 
-                 * if (player collide with enemy)
+                 * if (player collides with enemy)
                  * - Attack()
                 */
             }

@@ -13,16 +13,20 @@ namespace Enemy_EntityManager_HUD
     public class HUD
     {
         private Texture2D heart;
+        private int hearts;
         // private Player player;
         private string task;
         private SpriteFont arial32;
 
-        public HUD (Texture2D heart, string task, SpriteFont arial32) // Player player
+        public HUD(Texture2D heart, string task, SpriteFont arial32) // Player player
         {
             this.heart = heart;
             this.task = task;
             // this.player = player;
             this.arial32 = arial32;
+
+            // TEMPORARY FOR TESTING PURPOSES
+            hearts = 3;
         }
 
         public void Update(GameTime gameTime)
@@ -34,8 +38,7 @@ namespace Enemy_EntityManager_HUD
         {
             // Draw hearts in top left, use Player health int for how many hearts,
             // int hearts = player.health;
-            int hearts = 3;
-            for (int i =  0; i < hearts; i++)
+            for (int i = 0; i < hearts; i++)
             {
                 sb.Draw(heart,
                     new Rectangle(
@@ -48,6 +51,14 @@ namespace Enemy_EntityManager_HUD
 
             sb.DrawString(arial32, "Current Task: ", new Vector2(20, 480 - 95), Color.Black);
             sb.DrawString(arial32, task, new Vector2(20, 480 - 50), Color.Black);
+        }
+
+        public void TakeDamage()
+        {
+            if (hearts != 0)
+            {
+                hearts -= 1;
+            }
         }
     }
 }
