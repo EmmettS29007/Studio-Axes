@@ -11,7 +11,9 @@ namespace DialogueManager
         private SpriteBatch _spriteBatch;
         private SpriteFont arial12;
         private Texture2D textBox;
+        private KeyboardState kbState;
         private DialogueManager dialogueManager;
+        private bool test;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -24,7 +26,7 @@ namespace DialogueManager
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            test = false;
             base.Initialize();
         }
 
@@ -45,8 +47,19 @@ namespace DialogueManager
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            dialogueManager.FileName = "Content/example_dialogue.txt";
-            dialogueManager.Update(gameTime);
+            KeyboardState kbPrevState = kbState;
+            kbState = Keyboard.GetState();
+
+
+            if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+            {
+                test = !test;
+                if (test)
+                {
+                    dialogueManager.FileName = "Content/example_dialogue.txt";
+                }
+            }
+            dialogueManager.Update(gameTime, test);
             // TODO: Add your update logic here
 
             base.Update(gameTime);

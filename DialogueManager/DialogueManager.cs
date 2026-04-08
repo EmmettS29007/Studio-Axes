@@ -25,6 +25,7 @@ namespace DialogueManager
         int windowHeight;
         private KeyboardState kbState;
         private KeyboardState kbPrevState;
+        private bool dialogueActivated;
         /// <summary>
         /// Private variable used for dialogue line counting
         /// </summary>
@@ -55,6 +56,7 @@ namespace DialogueManager
             dialogue = new List<string>();
             filename = null;
             currentLine = null;
+            dialogueActivated = false;
         }
 
         /// <summary>
@@ -106,14 +108,22 @@ namespace DialogueManager
             }
             
         }
+
+        /// <summary>
+        /// Private method used for exiting dialogue
+        /// </summary>
         private void ExitDialogue()
         {
             // Empties the dialogue lst
             // The filename is nulled, and thus needs to be reassigned
-            dialogue.Clear();
-            filename = null;
+
+            // Resets the dialogue List by resetting the variable
+            dialogue = null;
+            dialogue = new List<string>();
             currentLine = null;
+            dialogueActivated = false;
             i = 0;
+
         }
 
         /// <summary>
@@ -121,22 +131,36 @@ namespace DialogueManager
         /// by one line
         /// </summary>
         /// <param name="gt">Current time in the game</param>
-        public void Update(GameTime gt)
+        public void Update(GameTime gt, bool dialogueConditional)
         {
+            // Used for singular key input checking 
             kbPrevState = kbState;
             kbState = Keyboard.GetState();
+
+            // Activates dialogue depending on the external conditional, ideally 
+            // changed in Game1
+            dialogueActivated = dialogueConditional;
+
+            // If the file is null, the dialogue is added to dialogue list.
             if (filename != null)
             {
                 ReadDialogue(filename);
-
-                currentLine = dialogue[i];
-                if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
+                filename = null;
+            }
+            if (dialogueActivated)
+            {
+                if(dialogue.Count != 0 && i < dialogue.Count)
+                {
+                    currentLine = dialogue[i];
+                }
+                if ((kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter)))
                 {
                     i++;
                 }
                 // If the dialogue is at it's maximum, and the player presses enter again, the dialogue is exited
-                if ((i >= dialogue.Count - 1))
+                else if ((i > dialogue.Count - 1))
                 {
+                    dialogueConditional = false;
                     ExitDialogue();
                 }
             }
@@ -150,15 +174,17 @@ namespace DialogueManager
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();
+            if (dialogueActivated)
+            {
+                sb.Draw(dialogueSprite, dialoguePosition, Color.White);
 
-            sb.Draw(dialogueSprite, dialoguePosition, Color.White);
-
-            // Alligns the text to the center of the dialogue box
-            sb.DrawString(font,
-                currentLine,
-                new Vector2(((dialogueSprite.Width - font.MeasureString(currentLine).X)/2) + dialoguePosition.X,
-                dialogueSprite.Height / 2 + dialoguePosition.Y),
-                Color.White);
+                // Alligns the text to the center of the dialogue box
+                sb.DrawString(font,
+                    currentLine,
+                    new Vector2(((dialogueSprite.Width - font.MeasureString(currentLine).X) / 2) + dialoguePosition.X,
+                    dialogueSprite.Height / 2 + dialoguePosition.Y),
+                    Color.White);
+            }
 
             sb.End();
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Users/Misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/arial-12.spritefont</SourceFile>
-  <SourceTime>2026-04-06T19:07:01.6512592-04:00</SourceTime>
-  <DestFile>D:/Users/Misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/bin/DesktopGL/Content/arial-12.xnb</DestFile>
-  <DestTime>2026-04-06T19:07:58.5129368-04:00</DestTime>
+  <SourceFile>C:/Users/misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/arial-12.spritefont</SourceFile>
+  <SourceTime>2026-04-08T12:59:21.9649015-04:00</SourceTime>
+  <DestFile>C:/Users/misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/bin/DesktopGL/Content/arial-12.xnb</DestFile>
+  <DestTime>2026-04-08T13:00:21.7706419-04:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

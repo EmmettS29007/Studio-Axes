@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/arial-12.spritefont</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/purple_txt_box.png</File>
+    <File>C:/Users/misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/arial-12.spritefont</File>
+    <File>C:/Users/misty/Documents/GitHub/Studio-Axes/DialogueManager/Content/purple_txt_box.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
