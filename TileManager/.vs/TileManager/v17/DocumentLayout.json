@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\",
+  "WorkspaceRootPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\tilemanager\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\tilemanager\\content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\tilemanager\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\tilemanager\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\tilemanager\\content\\1_industrial_tileset_1b.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:content\\1_industrial_tileset_1b.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\tilemanager\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\tilemanager\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\tilemanager\\content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\tilemanager\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\tilemanager\\content\\1_industrial_tileset_1b.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{CBE9578F-F95C-4DE4-9AA4-4B2A752A1FE7}|TileManager.csproj|solutionrelative:content\\1_industrial_tileset_1b.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Game1.cs",
-              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Game1.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwCwAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T02:10:35.12Z",
               "IsPinned": true,
@@ -48,23 +48,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "1_Industrial_Tileset_1B.png",
-              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\1_Industrial_Tileset_1B.png",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\1_Industrial_Tileset_1B.png",
               "RelativeDocumentMoniker": "Content\\1_Industrial_Tileset_1B.png",
-              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\1_Industrial_Tileset_1B.png",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\1_Industrial_Tileset_1B.png",
               "RelativeToolTip": "Content\\1_Industrial_Tileset_1B.png",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2026-04-06T13:10:56.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-06T13:10:56.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "textureMappingData.txt",
-              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\textureMappingData.txt",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\textureMappingData.txt",
               "RelativeDocumentMoniker": "Content\\textureMappingData.txt",
-              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\textureMappingData.txt",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Content\\textureMappingData.txt",
               "RelativeToolTip": "Content\\textureMappingData.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
@@ -73,26 +72,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Tile.cs",
-              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Tile.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Tile.cs",
               "RelativeDocumentMoniker": "Tile.cs",
-              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\Tile.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\Tile.cs",
               "RelativeToolTip": "Tile.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T02:20:15.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "TileManager.cs",
-              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.cs",
+              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.cs",
               "RelativeDocumentMoniker": "TileManager.cs",
-              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.cs",
+              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\TileManager\\TileManager.cs",
               "RelativeToolTip": "TileManager.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAswGkAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAYwIsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T02:19:17.946Z",
               "EditorCaption": ""

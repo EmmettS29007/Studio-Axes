@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Enemy_EntityManager_HUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5054d52dd7177b5a6dd33121128b7d69a0c4517a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55707fa7fd87e5be8de5aab5d31889b2c138de44")]
 [assembly: System.Reflection.AssemblyProductAttribute("Enemy_EntityManager_HUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Enemy_EntityManager_HUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

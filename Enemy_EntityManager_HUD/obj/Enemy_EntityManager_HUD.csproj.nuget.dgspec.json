@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj": {}
+    "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj": {}
   },
   "projects": {
-    "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj": {
+    "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj",
+        "projectUniqueName": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj",
         "projectName": "Enemy_EntityManager_HUD",
-        "projectPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj",
-        "packagesPath": "D:\\Profiles\\anv9974\\.nuget\\packages\\",
-        "outputPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\obj\\",
+        "projectPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\Enemy_EntityManager_HUD.csproj",
+        "packagesPath": "C:\\Users\\Bashe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Enemy_EntityManager_HUD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Profiles\\anv9974\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bashe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,9 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/arial-32.spritefont</File>
-    <File>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/heart.png</File>
-    <File>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/squirtle!.png</File>
+    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/arial-32.spritefont</File>
+    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/heart.png</File>
+    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Enemy_EntityManager_HUD/Content/squirtle!.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

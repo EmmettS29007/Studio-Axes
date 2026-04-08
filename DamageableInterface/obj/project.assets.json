@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Misty\\.nuget\\packages\\": {},
+    "C:\\Users\\Bashe\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\DamageableInterface.csproj",
+      "projectUniqueName": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\DamageableInterface.csproj",
       "projectName": "DamageableInterface",
-      "projectPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\DamageableInterface.csproj",
-      "packagesPath": "C:\\Users\\Misty\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\obj\\",
+      "projectPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\DamageableInterface.csproj",
+      "packagesPath": "C:\\Users\\Bashe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\DamageableInterface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bashe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -369,7 +369,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
