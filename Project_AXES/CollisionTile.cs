@@ -11,18 +11,8 @@ using System.Threading.Tasks;
 
 namespace Project_AXES
 {
-    public class Tile
+    public class CollisionTile : Tile ,ICollidable
     {
-        //NON COLLIEDABLE TILE
-        //Used for background
-        //Collideable tiles inherit from here
-
-        //---FIELDS---
-        protected Texture2D spriteSheet;
-        protected Rectangle sourceRect;
-        protected SpriteBatch sb;
-        protected Rectangle spriteSheetRect;
-
         //---CONSTRUCTOR---
 
         /// <summary>
@@ -33,24 +23,37 @@ namespace Project_AXES
         /// <param name="spriteSheetRect">rectangle that is taken from the sprite sheet</param>
         /// <param name="sb"></param>
 
-        public Rectangle Position { get { return sourceRect; } }
-
-        public Tile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb)
+        public CollisionTile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb):
+            base (spriteSheet, sourceRect, spriteSheetRect,sb)
         {
             this.spriteSheet = spriteSheet;
             this.sb = sb;
             this.sourceRect = sourceRect;
             this.spriteSheetRect = spriteSheetRect;
         }
+
         //---METHODS---
 
+        // just adds collision stuff
+
         /// <summary>
-        /// Render this LevelTile to the game window.
+        /// Detects any Collisions with another Collidable object, Calls Push if Needed
         /// </summary>
-        /// <param name="sb"></param>
-        public void Draw(SpriteBatch sb)
+        /// <param name="other">The other collidable</param>
+        public void DetectCollision(ICollidable other)
         {
-            sb.Draw(spriteSheet, sourceRect, spriteSheetRect, Color.White);
         }
+
+        /// <summary>
+        /// Would normally change the x and y based off being collided with,
+        /// </summary>
+        /// <param name="xAmt">The X axis change</param>
+        /// <param name="yAmt">The Y axis change</param>
+        public void Push(int xAmt, int yAmt)
+        {
+            //This method doesn't need to do anything
+        }
+
+
     }
 }

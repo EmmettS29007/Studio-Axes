@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace Project_AXES
 {
-    internal interface ICollidable
+    public interface ICollidable
     {
         /// <summary>
         /// Gets the positioning of the rectangle

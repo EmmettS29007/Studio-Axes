@@ -1,4 +1,4 @@
-﻿using DamageableInterface;
+﻿//using DamageableInterface;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -20,7 +20,7 @@ namespace Project_AXES
         Ceiling,
         None,
     }
-    internal class Player : ICollidable , IDamageable
+    public class Player : ICollidable , IDamageable
     {
 
         private Texture2D playerTexture;

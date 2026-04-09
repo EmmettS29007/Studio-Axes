@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DamageableInterface
+namespace Project_AXES
 {
-    internal interface IDamageable
+    public interface IDamageable
     {
         int Health
         {

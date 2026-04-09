@@ -8,22 +8,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TileManager
+namespace Project_AXES
 {
     //This class manages tiles
+    //**NOTES
+
+    // https://docs.google.com/spreadsheets/d/1L_lAuEy0PqPj4w9MGE8k5RVYLyzOUSqi7vtp6aE9b_U/edit?gid=0#gid=0
+    // Link to google sheet level builder
+    // Copy paste section that it tells you to into textureMappingData.txt
+
+    //Game window is about 30x14 tiles,
+    //overall this will change as we expand the level i would assume
+
     public class TileManager
     {
         //---FIELDS---
         //needed for drawing
         private SpriteBatch spriteBatch;
-
         //sprite sheet
         private Texture2D spriteSheet;
-
         //Tileset list
         private Tile[,] tileList;
-
-        //NOTE: Game window is about 30x17 tiles
+        //Initializes a collideable tile list
+        //this is needed so we can have collision checks
+        List<CollisionTile> collideableTiles = new List<CollisionTile>();
 
         //---CONSTRUCTOR---
         public TileManager(Texture2D spriteSheet, SpriteBatch spriteBatch)
@@ -42,21 +50,15 @@ namespace TileManager
         {
             try
             {
-                // ***SETUP VARIABLES FOR FILE READING: ***
-                // ------------------------------------------------------------------------------------
+                // --- INITIAL DATA READING ---
                 StreamReader reader = new StreamReader(filepath);
                 string line = "";
                 string[] splitData = null;
 
-                // Needed for determining individual tile data placement
-                //for keeping track of columns an rows
-                int currentColumn = 0;
-                int currentRow = 0;
-
                 // Skip past the informational line
                 reader.ReadLine();
 
-                // Line 1: How large should the level tiles be?
+                // Tile size reasding
                 line = reader.ReadLine();
                 splitData = line.Split(',');
                 int tileWidth = int.Parse(splitData[0]);
@@ -65,7 +67,7 @@ namespace TileManager
                 // Skip past the informational line
                 reader.ReadLine();
 
-                // Line 2: How many tiles are there?
+                // Tile ct reading
                 line = reader.ReadLine();
                 splitData = line.Split(',');
                 int tilesetColumns = int.Parse(splitData[0]);
@@ -74,7 +76,7 @@ namespace TileManager
                 // Skip past the informational line
                 reader.ReadLine();
 
-                // Line 3: How big are the tiles taken from the sprite sheet?
+                // Sprite sheet tile size reading
                 line = reader.ReadLine();
                 splitData = line.Split(',');
                 int sheetTileWidth = int.Parse(splitData[0]);
@@ -85,29 +87,66 @@ namespace TileManager
 
                 // Initialize the tileSet array to the correct size
                 tileList = new Tile[tilesetColumns, tilesetRows];
-
+                
+                // --- INITIAL DATA FOR TILE ASSIGNMENT ---
                 //lines
                 int upperLeftX;
                 int upperLeftY;
 
-                // Read data line by line for tiles
+                //for keeping track of columns an rows
+                int currentColumn = 0;
+                int currentRow = 0;
+
+                // --- TILE SORTING AND READING ---
+
+                //sorts tiles into collideable and not collideable
+                //places them into arrays and lists where appropriate
+                //until the row and column hit max
                 while ((currentRow != tilesetRows)&&(currentColumn!= tilesetColumns))
                 {
-                    line = reader.ReadLine();
+                    //reads line and splits data correctly
+                    line = reader.ReadLine(); //next line
+                    splitData = line.Split(','); //gets data
+
                     // Get the upper left corner of the source rectangle in the spritesheet
-                    splitData = line.Split(',');
                     upperLeftX = int.Parse(splitData[0]);
                     upperLeftY = int.Parse(splitData[1]);
 
-                    //tile is placed in 2D tileList array at correct placement
-                    Tile myTile = new Tile(
-                        spriteSheet,
-                        new Rectangle(currentColumn * tileWidth, currentRow * tileHeight, tileWidth, tileHeight),
-                        new Rectangle(upperLeftX, upperLeftY, sheetTileWidth, sheetTileHeight),
-                        spriteBatch);
+                    //sorts b/t collideable and non colliudeable tiles
+                    if (splitData.Length == 3) // this indicates that this is a background tile
+                    {
+                        //tile is placed in 2D tileList array at correct placement
+                        Tile myTile = new Tile(
+                            spriteSheet,
+                            new Rectangle //drawn rectangle
+                            (currentColumn * tileWidth, currentRow * tileHeight,
+                            tileWidth, tileHeight),
+                            new Rectangle //rectangle taken from sprite sheet
+                            (upperLeftX, upperLeftY,
+                            sheetTileWidth, sheetTileHeight),
+                            spriteBatch);
 
-                    tileList[currentColumn, currentRow] = myTile;
+                        //adds to array
+                        tileList[currentColumn, currentRow] = myTile;
+                    }
+                    else //this is NOT a background tile and needs collision
+                    {
+                        CollisionTile myTile = new CollisionTile(
+                            spriteSheet,
+                            new Rectangle //drawn rectangle
+                            (currentColumn * tileWidth,
+                            currentRow * tileHeight, tileWidth, tileHeight),
+                            new Rectangle //rectangle taken from sprite sheet
+                            (upperLeftX, upperLeftY,
+                            sheetTileWidth, sheetTileHeight),
+                            spriteBatch);
 
+                        //adds to array AND collision list for collision detection
+                        tileList[currentColumn, currentRow] = myTile;
+                        collideableTiles.Add(myTile);
+                    }
+
+                    //resets column counter if it gets to the end of a row
                     if (currentColumn == tilesetColumns-1)
                     {
                         currentColumn = 0;
@@ -142,6 +181,21 @@ namespace TileManager
                 {
                     tileList[r, c].Draw(spriteBatch);
                 }
+            }
+        }
+
+        /// <summary>
+        /// checks collision against player
+        /// </summary>
+        /// <param name="player"></param>
+        public void CollisionCheck(Player player)
+        {
+            //uses a collisiontile list for simplicity
+            //also that way you dont have to go through
+            //every single tile~
+            foreach (CollisionTile tile in collideableTiles)
+            {
+                player.DetectCollision(tile);
             }
         }
     }
