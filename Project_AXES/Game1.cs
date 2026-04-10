@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Project_Axes;
 using System.Collections.Generic;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Project_AXES
 {
@@ -10,6 +12,7 @@ namespace Project_AXES
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private KeyboardState kbState;
 
         //screen specs
         private int screenWidth;
@@ -22,6 +25,12 @@ namespace Project_AXES
         //Tile Manager 
         Texture2D tileSet;
         TileManager myTileManager;
+
+        //Dialogue Manager
+        private DialogueManager dialogueManager;
+        private SpriteFont arial12;
+        private Texture2D textBox;
+        private bool test;
 
         public Game1()
         {
@@ -55,6 +64,14 @@ namespace Project_AXES
             tileSet = Content.Load<Texture2D>("1_Industrial_Tileset_1B");
             myTileManager = new TileManager(tileSet, _spriteBatch);
             myTileManager.AssignTiles("../../../Content/textureMappingData.txt");
+
+            //Dialogue Box
+            arial12 = Content.Load<SpriteFont>("arial-12");
+            textBox = Content.Load<Texture2D>("purple_txt_box");
+            dialogueManager = new DialogueManager(arial12,
+                textBox,
+                _graphics.PreferredBackBufferWidth,
+                _graphics.PreferredBackBufferHeight);
         }
 
         protected override void Update(GameTime gameTime)
@@ -62,10 +79,27 @@ namespace Project_AXES
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            //Keyboard State
+            KeyboardState kbPrevState = kbState;
+            kbState = Keyboard.GetState();
+
+            //player
             player.Update();
             player.PreCollision();
 
+            //tile manager
             myTileManager.CollisionCheck(player);
+
+            //dialogue
+            if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+            {
+                test = !test;
+                if (test)
+                {
+                    dialogueManager.FileName = "Content/example_dialogue.txt";
+                }
+            }
+            dialogueManager.Update(gameTime, test);
 
             base.Update(gameTime);
         }
@@ -78,6 +112,7 @@ namespace Project_AXES
 
             myTileManager.DisplayTiles();
             player.Draw(_spriteBatch);
+            dialogueManager.Draw(_spriteBatch);
 
             _spriteBatch.End();
 
