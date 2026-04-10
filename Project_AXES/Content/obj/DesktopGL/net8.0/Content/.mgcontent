@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</File>
+    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/1_Industrial_Tileset_1B.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

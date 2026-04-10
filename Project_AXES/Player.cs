@@ -53,7 +53,7 @@ namespace Project_AXES
             this.playerTexture = playerTexture;
             this.health = health;
             this.position = position;
-            destination = new Rectangle((int)position.X, (int)position.Y - 400, 140, 180);
+            destination = new Rectangle((int)position.X, (int)position.Y - 400, 105, 135);
             spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
             gravity = .75f;
             currentYSpeed = 0;
@@ -140,7 +140,7 @@ namespace Project_AXES
 
             //If W & can jump, Jump         
             if (keyboard.IsKeyDown(Keys.W) && canJump)
-            { currentYSpeed = -32; canJump = false; }
+            { currentYSpeed = -24; canJump = false; }
             destination.Y += (int)currentYSpeed;
 
             if (keyboard.IsKeyDown(Keys.V) && previousKeyboard.IsKeyUp(Keys.V))
