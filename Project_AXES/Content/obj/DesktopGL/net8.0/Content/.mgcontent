@@ -4,10 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</File>
-    <File>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/1_Industrial_Tileset_1B.png</File>
+    <File>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</File>
+    <File>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/1_Industrial_Tileset_1B.png</File>
+    <File>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-12.spritefont</File>
+    <File>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
