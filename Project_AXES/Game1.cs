@@ -32,6 +32,17 @@ namespace Project_AXES
         private Texture2D textBox;
         private bool test;
 
+        //Enemy and Entity Manager
+        private Enemy enemy;
+        private EntityManager entityManager;
+
+        //HUD
+        private HUD hud;
+        private Texture2D heart;
+
+        // Temporary task string for hud
+        private string task;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -47,7 +58,7 @@ namespace Project_AXES
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
-
+            task = "Try out the game! (WIP)";
 
             base.Initialize();
         }
@@ -72,6 +83,11 @@ namespace Project_AXES
                 textBox,
                 _graphics.PreferredBackBufferWidth,
                 _graphics.PreferredBackBufferHeight);
+
+            //HUD Initialization
+            heart = Content.Load<Texture2D>("heart");
+            hud = new HUD(heart, task, arial12, player);
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -113,6 +129,7 @@ namespace Project_AXES
             myTileManager.DisplayTiles();
             player.Draw(_spriteBatch);
             dialogueManager.Draw(_spriteBatch);
+            hud.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

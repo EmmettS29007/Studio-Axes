@@ -47,6 +47,18 @@
 #begin example_dialogue.txt
 /copy:example_dialogue.txt
 
+#begin heart.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:heart.png
+
 #begin purple_txt_box.png
 /importer:TextureImporter
 /processor:TextureProcessor
