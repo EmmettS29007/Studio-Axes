@@ -17,12 +17,12 @@ namespace Project_Axes
         // Variable Block
         private List<string> dialogue;
         private string filename;
-        string currentLine;
+        private string currentLine;
         private SpriteFont font;
         private Texture2D dialogueSprite;
         private Rectangle dialoguePosition;
-        int windowWidth;
-        int windowHeight;
+        private int windowWidth;
+        private int windowHeight;
         private KeyboardState kbState;
         private KeyboardState kbPrevState;
         private bool dialogueActivated;
