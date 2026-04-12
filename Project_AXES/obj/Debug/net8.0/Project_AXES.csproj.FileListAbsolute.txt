@@ -116,3 +116,5 @@ C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8
 C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.genruntimeconfig.cache
 C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\ref\Project_AXES.dll
 C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\heart.xnb
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\Skeleton Idle.xnb
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\tempEnemySprite.xnb

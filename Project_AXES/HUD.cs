@@ -17,7 +17,7 @@ namespace Project_AXES
         private Player player;
         private string task;
         private SpriteFont arial32;
-        private int screenBottom;
+
 
         public HUD(Texture2D heart, string task, SpriteFont arial32, Player player)
         {
@@ -32,7 +32,7 @@ namespace Project_AXES
             // If task completed, change the current task
         }
 
-        public void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb, int y)
         {
             // Draw hearts in top left, use Player health int for how many hearts,
             // int hearts = player.health;
@@ -47,16 +47,8 @@ namespace Project_AXES
                     Color.Red);
             }
 
-            sb.DrawString(arial32, "Current Task: ", new Vector2(20, 480 - 95), Color.Black);
-            sb.DrawString(arial32, task, new Vector2(20, 480 - 50), Color.Black);
-        }
-
-        public void TakeDamage()
-        {
-            if (hearts != 0)
-            {
-                hearts -= 1;
-            }
+            sb.DrawString(arial32, "Current Task: ", new Vector2(20, y - 75), Color.White);
+            sb.DrawString(arial32, task, new Vector2(20, y - 50), Color.White);
         }
     }
 }

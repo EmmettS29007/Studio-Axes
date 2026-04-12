@@ -10,9 +10,9 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enemy_EntityManager_HUD
+namespace Project_AXES
 {
-    public class Enemy
+    public class Enemy : ICollidable, IDamageable
     {
         private Texture2D enemySprite;
 
@@ -23,16 +23,20 @@ namespace Enemy_EntityManager_HUD
         private Vector2 position;
         private bool moving;
         private float range;
+        private bool dead;
 
         public Texture2D getSprite
         {
             get {  return enemySprite; }
         }
 
-        public Vector2 Position
+        public Rectangle Position
         {
-            get { return position; }
-            set { position = value; }
+            get { return new Rectangle(
+                (int)position.X,
+                (int)position.Y,
+                72,
+                78); }
         }
 
         public float Range
@@ -52,6 +56,17 @@ namespace Enemy_EntityManager_HUD
             set { position.X = value; }
         }
 
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+        
+        public bool isDead
+        {
+            get { return dead; }
+        }
+
         public Enemy(Texture2D enemySprite, int health, Vector2 position, float range)
         {
             this.enemySprite = enemySprite;
@@ -60,7 +75,23 @@ namespace Enemy_EntityManager_HUD
             this.range = range;
         }
 
+        public void Attack(Player player)
+        {
+            player.Health--;
+        }
 
+        public void DetectCollision(ICollidable other) { }
 
+        public void Push(int x, int y) { }
+
+        public void TakeDamage(int damage)
+        {
+            health --;
+        }
+
+        public void Die()
+        {
+            dead = true;
+        }
     }
 }

@@ -33,8 +33,10 @@ namespace Project_AXES
         private bool test;
 
         //Enemy and Entity Manager
+        private Texture2D enemySprite;
         private Enemy enemy;
         private EntityManager entityManager;
+        private List<Enemy> enemies;
 
         //HUD
         private HUD hud;
@@ -59,6 +61,7 @@ namespace Project_AXES
             _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
             task = "Try out the game! (WIP)";
+            enemies = new List<Enemy>();
 
             base.Initialize();
         }
@@ -88,6 +91,14 @@ namespace Project_AXES
             heart = Content.Load<Texture2D>("heart");
             hud = new HUD(heart, task, arial12, player);
 
+            //Enemy and EntityManager Setup
+            enemySprite = Content.Load<Texture2D>("tempEnemySprite");
+
+            enemy = new Enemy(enemySprite, 3, new Vector2(screenWidth-228, screenHeight-171), 76);
+            enemies.Add(enemy);
+
+            entityManager = new EntityManager(enemies);
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -116,6 +127,7 @@ namespace Project_AXES
                 }
             }
             dialogueManager.Update(gameTime, test);
+            entityManager.Update(gameTime, player);
 
             base.Update(gameTime);
         }
@@ -129,7 +141,8 @@ namespace Project_AXES
             myTileManager.DisplayTiles();
             player.Draw(_spriteBatch);
             dialogueManager.Draw(_spriteBatch);
-            hud.Draw(_spriteBatch);
+            hud.Draw(_spriteBatch, screenHeight);
+            entityManager.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

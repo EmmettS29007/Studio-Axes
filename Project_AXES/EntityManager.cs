@@ -20,7 +20,7 @@ namespace Project_AXES
             startingPositions = new List<Vector2>();
             foreach (Enemy enemy in this.enemies)
             {
-                startingPositions.Add(enemy.Position);
+                startingPositions.Add(new Vector2(enemy.Position.X, enemy.Position.Y));
             }
         }
 
@@ -54,6 +54,9 @@ namespace Project_AXES
                 */
 
                 if (player.Position.Intersects(enemies[i].Position))
+                {
+                    player.Health -= 1;
+                }
 
             }
         }
@@ -62,7 +65,10 @@ namespace Project_AXES
         {
             foreach (Enemy enemy in enemies)
             {
-                sb.Draw(enemy.getSprite, enemy.Position, Color.White);
+                if (enemy.isDead == false)
+                {
+                    sb.Draw(enemy.getSprite, enemy.Position, Color.White);
+                }
             }
         }
 
