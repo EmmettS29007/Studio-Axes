@@ -120,7 +120,7 @@ namespace Project_AXES
             //dialogue
             if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
             {
-                test = !test;
+                test = true;
                 if (test)
                 {
                     dialogueManager.FileName = "Content/example_dialogue.txt";
