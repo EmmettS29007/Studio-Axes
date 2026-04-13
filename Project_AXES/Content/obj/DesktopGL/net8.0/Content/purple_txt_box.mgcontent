@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</SourceFile>
-  <SourceTime>2026-04-11T18:04:45.7209127-04:00</SourceTime>
-  <DestFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/purple_txt_box.xnb</DestFile>
-  <DestTime>2026-04-11T18:14:28.4429635-04:00</DestTime>
+  <SourceFile>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</SourceFile>
+  <SourceTime>2026-04-10T09:31:29.1639528-04:00</SourceTime>
+  <DestFile>D:/Profiles/anv9974/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/purple_txt_box.xnb</DestFile>
+  <DestTime>2026-04-13T08:46:45.2676022-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

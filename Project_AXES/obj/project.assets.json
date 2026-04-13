@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Misty\\.nuget\\packages\\": {},
+    "D:\\Profiles\\anv9974\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "projectUniqueName": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
       "projectName": "Project_AXES",
-      "projectPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-      "packagesPath": "C:\\Users\\Misty\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+      "projectPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "D:\\Profiles\\anv9974\\.nuget\\packages\\",
+      "outputPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Profiles\\anv9974\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -369,7 +369,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

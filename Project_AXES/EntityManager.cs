@@ -55,7 +55,15 @@ namespace Project_AXES
 
                 if (player.Position.Intersects(enemies[i].Position))
                 {
-                    player.Health -= 1;
+                    if (player.Health > 0)
+                    {
+                        player.Health -= 1;
+                    }
+
+                    if (player.Health <= 0)
+                    {
+                        player.Die();
+                    }
                 }
 
             }

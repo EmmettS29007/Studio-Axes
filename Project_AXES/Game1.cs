@@ -94,7 +94,7 @@ namespace Project_AXES
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("tempEnemySprite");
 
-            enemy = new Enemy(enemySprite, 3, new Vector2(screenWidth-228, screenHeight-171), 76);
+            enemy = new Enemy(enemySprite, 3, new Vector2(200, 300), 76);
             enemies.Add(enemy);
 
             entityManager = new EntityManager(enemies);
