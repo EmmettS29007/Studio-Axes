@@ -14,24 +14,35 @@ namespace Project_Axes
 {
     internal class DialogueManager
     {
-        // Variable Block
+        // File.IO Variables
+        // List that contains the dialogue
         private List<string> dialogue;
+        // The name and location of the file that contains the dialogue
         private string filename;
+        // The current line of dialogue being drawn to the screen
         private string currentLine;
+
+        // Variables used for drawing to the screen & positioning
         private SpriteFont font;
         private Texture2D dialogueSprite;
         private Rectangle dialoguePosition;
         private int windowWidth;
         private int windowHeight;
+
+        // Used for checking if [ENTER] was pressed, which progresses the dialogue
         private KeyboardState kbState;
         private KeyboardState kbPrevState;
+        // Used for checking if the game is still in a "dialogue" state
         private bool dialogueActivated;
+
         /// <summary>
         /// Private variable used for dialogue line counting
         /// </summary>
         private int i;
 
-
+        /// <summary>
+        /// The name and location of the file to read and save dialogue
+        /// </summary>
         public string FileName
         {
             get { return filename; }
