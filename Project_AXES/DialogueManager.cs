@@ -184,7 +184,6 @@ namespace Project_Axes
         /// <param name="sb">The spritebatch to take the font and text box from</param>
         public void Draw(SpriteBatch sb)
         {
-            //sb.Begin();
             if (dialogueActivated)
             {
                 sb.Draw(dialogueSprite, dialoguePosition, Color.White);
@@ -197,7 +196,6 @@ namespace Project_Axes
                     Color.White);
             }
 
-            //sb.End();
         }
 
     }
