@@ -35,13 +35,14 @@ namespace AXES_Player
         }
 
         /// <summary>
-        /// Would normally change the x and y based off being collided with,
+        /// Would normally change the x and y based off being collided with, used for camera
         /// </summary>
         /// <param name="xAmt">The X axis change</param>
         /// <param name="yAmt">The Y axis change</param>
         public void Push(int xAmt, int yAmt)
         {
-            //This method doesn't need to do anything
+            rect.X += xAmt;
+            rect.Y += yAmt;
         }
 
 
