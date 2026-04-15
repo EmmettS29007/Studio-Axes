@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "D:\\Profiles\\svg1108\\.nuget\\packages\\": {},
+    "C:\\Users\\misty\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\AXES_Player.csproj",
+      "projectUniqueName": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\AXES_Player.csproj",
       "projectName": "AXES_Player",
-      "projectPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\AXES_Player.csproj",
-      "packagesPath": "D:\\Profiles\\svg1108\\.nuget\\packages\\",
-      "outputPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\obj\\",
+      "projectPath": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\AXES_Player.csproj",
+      "packagesPath": "C:\\Users\\misty\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\AXES_Player\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Profiles\\svg1108\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -320,6 +320,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -338,7 +339,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -364,12 +365,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.23, 8.0.23]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.23, 8.0.23]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.23, 8.0.23]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.23, 8.0.23]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
