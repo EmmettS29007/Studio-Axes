@@ -100,7 +100,6 @@ namespace Project_AXES
             enemies.Add(enemy);
 
             entityManager = new EntityManager(enemies);
-
         }
 
         protected override void Update(GameTime gameTime)

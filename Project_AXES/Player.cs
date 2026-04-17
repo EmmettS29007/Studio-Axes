@@ -22,7 +22,6 @@ namespace Project_AXES
     }
     public class Player : ICollidable , IDamageable
     {
-
         private Texture2D playerTexture;
         private Texture2D playerSpriteSheet;
         private int health;
@@ -43,6 +42,10 @@ namespace Project_AXES
         private int xSpeed;
         private Color playerColor;
 
+        //Animation Fields
+
+
+
         /// <summary>
         /// The Constructor for the player
         /// </summary>
@@ -52,6 +55,7 @@ namespace Project_AXES
         public Player(Texture2D playerSpriteSheet, Texture2D playerTexture, int health, Vector2 position)
         {
             this.playerTexture = playerTexture;
+            this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
             this.position = position;
             destination = new Rectangle((int)position.X, (int)position.Y - 400, 105, 135);
@@ -84,10 +88,8 @@ namespace Project_AXES
         /// <param name="sb">The spritebatch</param>
         public void Draw(SpriteBatch sb)
         {
-
             sb.Draw(playerTexture, destination, spriteRectangle, playerColor);
             DebugLib.DrawRectOutline(sb, destination, 3, myColor);
-
         }
 
         /// <summary>
@@ -251,6 +253,37 @@ namespace Project_AXES
             {
                 Die();
             }
+        }
+
+        //---ANIMATION---
+
+        /// <summary>
+        /// Draws Mario with a walking animation.
+        /// </summary>
+        /// <param name="flip">Should he be flipped horizontally or vertically?</param>
+        private void DrawMarioWalking(SpriteBatch sb, SpriteEffects flip)
+        {
+            // This version of draw can flip (mirror) the image horizontally or vertically,
+            // depending on the method's SpriteEffects parameter.
+
+            // Mario is animated with this method.
+            // He is drawn starting at the second animation frame in the sprite sheet 
+            //   and cycles through animation frames 1, 2, and 3.
+            //   (i.e. the second through fourth images in the sheet)
+            sb.Draw(
+                playerSpriteSheet,                                   // Whole sprite sheet
+                destination,                                  // Position of the Mario sprite
+                new Rectangle(                                  // Which portion of the sheet is drawn:
+                    playerCurrentFrame * widthOfSingleSprite,   // - Left edge
+                    0,                                          // - Top of sprite sheet
+                    widthOfSingleSprite,                        // - Width 
+                    playerTexture.Height),                       // - Height
+                playerColor,                                    // No change in color
+                0.0f,                                           // No rotation
+                Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
+                1.0f,                                           // Scale
+                flip,                                           // Flip it horizontally or vertically?    
+                0.0f);                                          // Layer depth
         }
     }
 }

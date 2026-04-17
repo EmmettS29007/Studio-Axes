@@ -25,10 +25,13 @@ namespace Project_AXES
         //---FIELDS---
         //needed for drawing
         private SpriteBatch spriteBatch;
+
         //sprite sheet
         private Texture2D spriteSheet;
+
         //Tileset list
         private Tile[,] tileList;
+
         //Initializes a collideable tile list
         //this is needed so we can have collision checks
         List<CollisionTile> collideableTiles = new List<CollisionTile>();
