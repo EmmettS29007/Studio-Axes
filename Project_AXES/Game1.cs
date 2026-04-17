@@ -20,6 +20,7 @@ namespace Project_AXES
 
         //player
         private Texture2D playerTexture;
+        private Texture2D playerSpriteSheet;
         private Player player;
 
         //Tile Manager 
@@ -72,7 +73,8 @@ namespace Project_AXES
 
             //Player Textures
             playerTexture = Content.Load<Texture2D>("_Run");
-            player = new Player(playerTexture, 3, new Vector2(0, 0));
+            playerSpriteSheet = Content.Load<Texture2D>("knight-sprite-sheet");
+            player = new Player(playerSpriteSheet,playerTexture, 3, new Vector2(0, 0));
 
             //Tile Mapping
             tileSet = Content.Load<Texture2D>("1_Industrial_Tileset_1B");

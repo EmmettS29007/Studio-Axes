@@ -24,6 +24,7 @@ namespace Project_AXES
     {
 
         private Texture2D playerTexture;
+        private Texture2D playerSpriteSheet;
         private int health;
         private Vector2 position;
         private Rectangle destination;
@@ -48,7 +49,7 @@ namespace Project_AXES
         /// <param name="playerTexture">The texture of the player</param>
         /// <param name="health">The player's health</param>
         /// <param name="position">The location of the player</param>
-        public Player(Texture2D playerTexture, int health, Vector2 position)
+        public Player(Texture2D playerSpriteSheet, Texture2D playerTexture, int health, Vector2 position)
         {
             this.playerTexture = playerTexture;
             this.health = health;
