@@ -22,28 +22,36 @@ namespace Project_AXES
     }
     public class Player : ICollidable , IDamageable
     {
+        //Sprites/Textures
         private Texture2D playerTexture;
         private Texture2D playerSpriteSheet;
-        private int health;
+        private Rectangle spriteRectangle;
+
+        //Position Data/Movement
         private Vector2 position;
         private Rectangle destination;
-        private Rectangle spriteRectangle;
-        private KeyboardState keyboard;
-        private KeyboardState previousKeyboard;
-        private float gravity;
-        private float maxYSpeed;
         private float currentYSpeed;
-        private Color myColor;
         private CollisionTypes yTopCollision;
         private CollisionTypes yBottomCollision;
         private bool canJump;
         private bool yesFloor;
         private int collisionChange;
         private int xSpeed;
+
+        //Player Input
+        private KeyboardState keyboard;
+        private KeyboardState previousKeyboard;
+        private float gravity;
+        private float maxYSpeed;
+        
+        //Basic Data
+        private Color myColor;
+        private int health;
         private Color playerColor;
 
         //Animation Fields
-
+        private int playerCurrentFrame;
+        private int widthOfSingleSprite = 90;
 
 
         /// <summary>
@@ -57,7 +65,7 @@ namespace Project_AXES
             this.playerTexture = playerTexture;
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
-            this.position = position;
+            this.position = new Vector2(32,64);
             destination = new Rectangle((int)position.X, (int)position.Y - 400, 105, 135);
             spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
             gravity = .75f;
@@ -88,7 +96,7 @@ namespace Project_AXES
         /// <param name="sb">The spritebatch</param>
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(playerTexture, destination, spriteRectangle, playerColor);
+            DrawPlayerWalking(sb,SpriteEffects.None);
             DebugLib.DrawRectOutline(sb, destination, 3, myColor);
         }
 
@@ -258,27 +266,22 @@ namespace Project_AXES
         //---ANIMATION---
 
         /// <summary>
-        /// Draws Mario with a walking animation.
+        /// Draws animation
         /// </summary>
         /// <param name="flip">Should he be flipped horizontally or vertically?</param>
-        private void DrawMarioWalking(SpriteBatch sb, SpriteEffects flip)
+        private void DrawPlayerWalking(SpriteBatch sb, SpriteEffects flip)
         {
             // This version of draw can flip (mirror) the image horizontally or vertically,
             // depending on the method's SpriteEffects parameter.
-
-            // Mario is animated with this method.
-            // He is drawn starting at the second animation frame in the sprite sheet 
-            //   and cycles through animation frames 1, 2, and 3.
-            //   (i.e. the second through fourth images in the sheet)
             sb.Draw(
-                playerSpriteSheet,                                   // Whole sprite sheet
-                destination,                                  // Position of the Mario sprite
+                playerSpriteSheet,                               // Whole sprite sheet
+                position,                                       // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
                     playerCurrentFrame * widthOfSingleSprite,   // - Left edge
                     0,                                          // - Top of sprite sheet
                     widthOfSingleSprite,                        // - Width 
-                    playerTexture.Height),                       // - Height
-                playerColor,                                    // No change in color
+                    playerTexture.Height),                      // - Height
+                playerColor,                                    // Color
                 0.0f,                                           // No rotation
                 Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
                 1.0f,                                           // Scale
