@@ -44,7 +44,7 @@ namespace Project_AXES
         private Texture2D heart;
 
         // Temporary task string for hud
-        private string task;
+        private string[] task = new string[2];
 
         //Camera
         private Camera camera;
@@ -59,12 +59,13 @@ namespace Project_AXES
         protected override void Initialize()
         {
             screenHeight = 1080; 
-            screenWidth = 720;
+            screenWidth = 1920;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.PreferredBackBufferWidth = screenWidth;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
             _graphics.ApplyChanges();
-            task = "Try out the game! (WIP)";
+            string daTask = "TRY TOUIIOUTKLHRBHJSFAFAFAFFFBHFEEFHA BARK BARK VBARK";
+            task[0] = daTask;
             enemies = new List<Enemy>();
 
             base.Initialize();
@@ -102,7 +103,7 @@ namespace Project_AXES
             enemy = new Enemy(enemySprite, 3, new Vector2(200, 300), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies);
+            entityManager = new EntityManager(enemies,enemySprite);
 
             //Camera
             camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
@@ -118,7 +119,7 @@ namespace Project_AXES
             kbState = Keyboard.GetState();
 
             //player
-            player.Update();
+            player.Update(gameTime);
             player.PreCollision();
 
             //tile manager
