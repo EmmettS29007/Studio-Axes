@@ -20,6 +20,15 @@ namespace Project_AXES
         Ceiling,
         None,
     }
+    enum PlayerState
+    {
+        IdleLeft,
+        IdleRight,
+        FacingLeft,
+        FacingRight,
+        JumpLeft,
+        JumpRight
+    }
     public class Player : ICollidable , IDamageable
     {
         //Sprites/Textures
@@ -37,6 +46,7 @@ namespace Project_AXES
         private bool yesFloor;
         private int collisionChange;
         private int xSpeed;
+        private PlayerState playerState;
 
         // Attacking data
         private Rectangle attack;
@@ -155,15 +165,43 @@ namespace Project_AXES
 
             //If D & Not colliding with a right wall, move right
             if (keyboard.IsKeyDown(Keys.D))
-            { destination.X += xSpeed; }
+            {
+                playerState = PlayerState.FacingRight;
+                destination.X += xSpeed; 
+            }
 
+            // If the previous key down was D, the charachter idles to the right
+            if (previousKeyboard.IsKeyDown(Keys.D))
+            {
+                playerState = PlayerState.IdleRight;
+            }
+
+            // If the previous key down was A, the character idles left.
+            if (previousKeyboard.IsKeyDown(Keys.A))
+            {
+                playerState = PlayerState.IdleLeft;
+            }
             //If A & Not colliding with a left wall, move left
             if (keyboard.IsKeyDown(Keys.A))
-            { destination.X -= xSpeed; }
+            {
+                playerState = PlayerState.FacingLeft;
+                destination.X -= xSpeed; 
+            }
 
             //If W & can jump, Jump         
             if (keyboard.IsKeyDown(Keys.W) && canJump)
-            { currentYSpeed = -24; canJump = false; }
+            {
+                if (keyboard.IsKeyDown(Keys.D))
+                {
+                    playerState = PlayerState.JumpLeft;
+                }
+                else if (keyboard.IsKeyDown(Keys.A))
+                {
+                    playerState = PlayerState.JumpLeft;
+                }
+                currentYSpeed = -24; 
+                canJump = false; 
+            }
             destination.Y += (int)currentYSpeed;
 
             if (keyboard.IsKeyDown(Keys.V) && previousKeyboard.IsKeyUp(Keys.V))
@@ -285,10 +323,17 @@ namespace Project_AXES
         /// </summary>
         public void Attacking(GameTime gt)
         {
-            if (keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K))
+            if ((keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K)))
             {
                 timerCurrent = attackDuration;
-                attack = new Rectangle(destination.X+(destination.Width/2), destination.Y, destination.Width, destination.Height);
+                if ((playerState == PlayerState.IdleRight) || (playerState == PlayerState.FacingRight) || (playerState == PlayerState.JumpRight))
+                {
+                    attack = new Rectangle(destination.X + (destination.Width / 2), destination.Y, destination.Width, destination.Height);
+                }
+                else if ((playerState == PlayerState.IdleLeft) || (playerState == PlayerState.FacingLeft) || (playerState == PlayerState.JumpLeft))
+                {
+                    attack = new Rectangle(destination.X - (destination.Width / 2), destination.Y, destination.Width, destination.Height);
+                }
             }
             timerCurrent -= gt.ElapsedGameTime.TotalSeconds;
             if (timerCurrent <= 0)
