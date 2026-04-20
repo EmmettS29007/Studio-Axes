@@ -86,8 +86,8 @@ namespace Project_AXES
             textBox = Content.Load<Texture2D>("purple_txt_box");
             dialogueManager = new DialogueManager(arial12,
                 textBox,
-                _graphics.PreferredBackBufferWidth,
-                _graphics.PreferredBackBufferHeight);
+                screenWidth,
+                screenHeight);
 
             //HUD Initialization
             heart = Content.Load<Texture2D>("heart");

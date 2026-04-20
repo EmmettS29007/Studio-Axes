@@ -60,7 +60,7 @@ namespace Project_Axes
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
             this.dialogueSprite = dialogueSprite;
-            dialoguePosition = new Rectangle(((windowWidth - dialogueSprite.Width) / 2),
+            dialoguePosition = new Rectangle((windowWidth / 2),
                 (windowHeight - dialogueSprite.Height),
                 dialogueSprite.Width,
                 dialogueSprite.Height);
