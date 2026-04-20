@@ -83,7 +83,7 @@ namespace Project_AXES
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
             this.position = new Vector2(32,64);
-            destination = new Rectangle((int)position.X, (int)position.Y - 400, 200, 250);
+            destination = new Rectangle((int)position.X, (int)position.Y - 400, 140, 180);
             spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
             gravity = .75f;
             currentYSpeed = 0;
