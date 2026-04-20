@@ -1,5 +1,5 @@
 // Size of tiles drawn to window
-64,64
+144,144
 // How many tiles (Width X Height) to draw to window
 52,14
 // How big the tile that we're taking from sprite sheet is
