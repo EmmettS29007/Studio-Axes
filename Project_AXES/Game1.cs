@@ -55,7 +55,7 @@ namespace Project_AXES
 
         protected override void Initialize()
         {
-            screenHeight = GraphicsDevice.DisplayMode.Height;
+            screenHeight = GraphicsDevice.DisplayMode.Height; 
             screenWidth = GraphicsDevice.DisplayMode.Width;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.PreferredBackBufferWidth = screenWidth;
@@ -135,7 +135,7 @@ namespace Project_AXES
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             _spriteBatch.Begin();
 
