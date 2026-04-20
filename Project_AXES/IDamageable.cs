@@ -14,6 +14,7 @@ namespace Project_AXES
             set;
         }
 
+        /*
         /// <summary>
         /// Lowers health by the damage taken.
         /// </summary>
@@ -24,7 +25,7 @@ namespace Project_AXES
             // If the object reaches zero health, it will die
             if (Health <= 0)
             {
-                Die();
+                // Die();
             }
         }
 
@@ -34,5 +35,6 @@ namespace Project_AXES
         /// if their health reaches below zero.
         /// </summary>
         void Die();
+        */
     }
 }

@@ -38,6 +38,9 @@ namespace Project_AXES
         private int collisionChange;
         private int xSpeed;
 
+        // Attacking data
+        private Rectangle attack;
+
         //Player Input
         private KeyboardState keyboard;
         private KeyboardState previousKeyboard;
@@ -66,12 +69,12 @@ namespace Project_AXES
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
             this.position = new Vector2(32,64);
-            destination = new Rectangle((int)position.X, (int)position.Y - 400, 105, 135);
+            destination = new Rectangle((int)position.X, (int)position.Y - 400, 200, 250);
             spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
             gravity = .75f;
             currentYSpeed = 0;
             maxYSpeed = 24;
-            myColor = Color.Black;
+            myColor = Color.Red;
             canJump = false;
             yesFloor = false;
             xSpeed = 8;
@@ -80,6 +83,8 @@ namespace Project_AXES
 
         public int Health { get { return health; } set { health = value; } }
 
+        public Rectangle Attack { get { return attack; } }
+
         /// <summary>
         /// Updates the player
         /// </summary>
@@ -87,6 +92,7 @@ namespace Project_AXES
         {
             keyboard = Keyboard.GetState();
             Movement();
+            Attacking();
             previousKeyboard = keyboard;
         }
 
@@ -98,6 +104,7 @@ namespace Project_AXES
         {
             DrawPlayerWalking(sb,SpriteEffects.None);
             DebugLib.DrawRectOutline(sb, destination, 3, myColor);
+            DebugLib.DrawRectOutline(sb, attack, 3, myColor);
         }
 
         /// <summary>
@@ -244,16 +251,21 @@ namespace Project_AXES
         /// Ideally requires IDamageable objects to die
         /// if their health reaches below zero.
         /// </summary>
-        public void Die()
+        public bool Die()
         {
-            playerColor = Color.Red;
+            if (health >= 0)
+            {
+                playerColor = Color.Red;
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
         /// Lowers health by the damage taken.
         /// </summary>
         /// <param name="damage">The amount of damage to be taken</param>
-        void TakeDamage(int damage)
+        public void TakeDamage(int damage)
         {
             Health -= damage;
             // If the object reaches zero health, it will die
@@ -261,6 +273,18 @@ namespace Project_AXES
             {
                 Die();
             }
+        }
+
+        /// <summary>
+        /// Spawns a rectangle infront of the player that deals damage
+        /// </summary>
+        public void Attacking()
+        {
+            if (keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K))
+            {
+                attack = new Rectangle(destination.X+(destination.Width/2), destination.Y, destination.Width, destination.Height);
+            }
+            attack = new Rectangle(0,0,0,0);
         }
 
         //---ANIMATION---

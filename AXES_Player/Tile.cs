@@ -11,10 +11,12 @@ namespace AXES_Player
 {
     internal class Tile : ICollidable
     {
-        Rectangle rect;
+        private Rectangle rect;
+        private bool inCamera;
         public Tile(Rectangle rect)
         {
             this.rect = rect;
+            inCamera = false;
         }
 
         /// <summary>
@@ -23,7 +25,10 @@ namespace AXES_Player
         public Rectangle Position { get { return rect; } }
         public void Draw(SpriteBatch sb)
         {
-            DebugLib.DrawRectFill(sb, rect, Color.Red);
+            if (inCamera)
+            {
+                DebugLib.DrawRectFill(sb, rect, Color.Red);
+            }
         }
 
         /// <summary>
@@ -44,6 +49,8 @@ namespace AXES_Player
             rect.X += xAmt;
             rect.Y += yAmt;
         }
+
+        public bool InCamera { get { return inCamera; } set {inCamera = value; } }
 
 
     }
