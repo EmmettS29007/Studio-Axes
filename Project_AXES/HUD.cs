@@ -15,21 +15,22 @@ namespace Project_AXES
         private Texture2D heart;
         private int hearts;
         private Player player;
-        private string task;
+        private int taskIndex;
+        private string[] tasks;
         private SpriteFont arial32;
 
 
-        public HUD(Texture2D heart, string task, SpriteFont arial32, Player player)
+        public HUD(Texture2D heart, string[] tasks, SpriteFont arial32, Player player)
         {
             this.heart = heart;
-            this.task = task;
+            this.tasks = tasks;
             this.player = player;
             this.arial32 = arial32;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
-            // If task completed, change the current task
+            taskIndex++;
         }
 
         public void Draw(SpriteBatch sb, int y)
@@ -48,7 +49,7 @@ namespace Project_AXES
             }
 
             sb.DrawString(arial32, "Current Task: ", new Vector2(20, y - 75), Color.White);
-            sb.DrawString(arial32, task, new Vector2(20, y - 50), Color.White);
+            sb.DrawString(arial32, tasks[taskIndex], new Vector2(20, y - 50), Color.White);
         }
     }
 }
