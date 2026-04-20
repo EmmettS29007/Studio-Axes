@@ -31,14 +31,18 @@ namespace Project_AXES
         FacingLeft,
         FacingRight,
         JumpLeft,
-        JumpRight
+        JumpRight,
+        TakeDamage,
+        Attack,
+        Dead
     }
     public class Player : ICollidable , IDamageable
     {
         //Sprites/Textures
-        private Texture2D playerTexture;
         private Texture2D playerSpriteSheet;
         private Rectangle spriteRectangle;
+        private int widthOfSingleSprite = 128;
+        private int heightOfSingleSprite = 62;
 
         //Position Data/Movement
         private Vector2 position;
@@ -71,13 +75,13 @@ namespace Project_AXES
         private Color playerColor;
 
         //Animation Fields
-        //player current frame is a 2d array
-        //x is the player's frame in the cycle, y is the animation cycle
-        private int widthOfSingleSprite = 124;
-        private int heightOfSingleSprite = 62;
-        private int playerAnimation;
-        private int playerCycle;
-        private int frameToDraw;
+
+        private int playerAnimation = 0; //type of cycle playing--i.e run, jump
+        private int playerFrame = 0; //frame in said cycle
+        private int cycleFrameTotal = 11; //frame total in the cycle
+        private double timeCounter = 0; //for frame switching
+        private double secondsPerFrame = .1;
+        private bool toFlip = false;
 
 
         /// <summary>
@@ -108,12 +112,17 @@ namespace Project_AXES
             attackDuration = 0.1;
         }
 
+        //Properties
+
         public int Health { get { return health; } set { health = value; } }
 
         /// <summary>
         /// The 
         /// </summary>
         public Rectangle Attack { get { return attack; } }
+
+
+        //****----------UPDATE/DRAW---------****
 
         /// <summary>
         /// Updates the player
@@ -123,6 +132,8 @@ namespace Project_AXES
             keyboard = Keyboard.GetState();
             Movement();
             Attacking(gt);
+            UpdateAnimation(gt);
+            UpdateAnimationFrame(gt);
             previousKeyboard = keyboard;
         }
 
@@ -147,6 +158,11 @@ namespace Project_AXES
         /// </summary>
         public void Movement()
         {
+            //**NOTE-- movement has been intentionally layered for the smoothest animation appearance
+            //if you change the order, please ensure that the animations are alright
+
+            //---FALLING---
+
             //If BottomCollision is Nothing, Gravity
             if (yBottomCollision == CollisionTypes.None)
             {
@@ -154,6 +170,7 @@ namespace Project_AXES
                 if (currentYSpeed + gravity < maxYSpeed && !canJump)
                 {
                     currentYSpeed += gravity;
+                    playerState = PlayerState.JumpLeft;
                 }
             }
             else //If else: 
@@ -163,10 +180,12 @@ namespace Project_AXES
                 {
                     //if it is: it's falling and landing on a floor
                     currentYSpeed = 0;
+                    playerState = PlayerState.IdleLeft;
                 }
                 else
                 {
                     //if not: it's moving up and/or jumping so it should not be able to double jump
+                    playerState = PlayerState.JumpLeft;
                     canJump = false;
                 }
 
@@ -178,37 +197,44 @@ namespace Project_AXES
                 currentYSpeed = 4;
             }
 
-            //If D & Not colliding with a right wall, move right
-            if (keyboard.IsKeyDown(Keys.D))
-            {
-                playerState = PlayerState.FacingRight;
-                destination.X += xSpeed; 
-            }
+            //---IDLE---
 
             // If the previous key down was D, the charachter idles to the right
             if (previousKeyboard.IsKeyDown(Keys.D))
             {
                 playerState = PlayerState.IdleRight;
+                toFlip = false;
             }
-
             // If the previous key down was A, the character idles left.
-            if (previousKeyboard.IsKeyDown(Keys.A))
+            else if (previousKeyboard.IsKeyDown(Keys.A))
             {
                 playerState = PlayerState.IdleLeft;
+                toFlip = true;
+            }
+
+            //---LEFT AND RIGHT RUN---
+
+            //If D & Not colliding with a right wall, move right
+            if (keyboard.IsKeyDown(Keys.D))
+            {
+                playerState = PlayerState.FacingRight;
+                destination.X += xSpeed;
             }
             //If A & Not colliding with a left wall, move left
-            if (keyboard.IsKeyDown(Keys.A))
+            else if (keyboard.IsKeyDown(Keys.A))
             {
                 playerState = PlayerState.FacingLeft;
-                destination.X -= xSpeed; 
+                destination.X -= xSpeed;
             }
+
+            //---JUMP---
 
             //If W & can jump, Jump         
             if (keyboard.IsKeyDown(Keys.W) && canJump)
             {
                 if (keyboard.IsKeyDown(Keys.D))
                 {
-                    playerState = PlayerState.JumpLeft;
+                    playerState = PlayerState.JumpRight;
                 }
                 else if (keyboard.IsKeyDown(Keys.A))
                 {
@@ -219,11 +245,16 @@ namespace Project_AXES
             }
             destination.Y += (int)currentYSpeed;
 
+            //---DAMAGE---
+
             if (keyboard.IsKeyDown(Keys.V) && previousKeyboard.IsKeyUp(Keys.V))
             {
                 this.TakeDamage(1);
+                playerState = PlayerState.TakeDamage;
             }
         }
+
+        //******----------------COLLISIONS--------------------******
 
         /// <summary>
         /// Detects any Collisions with another Collidable object
@@ -304,6 +335,9 @@ namespace Project_AXES
             xSpeed = 8;
         }
 
+
+        //*****------------DAMAGE AND WORLD INTERACTION------------------******
+
         /// <summary>
         /// Method that handles incoming "Death" logic.
         /// Ideally requires IDamageable objects to die
@@ -314,6 +348,7 @@ namespace Project_AXES
             if (health >= 0)
             {
                 playerColor = Color.Red;
+                playerState = PlayerState.Dead;
                 return true;
             }
             return false;
@@ -357,7 +392,7 @@ namespace Project_AXES
             }
         }
 
-        //---ANIMATION---
+        //*********---------------------------ANIMATION--------------------------*********
 
         /// <summary>
         /// Draws animation
@@ -365,14 +400,16 @@ namespace Project_AXES
         /// <param name="flip">Should he be flipped horizontally or vertically?</param>
         private void DrawPlayer(SpriteBatch sb, SpriteEffects flip)
         {
-            playerAnimation = 3; //the type of animation i.e run, jump, walk
-            playerCycle = 0;     //frame in the animation
+            //checks if we need to flip the sprite
+            if (toFlip) { flip = SpriteEffects.FlipHorizontally; }
+            else { flip = SpriteEffects.None; }
 
+            //draws the sprite
             sb.Draw(
                 playerSpriteSheet,                              // Whole sprite sheet
                 new Vector2(Position.X-125,Position.Y-10),      // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
-                    playerCycle * widthOfSingleSprite,          // - Left edge
+                    playerFrame * widthOfSingleSprite,          // - Left edge
                     playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
                     widthOfSingleSprite,                        // - Width 
                     heightOfSingleSprite),                      // - Height
@@ -385,29 +422,83 @@ namespace Project_AXES
         }
 
         /// <summary>
-        /// Draws standing animation
+        /// Updates animation based on player states
         /// </summary>
-        /// <param name="sb"></param>
-        /// <param name="flip"></param>
-        private void DrawPlayerStanding(SpriteBatch sb, SpriteEffects flip)
+        /// <param name="gameTime"></param>
+        private void UpdateAnimation(GameTime gameTime)
         {
-            // This version of draw can flip (mirror) the image horizontally or vertically,
-            // depending on the method's SpriteEffects parameter.
-            sb.Draw(
-                playerSpriteSheet,                              // Whole sprite sheet
-                new Vector2(Position.X - 160, Position.Y),       // Position of the sprite
-                new Rectangle(                                  // Which portion of the sheet is drawn:
-                    playerCycle * widthOfSingleSprite,          // - Left edge
-                    playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
-                    widthOfSingleSprite,                        // - Width 
-                    playerTexture.Height),                      // - Height
-                playerColor,                                    // Color
-                0.0f,                                           // No rotation
-                Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
-                2.5f,                                           // Scale
-                flip,                                           // Flip it horizontally or vertically?    
-                0.0f);                                          // Layer depth
+            switch (playerState)
+            {
+                case PlayerState.IdleLeft:
+                    cycleFrameTotal = 4;
+                    playerAnimation = 4;
+                    break;
+                case PlayerState.IdleRight:
+                    cycleFrameTotal = 4;
+                    playerAnimation = 4;
+                    break;
+                case PlayerState.FacingLeft:
+                    cycleFrameTotal = 8;
+                    playerAnimation = 6;
+                    break;
+                case PlayerState.FacingRight:
+                    cycleFrameTotal = 8;
+                    playerAnimation = 6;
+                    break;
+                case PlayerState.JumpLeft:
+                    playerFrame = 0; //resets frame due to it switching too fast and occasonally going blank
+                    cycleFrameTotal = 3;
+                    playerAnimation = 2;
+                    break;
+                case PlayerState.JumpRight:
+                    playerFrame = 0;
+                    cycleFrameTotal = 3;
+                    playerAnimation = 2;
+                    break;
+                case PlayerState.TakeDamage:
+                    cycleFrameTotal = 2;
+                    playerAnimation = 3;
+                    break;
+                case PlayerState.Attack:
+                    cycleFrameTotal = 10;
+                    playerAnimation = 0;
+                    break;
+                case PlayerState.Dead:
+                    playerFrame = 0; //resets frame to play full animation
+                    cycleFrameTotal = 6;
+                    playerAnimation = 1;
+                    break;
+                default:
+                    break;
+            }
         }
+
+        /// <summary>
+        /// Updates frame 
+        /// </summary>
+        /// <param name="gameTime"></param>
+        private void UpdateAnimationFrame(GameTime gameTime)
+        {
+            //Code largely taken from mario pe
+
+            // ElapsedGameTime is the duration of the last GAME frame
+            timeCounter += gameTime.ElapsedGameTime.TotalSeconds;
+            // Has enough time passed to flip to the next frame?
+            if (timeCounter >= secondsPerFrame)
+            {
+                // Change which frame is active, ensuring the frame is reset back to the first 
+                playerFrame++;
+                if (playerFrame >= cycleFrameTotal)
+                {
+                    playerFrame = 0;
+                }
+
+                // Reset the time counter, keeping remaining elapsed time
+                timeCounter -= secondsPerFrame;
+            }
+        }
+
+
 
     }
 }
