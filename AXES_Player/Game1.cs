@@ -15,7 +15,6 @@ namespace AXES_Player
         private Texture2D playerTexture;
         private Player player;
         private List<Tile> tempTileManager;
-        private List<Player> playerList;
         private Camera camera;
         private Random myRNG;
 
@@ -35,7 +34,6 @@ namespace AXES_Player
             _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
             tempTileManager = new List<Tile>();
-            playerList = new List<Player>();
             tempTileManager.Add(new Tile(new Rectangle(-1000, 1200, 24000, 256))); //floor
             tempTileManager.Add(new Tile(new Rectangle(0, 600, 256, 1200))); //Left wall
             tempTileManager.Add(new Tile(new Rectangle(0, 400, 800, 256))); //Top
@@ -44,7 +42,7 @@ namespace AXES_Player
             tempTileManager.Add(new Tile(new Rectangle(1000, 500, 128, 128))); //left block
             myRNG = new Random();
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 500000; i++)
             {
                 tempTileManager.Add(new Tile(new Rectangle(3000 + myRNG.Next(15000), myRNG.Next(screenHeight), 128, 128)));
             }
@@ -57,8 +55,7 @@ namespace AXES_Player
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playerTexture = Content.Load<Texture2D>("_Run");
             player = new Player(playerTexture, 100, new Vector2(screenWidth / 2, 100));//screenHeight / 2));
-            playerList.Add(player);
-            camera = new(playerList, tempTileManager,screenWidth,screenHeight);
+            camera = new(player, tempTileManager,screenWidth,screenHeight);
         }
 
         protected override void Update(GameTime gameTime)
