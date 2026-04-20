@@ -55,8 +55,8 @@ namespace Project_AXES
 
         protected override void Initialize()
         {
-            screenHeight = GraphicsDevice.DisplayMode.Height; 
-            screenWidth = GraphicsDevice.DisplayMode.Width;
+            screenHeight = 1080; 
+            screenWidth = 720;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.IsFullScreen = true;

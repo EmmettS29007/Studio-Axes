@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AXES_Player")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddab23317a62b05192602d9cb73395ebc9abe0ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41703fbb90c187f757d2cc19794e12c288a45aa4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AXES_Player")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AXES_Player")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
