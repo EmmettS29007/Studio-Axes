@@ -20,6 +20,10 @@ namespace Project_AXES
         Ceiling,
         None,
     }
+
+    /// <summary>
+    /// Enumeration utilized for movement and attacking
+    /// </summary>
     enum PlayerState
     {
         IdleLeft,
@@ -83,7 +87,7 @@ namespace Project_AXES
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
             this.position = new Vector2(32,64);
-            destination = new Rectangle((int)position.X, (int)position.Y - 400, 200, 250);
+            destination = new Rectangle((int)position.X, (int)position.Y - 400, 110, 150);
             spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
             gravity = .75f;
             currentYSpeed = 0;
@@ -98,6 +102,9 @@ namespace Project_AXES
 
         public int Health { get { return health; } set { health = value; } }
 
+        /// <summary>
+        /// The 
+        /// </summary>
         public Rectangle Attack { get { return attack; } }
 
         /// <summary>
