@@ -112,7 +112,7 @@ namespace Project_AXES
             kbState = Keyboard.GetState();
 
             //player
-            player.Update();
+            player.Update(gameTime);
             player.PreCollision();
 
             //tile manager
