@@ -164,7 +164,7 @@ namespace Project_Axes
                 {
                     currentLine = dialogue[i];
                 }
-                if ((kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter)))
+                if (dialogueActivated && (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter)))
                 {
                     i++;
                 }
