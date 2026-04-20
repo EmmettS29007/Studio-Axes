@@ -24,7 +24,7 @@ namespace Project_AXES
     /// <summary>
     /// Enumeration utilized for movement and attacking
     /// </summary>
-    enum PlayerState
+    enum PlayerStateMovement
     {
         IdleLeft,
         IdleRight,
@@ -32,9 +32,18 @@ namespace Project_AXES
         FacingRight,
         JumpLeft,
         JumpRight,
+    }
+
+    /// <summary>
+    /// Enumeration for states other than movement
+    /// Used so the two player states can exist in conjunction
+    /// </summary>
+    enum PlayerStateEffects
+    {
+        None,
         TakeDamage,
         Attack,
-        Dead
+        Dead,
     }
     public class Player : ICollidable , IDamageable
     {
@@ -54,7 +63,8 @@ namespace Project_AXES
         private bool yesFloor;
         private int collisionChange;
         private int xSpeed;
-        private PlayerState playerState;
+        private PlayerStateMovement playerStateMovement;
+        private PlayerStateEffects playerStateEffects;
 
         // Attacking data
         private Rectangle attack;
@@ -170,7 +180,7 @@ namespace Project_AXES
                 if (currentYSpeed + gravity < maxYSpeed && !canJump)
                 {
                     currentYSpeed += gravity;
-                    playerState = PlayerState.JumpLeft;
+                    playerStateMovement = PlayerStateMovement.JumpLeft;
                 }
             }
             else //If else: 
@@ -180,12 +190,12 @@ namespace Project_AXES
                 {
                     //if it is: it's falling and landing on a floor
                     currentYSpeed = 0;
-                    playerState = PlayerState.IdleLeft;
+                    playerStateMovement = PlayerStateMovement.IdleLeft;
                 }
                 else
                 {
                     //if not: it's moving up and/or jumping so it should not be able to double jump
-                    playerState = PlayerState.JumpLeft;
+                    playerStateMovement = PlayerStateMovement.JumpLeft;
                     canJump = false;
                 }
 
@@ -202,13 +212,13 @@ namespace Project_AXES
             // If the previous key down was D, the charachter idles to the right
             if (previousKeyboard.IsKeyDown(Keys.D))
             {
-                playerState = PlayerState.IdleRight;
+                playerStateMovement = PlayerStateMovement.IdleRight;
                 toFlip = false;
             }
             // If the previous key down was A, the character idles left.
             else if (previousKeyboard.IsKeyDown(Keys.A))
             {
-                playerState = PlayerState.IdleLeft;
+                playerStateMovement = PlayerStateMovement.IdleLeft;
                 toFlip = true;
             }
 
@@ -217,13 +227,13 @@ namespace Project_AXES
             //If D & Not colliding with a right wall, move right
             if (keyboard.IsKeyDown(Keys.D))
             {
-                playerState = PlayerState.FacingRight;
+                playerStateMovement = PlayerStateMovement.FacingRight;
                 destination.X += xSpeed;
             }
             //If A & Not colliding with a left wall, move left
             else if (keyboard.IsKeyDown(Keys.A))
             {
-                playerState = PlayerState.FacingLeft;
+                playerStateMovement = PlayerStateMovement.FacingLeft;
                 destination.X -= xSpeed;
             }
 
@@ -234,11 +244,11 @@ namespace Project_AXES
             {
                 if (keyboard.IsKeyDown(Keys.D))
                 {
-                    playerState = PlayerState.JumpRight;
+                    playerStateMovement = PlayerStateMovement.JumpRight;
                 }
                 else if (keyboard.IsKeyDown(Keys.A))
                 {
-                    playerState = PlayerState.JumpLeft;
+                    playerStateMovement = PlayerStateMovement.JumpLeft;
                 }
                 currentYSpeed = -24; 
                 canJump = false; 
@@ -250,7 +260,6 @@ namespace Project_AXES
             if (keyboard.IsKeyDown(Keys.V) && previousKeyboard.IsKeyUp(Keys.V))
             {
                 this.TakeDamage(1);
-                playerState = PlayerState.TakeDamage;
             }
         }
 
@@ -345,10 +354,10 @@ namespace Project_AXES
         /// </summary>
         public bool Die()
         {
-            if (health >= 0)
+            if (health <= 0)
             {
                 playerColor = Color.Red;
-                playerState = PlayerState.Dead;
+                playerStateEffects = PlayerStateEffects.Dead;
                 return true;
             }
             return false;
@@ -360,6 +369,10 @@ namespace Project_AXES
         /// <param name="damage">The amount of damage to be taken</param>
         public void TakeDamage(int damage)
         {
+            playerStateEffects = PlayerStateEffects.TakeDamage;
+            playerFrame = 0; //resets frame so plays trhough full damage animation
+            //resetting frame also resets it in case of death, which is nice
+
             Health -= damage;
             // If the object reaches zero health, it will die
             if (Health <= 0)
@@ -376,14 +389,17 @@ namespace Project_AXES
             if ((keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K)))
             {
                 timerCurrent = attackDuration;
-                if ((playerState == PlayerState.IdleRight) || (playerState == PlayerState.FacingRight) || (playerState == PlayerState.JumpRight))
+                if ((playerStateMovement == PlayerStateMovement.IdleRight) || (playerStateMovement == PlayerStateMovement.FacingRight) || (playerStateMovement == PlayerStateMovement.JumpRight))
                 {
                     attack = new Rectangle(destination.X + (destination.Width / 2), destination.Y, destination.Width, destination.Height);
                 }
-                else if ((playerState == PlayerState.IdleLeft) || (playerState == PlayerState.FacingLeft) || (playerState == PlayerState.JumpLeft))
+                else if ((playerStateMovement == PlayerStateMovement.IdleLeft) || (playerStateMovement == PlayerStateMovement.FacingLeft) || (playerStateMovement == PlayerStateMovement.JumpLeft))
                 {
                     attack = new Rectangle(destination.X - (destination.Width / 2), destination.Y, destination.Width, destination.Height);
+                    playerStateEffects = PlayerStateEffects.Attack;
+                    toFlip = true;
                 }
+                
             }
             timerCurrent -= gt.ElapsedGameTime.TotalSeconds;
             if (timerCurrent <= 0)
@@ -427,46 +443,59 @@ namespace Project_AXES
         /// <param name="gameTime"></param>
         private void UpdateAnimation(GameTime gameTime)
         {
-            switch (playerState)
+            //cycles through movement animations
+            switch (playerStateMovement)
             {
-                case PlayerState.IdleLeft:
-                    cycleFrameTotal = 4;
+                case PlayerStateMovement.IdleLeft:
+                    cycleFrameTotal = 5;
                     playerAnimation = 4;
                     break;
-                case PlayerState.IdleRight:
-                    cycleFrameTotal = 4;
+                case PlayerStateMovement.IdleRight:
+                    cycleFrameTotal = 5;
                     playerAnimation = 4;
                     break;
-                case PlayerState.FacingLeft:
+                case PlayerStateMovement.FacingLeft:
                     cycleFrameTotal = 8;
                     playerAnimation = 6;
                     break;
-                case PlayerState.FacingRight:
+                case PlayerStateMovement.FacingRight:
                     cycleFrameTotal = 8;
                     playerAnimation = 6;
                     break;
-                case PlayerState.JumpLeft:
-                    playerFrame = 0; //resets frame due to it switching too fast and occasonally going blank
-                    cycleFrameTotal = 3;
+                case PlayerStateMovement.JumpLeft:
+                    cycleFrameTotal = 4;
                     playerAnimation = 2;
                     break;
-                case PlayerState.JumpRight:
-                    playerFrame = 0;
-                    cycleFrameTotal = 3;
+                case PlayerStateMovement.JumpRight:
+                    cycleFrameTotal = 4;
                     playerAnimation = 2;
                     break;
-                case PlayerState.TakeDamage:
+                default:
+                    break;
+            }
+
+            //runs if the player has an effect
+            //if no effect, plays the default movmement animations
+            switch (playerStateEffects)
+            {
+                case PlayerStateEffects.TakeDamage:
                     cycleFrameTotal = 2;
                     playerAnimation = 3;
+                    if (playerFrame==1) //after animation plays, returns to none
+                    {
+                        playerStateEffects = PlayerStateEffects.None;
+                    }
                     break;
-                case PlayerState.Attack:
+                case PlayerStateEffects.Attack:
                     cycleFrameTotal = 10;
                     playerAnimation = 0;
                     break;
-                case PlayerState.Dead:
-                    playerFrame = 0; //resets frame to play full animation
+                case PlayerStateEffects.Dead:
                     cycleFrameTotal = 6;
                     playerAnimation = 1;
+                    playerStateEffects = PlayerStateEffects.Dead; // can't stop bein dead
+                    break;
+                case PlayerStateEffects.None:
                     break;
                 default:
                     break;
@@ -488,10 +517,17 @@ namespace Project_AXES
             {
                 // Change which frame is active, ensuring the frame is reset back to the first 
                 playerFrame++;
+
+                if (playerStateEffects == PlayerStateEffects.Dead && playerFrame == 6)
+                {
+                    playerFrame--;
+                }
+
                 if (playerFrame >= cycleFrameTotal)
                 {
                     playerFrame = 0;
                 }
+
 
                 // Reset the time counter, keeping remaining elapsed time
                 timeCounter -= secondsPerFrame;
