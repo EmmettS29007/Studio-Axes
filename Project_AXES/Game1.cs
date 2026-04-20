@@ -77,7 +77,7 @@ namespace Project_AXES
 
             //Player Textures
             playerTexture = Content.Load<Texture2D>("_Run");
-            playerSpriteSheet = Content.Load<Texture2D>("knight-sprite-sheet");
+            playerSpriteSheet = Content.Load<Texture2D>("knightSpriteSheet");
             player = new Player(playerSpriteSheet,playerTexture, 3, new Vector2(0, 0));
 
             //Tile Mapping

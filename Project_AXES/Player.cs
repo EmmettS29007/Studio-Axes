@@ -71,8 +71,13 @@ namespace Project_AXES
         private Color playerColor;
 
         //Animation Fields
-        private int playerCurrentFrame;
-        private int widthOfSingleSprite = 90;
+        //player current frame is a 2d array
+        //x is the player's frame in the cycle, y is the animation cycle
+        private int widthOfSingleSprite = 124;
+        private int heightOfSingleSprite = 62;
+        private int playerAnimation;
+        private int playerCycle;
+        private int frameToDraw;
 
 
         /// <summary>
@@ -83,12 +88,15 @@ namespace Project_AXES
         /// <param name="position">The location of the player</param>
         public Player(Texture2D playerSpriteSheet, Texture2D playerTexture, int health, Vector2 position)
         {
-            this.playerTexture = playerTexture;
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
             this.position = new Vector2(32,64);
-            destination = new Rectangle((int)position.X, (int)position.Y - 400, 110, 150);
-            spriteRectangle = new Rectangle(44 * 17 + 14, playerTexture.Height - 36, 28, 36);
+            destination = new Rectangle   //collision box
+                ((int)position.X,       //x
+                (int)position.Y - 400,  //y
+                heightOfSingleSprite,   //height
+                widthOfSingleSprite);   //width 
+            spriteRectangle = new Rectangle(44 * 17 + 14, heightOfSingleSprite - 36, 28, 36);
             gravity = .75f;
             currentYSpeed = 0;
             maxYSpeed = 24;
@@ -124,7 +132,7 @@ namespace Project_AXES
         /// <param name="sb">The spritebatch</param>
         public void Draw(SpriteBatch sb)
         {
-            DrawPlayerWalking(sb,SpriteEffects.None);
+            DrawPlayer(sb,SpriteEffects.None);
             DebugLib.DrawRectOutline(sb, destination, 3, myColor);
             DebugLib.DrawRectOutline(sb, attack, 3, myColor);
         }
@@ -355,24 +363,51 @@ namespace Project_AXES
         /// Draws animation
         /// </summary>
         /// <param name="flip">Should he be flipped horizontally or vertically?</param>
-        private void DrawPlayerWalking(SpriteBatch sb, SpriteEffects flip)
+        private void DrawPlayer(SpriteBatch sb, SpriteEffects flip)
+        {
+            playerAnimation = 3; //the type of animation i.e run, jump, walk
+            playerCycle = 0;     //frame in the animation
+
+            sb.Draw(
+                playerSpriteSheet,                              // Whole sprite sheet
+                new Vector2(Position.X-125,Position.Y-10),      // Position of the sprite
+                new Rectangle(                                  // Which portion of the sheet is drawn:
+                    playerCycle * widthOfSingleSprite,          // - Left edge
+                    playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
+                    widthOfSingleSprite,                        // - Width 
+                    heightOfSingleSprite),                      // - Height
+                playerColor,                                    // Color
+                0.0f,                                           // No rotation
+                Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
+                2.5f,                                           // Scale
+                flip,                                           // Flip it horizontally or vertically?    
+                0.0f);                                          // Layer depth
+        }
+
+        /// <summary>
+        /// Draws standing animation
+        /// </summary>
+        /// <param name="sb"></param>
+        /// <param name="flip"></param>
+        private void DrawPlayerStanding(SpriteBatch sb, SpriteEffects flip)
         {
             // This version of draw can flip (mirror) the image horizontally or vertically,
             // depending on the method's SpriteEffects parameter.
             sb.Draw(
-                playerSpriteSheet,                               // Whole sprite sheet
-                position,                                       // Position of the sprite
+                playerSpriteSheet,                              // Whole sprite sheet
+                new Vector2(Position.X - 160, Position.Y),       // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
-                    playerCurrentFrame * widthOfSingleSprite,   // - Left edge
-                    0,                                          // - Top of sprite sheet
+                    playerCycle * widthOfSingleSprite,          // - Left edge
+                    playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
                     widthOfSingleSprite,                        // - Width 
                     playerTexture.Height),                      // - Height
                 playerColor,                                    // Color
                 0.0f,                                           // No rotation
                 Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
-                1.0f,                                           // Scale
+                2.5f,                                           // Scale
                 flip,                                           // Flip it horizontally or vertically?    
                 0.0f);                                          // Layer depth
         }
+
     }
 }

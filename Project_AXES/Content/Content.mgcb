@@ -37,18 +37,6 @@
 /processorParam:TextureFormat=Color
 /build:1_Industrial_Tileset_1B.png
 
-#begin 1_Industrial_Tileset_1B.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:1_Industrial_Tileset_1B.png
-
 #begin arial-12.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -71,7 +59,7 @@
 /processorParam:TextureFormat=Color
 /build:heart.png
 
-#begin knight-sprite-sheet.png
+#begin knightSpriteSheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -81,7 +69,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:knight-sprite-sheet.png
+/build:knightSpriteSheet.png
 
 #begin purple_txt_box.png
 /importer:TextureImporter
