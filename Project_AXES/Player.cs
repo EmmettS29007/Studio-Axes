@@ -40,6 +40,10 @@ namespace Project_AXES
 
         // Attacking data
         private Rectangle attack;
+        private double attackDuration;
+
+        // Time used for Attacking
+        private double timerCurrent;
 
         //Player Input
         private KeyboardState keyboard;
@@ -79,6 +83,7 @@ namespace Project_AXES
             yesFloor = false;
             xSpeed = 8;
             playerColor = Color.White;
+            attackDuration = 0.1;
         }
 
         public int Health { get { return health; } set { health = value; } }
@@ -88,11 +93,11 @@ namespace Project_AXES
         /// <summary>
         /// Updates the player
         /// </summary>
-        public void Update()
+        public void Update(GameTime gt)
         {
             keyboard = Keyboard.GetState();
             Movement();
-            Attacking();
+            Attacking(gt);
             previousKeyboard = keyboard;
         }
 
@@ -278,13 +283,18 @@ namespace Project_AXES
         /// <summary>
         /// Spawns a rectangle infront of the player that deals damage
         /// </summary>
-        public void Attacking()
+        public void Attacking(GameTime gt)
         {
             if (keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K))
             {
+                timerCurrent = attackDuration;
                 attack = new Rectangle(destination.X+(destination.Width/2), destination.Y, destination.Width, destination.Height);
             }
-            attack = new Rectangle(0,0,0,0);
+            timerCurrent -= gt.ElapsedGameTime.TotalSeconds;
+            if (timerCurrent <= 0)
+            {
+                attack = new Rectangle(0, 0, 0, 0);
+            }
         }
 
         //---ANIMATION---
