@@ -44,7 +44,7 @@ namespace Project_AXES
         private Texture2D heart;
 
         // Temporary task string for hud
-        private string task;
+        private string[] task;
 
         public Game1()
         {
@@ -56,12 +56,14 @@ namespace Project_AXES
         protected override void Initialize()
         {
             screenHeight = 1080; 
-            screenWidth = 720;
+            screenWidth = 1920;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.PreferredBackBufferWidth = screenWidth;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
             _graphics.ApplyChanges();
-            task = "Try out the game! (WIP)";
+            string datask = "Try out the game! (WIP)";
+            task = new string[2];
+            task[0] = datask;
             enemies = new List<Enemy>();
 
             base.Initialize();
@@ -99,7 +101,7 @@ namespace Project_AXES
             enemy = new Enemy(enemySprite, 3, new Vector2(200, 300), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies);
+            entityManager = new EntityManager(enemies, enemySprite);
         }
 
         protected override void Update(GameTime gameTime)
