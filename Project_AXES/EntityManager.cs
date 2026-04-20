@@ -59,10 +59,10 @@ namespace Project_AXES
                     enemies[i].X -= 2;
                 }
 
-                /* if (player's attack collides with enemy)
-                 * - TakeDamage()
-                 * 
-                */
+                if (player.Attack.Intersects(enemies[i].Position))
+                {
+                    enemies[i].TakeDamage(1);
+                }
 
                 if (player.Position.Intersects(enemies[i].Position))
                 {

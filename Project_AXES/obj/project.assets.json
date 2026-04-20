@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "D:\\Profiles\\svg1108\\.nuget\\packages\\": {},
+    "D:\\Profiles\\anv9974\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "projectUniqueName": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
       "projectName": "Project_AXES",
-      "projectPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-      "packagesPath": "D:\\Profiles\\svg1108\\.nuget\\packages\\",
-      "outputPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+      "projectPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "D:\\Profiles\\anv9974\\.nuget\\packages\\",
+      "outputPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Profiles\\svg1108\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Profiles\\anv9974\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
