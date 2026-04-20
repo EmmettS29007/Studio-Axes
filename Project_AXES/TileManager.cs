@@ -122,7 +122,8 @@ namespace Project_AXES
                         Tile myTile = new Tile(
                             spriteSheet,
                             new Rectangle //drawn rectangle
-                            (currentColumn * tileWidth, currentRow * tileHeight,
+                            (currentColumn * tileWidth, 
+                            (currentRow * tileHeight)+75, //100 is offset from top
                             tileWidth, tileHeight),
                             new Rectangle //rectangle taken from sprite sheet
                             (upperLeftX, upperLeftY,
@@ -138,7 +139,8 @@ namespace Project_AXES
                             spriteSheet,
                             new Rectangle //drawn rectangle
                             (currentColumn * tileWidth,
-                            currentRow * tileHeight, tileWidth, tileHeight),
+                            (currentRow * tileHeight)+75, //100 is offset from top
+                            tileWidth, tileHeight),
                             new Rectangle //rectangle taken from sprite sheet
                             (upperLeftX, upperLeftY,
                             sheetTileWidth, sheetTileHeight),
