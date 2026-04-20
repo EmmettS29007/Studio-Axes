@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\content\\example_dialogue.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:content\\example_dialogue.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:content\\texturemappingdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,12 +19,16 @@
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\cas1899\\documents\\github\\studio-axes\\project_axes\\content\\knight-sprite-sheet.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
@@ -46,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Game1.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAEwEAAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T18:09:54.269Z",
               "IsPinned": true,
@@ -72,19 +80,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "example_dialogue.txt",
+              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\example_dialogue.txt",
+              "RelativeDocumentMoniker": "Content\\example_dialogue.txt",
+              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\example_dialogue.txt",
+              "RelativeToolTip": "Content\\example_dialogue.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-20T13:48:01.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "textureMappingData.txt",
+              "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\textureMappingData.txt",
+              "RelativeDocumentMoniker": "Content\\textureMappingData.txt",
+              "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\textureMappingData.txt",
+              "RelativeToolTip": "Content\\textureMappingData.txt",
+              "ViewState": "AgIAAI0CAAAAAAAAAAAkwN4CAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-20T13:31:52.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TileManager.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\TileManager.cs",
               "RelativeDocumentMoniker": "TileManager.cs",
               "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\TileManager.cs",
               "RelativeToolTip": "TileManager.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T12:54:49.609Z"
+              "WhenOpened": "2026-04-20T12:54:49.609Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Tile.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Tile.cs",
               "RelativeDocumentMoniker": "Tile.cs",
@@ -92,11 +127,12 @@
               "RelativeToolTip": "Tile.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T12:52:59.817Z"
+              "WhenOpened": "2026-04-20T12:52:59.817Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Camera.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Camera.cs",
               "RelativeDocumentMoniker": "Camera.cs",
@@ -108,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IDamageable.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\IDamageable.cs",
               "RelativeDocumentMoniker": "IDamageable.cs",
@@ -120,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
               "RelativeDocumentMoniker": "EntityManager.cs",
@@ -132,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
@@ -144,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "knight-sprite-sheet.png",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\knight-sprite-sheet.png",
               "RelativeDocumentMoniker": "Content\\knight-sprite-sheet.png",
@@ -155,13 +191,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAgwFUAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAuwGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T18:11:24.796Z",
               "EditorCaption": ""
