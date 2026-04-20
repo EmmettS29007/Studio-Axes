@@ -36,6 +36,12 @@ namespace Project_AXES
         //this is needed so we can have collision checks
         List<CollisionTile> collideableTiles = new List<CollisionTile>();
 
+
+        /// <summary>
+        /// A simple property for the list of tiles
+        /// </summary>
+        public Tile[,] TileList { get { return tileList; }}
+
         //---CONSTRUCTOR---
         public TileManager(Texture2D spriteSheet, SpriteBatch spriteBatch)
         {
@@ -184,7 +190,10 @@ namespace Project_AXES
             {
                 for (int c = 0; c < tileList.GetLength(1); c++)
                 {
-                    tileList[r, c].Draw(spriteBatch);
+                    if (tileList[r, c].InCamera)
+                    {
+                        tileList[r, c].Draw(spriteBatch);
+                    }
                 }
             }
         }
@@ -200,7 +209,10 @@ namespace Project_AXES
             //every single tile~
             foreach (CollisionTile tile in collideableTiles)
             {
-                player.DetectCollision(tile);
+                if (tile.InCamera)
+                {
+                    player.DetectCollision(tile);
+                }
             }
         }
     }

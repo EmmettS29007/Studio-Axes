@@ -22,9 +22,13 @@ namespace Project_AXES
         protected Rectangle sourceRect;
         protected SpriteBatch sb;
         protected Rectangle spriteSheetRect;
+        protected bool inCamera;
+
+
+        public bool InCamera { get { return inCamera; } set { inCamera = value; } }
+        public Rectangle Position { get { return sourceRect; } }
 
         //---CONSTRUCTOR---
-
         /// <summary>
         /// Ctor for tiles
         /// </summary>
@@ -32,15 +36,13 @@ namespace Project_AXES
         /// <param name="sourceRect">rectangle this is printed</param>
         /// <param name="spriteSheetRect">rectangle that is taken from the sprite sheet</param>
         /// <param name="sb"></param>
-
-        public Rectangle Position { get { return sourceRect; } }
-
         public Tile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb)
         {
             this.spriteSheet = spriteSheet;
             this.sb = sb;
             this.sourceRect = sourceRect;
             this.spriteSheetRect = spriteSheetRect;
+            inCamera = false;
         }
         //---METHODS---
 
@@ -51,6 +53,17 @@ namespace Project_AXES
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(spriteSheet, sourceRect, spriteSheetRect, Color.White);
+        }
+
+        /// <summary>
+        /// The amount that the object moves due to the Camera
+        /// </summary>
+        /// <param name="xAmt">The amount on the X axis</param>
+        /// <param name="yAmt">The amount on the Y axis</param>
+        public void Push(int xAmt, int yAmt)
+        {
+            sourceRect.X += xAmt;
+            sourceRect.Y += yAmt;
         }
     }
 }

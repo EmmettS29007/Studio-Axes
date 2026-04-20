@@ -46,6 +46,9 @@ namespace Project_AXES
         // Temporary task string for hud
         private string task;
 
+        //Camera
+        private Camera camera;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -100,6 +103,9 @@ namespace Project_AXES
             enemies.Add(enemy);
 
             entityManager = new EntityManager(enemies);
+
+            //Camera
+            camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
         }
 
         protected override void Update(GameTime gameTime)
@@ -129,6 +135,7 @@ namespace Project_AXES
             }
             dialogueManager.Update(gameTime, test);
             entityManager.Update(gameTime, player);
+            camera.Update();
 
             base.Update(gameTime);
         }
