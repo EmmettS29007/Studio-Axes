@@ -106,7 +106,7 @@ namespace Project_AXES
             entityManager = new EntityManager(enemies,enemySprite);
 
             //Camera
-            camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
+            camera = new(player, myTileManager.TileList, entityManager.EnemyList, screenWidth, screenHeight);
         }
 
         protected override void Update(GameTime gameTime)

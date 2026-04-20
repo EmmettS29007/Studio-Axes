@@ -82,7 +82,11 @@ namespace Project_AXES
 
         public void DetectCollision(ICollidable other) { }
 
-        public void Push(int x, int y) { }
+        public void Push(int x, int y) 
+        {
+            position.X += x;
+            position.Y += y;
+        }
 
         public void TakeDamage(int damage)
         {

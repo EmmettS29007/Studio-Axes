@@ -90,6 +90,8 @@ namespace Project_AXES
             }
         }
 
+        public List<Enemy> EnemyList { get { return enemies; }}
+
         public void Draw(SpriteBatch sb)
         {
             foreach (Enemy enemy in enemies)

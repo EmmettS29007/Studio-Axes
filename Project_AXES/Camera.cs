@@ -18,6 +18,9 @@ namespace Project_AXES
         private Tile[,] tile;
         private int loaded;
 
+        //List of Enemies
+        private List<Enemy> enemy;
+
         //The Camera's Rectangle and Width/Height
         private Rectangle cameraRect;
         private int width;
@@ -30,9 +33,10 @@ namespace Project_AXES
         /// <param name="tile">The list of tiles</param>
         /// <param name="width">The width of the screen</param>
         /// <param name="height">the height of the screen</param>
-        public Camera(Player player, Tile[,] tile, int width, int height)
+        public Camera(Player player, Tile[,] tile, List<Enemy> enemy, int width, int height)
         {
             this.player = player;
+            this.enemy = enemy;
             this.tile = tile;
             this.width = width;
             this.height = height;
@@ -50,26 +54,37 @@ namespace Project_AXES
         /// </summary>
         public void Update()
         {
-            //Gets the player's left position and moves it with the camera's border
+            //Gets the player's left position and moves it and tiles with the camera's border
             if (player.Position.X <= cameraRect.X + width / 4)
             {
                 foreach (Tile tiles in tile)
                 {
                     tiles.Push(8, 0);
                 }
+                foreach (Enemy enemies in enemy)
+                {
+                    enemies.Push(8, 0);
+                }
+
                 player.Push(8, 0);
             }
 
-            //Gets the player's right position and moves it with the camera's border
+            //Gets the player's right position and moves it and tiles with the camera's border
             if (player.Position.X + player.Position.Width >= cameraRect.X + width - width / 4)
             {
                 foreach (Tile tiles in tile)
                 {
                     tiles.Push(-8, 0);
                 }
+                foreach (Enemy enemies in enemy)
+                {
+                    enemies.Push(-8, 0);
+                }
                 player.Push(-8, 0);
 
             }
+
+
 
             //Check all Tiles
             CheckInCamera();
