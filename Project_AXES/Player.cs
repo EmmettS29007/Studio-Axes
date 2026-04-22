@@ -190,7 +190,6 @@ namespace Project_AXES
                 {
                     //if it is: it's falling and landing on a floor
                     currentYSpeed = 0;
-                    playerStateMovement = PlayerStateMovement.IdleLeft;
                 }
                 else
                 {
@@ -388,16 +387,25 @@ namespace Project_AXES
         {
             if ((keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K)))
             {
+                playerFrame = 0; //resets frame so full animation plays 
+
                 timerCurrent = attackDuration;
                 if ((playerStateMovement == PlayerStateMovement.IdleRight) || (playerStateMovement == PlayerStateMovement.FacingRight) || (playerStateMovement == PlayerStateMovement.JumpRight))
                 {
                     attack = new Rectangle(destination.X + (destination.Width / 2), destination.Y, destination.Width, destination.Height);
+
+                    //doesn't flip animation
+                    toFlip = false;
+                    playerStateEffects = PlayerStateEffects.Attack;
                 }
                 else if ((playerStateMovement == PlayerStateMovement.IdleLeft) || (playerStateMovement == PlayerStateMovement.FacingLeft) || (playerStateMovement == PlayerStateMovement.JumpLeft))
                 {
                     attack = new Rectangle(destination.X - (destination.Width / 2), destination.Y, destination.Width, destination.Height);
-                    playerStateEffects = PlayerStateEffects.Attack;
+
+                    //flips animation
                     toFlip = true;
+                    playerStateEffects = PlayerStateEffects.Attack;
+                    
                 }
                 
             }
@@ -443,6 +451,9 @@ namespace Project_AXES
         /// <param name="gameTime"></param>
         private void UpdateAnimation(GameTime gameTime)
         {
+            //This is intentionally layered so that the effects display will always
+            //take priority over movement display--but both can exit simultaneously 
+
             //cycles through movement animations
             switch (playerStateMovement)
             {
@@ -489,6 +500,10 @@ namespace Project_AXES
                 case PlayerStateEffects.Attack:
                     cycleFrameTotal = 10;
                     playerAnimation = 0;
+                    if (playerFrame == 9) //after animation plays, returns to none
+                    {
+                        playerStateEffects = PlayerStateEffects.None;
+                    }
                     break;
                 case PlayerStateEffects.Dead:
                     cycleFrameTotal = 6;
@@ -500,6 +515,9 @@ namespace Project_AXES
                 default:
                     break;
             }
+
+            System.Diagnostics.Debug.WriteLine(playerStateMovement);
+            System.Diagnostics.Debug.WriteLine(playerStateEffects);
         }
 
         /// <summary>

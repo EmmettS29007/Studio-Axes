@@ -64,7 +64,7 @@ namespace Project_AXES
                     enemies[i].X -= 2;
                 }
 
-                if (player.Position.Intersects(enemies[i].Position) && player)
+                if (player.Position.Intersects(enemies[i].Position))
                 {
                     if (player.Health > 0)
                     {
