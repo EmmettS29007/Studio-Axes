@@ -18,10 +18,13 @@ namespace Project_AXES
         private Tile[,] tile;
         private int loaded;
 
-        //The Camera's Rectangle and Width/Height
+        //The Camera's Rectangle and Width/Height along with it's border
         private Rectangle cameraRect;
         private int width;
         private int height;
+        private int leftBorder;
+        private int rightBorder;
+        private int bottomBorder;
 
         /// <summary>
         /// Constructor for the Camera
@@ -38,38 +41,57 @@ namespace Project_AXES
             this.height = height;
             cameraRect = new Rectangle(0, 0, width, height);
             loaded = 1;
+            GetCameraBorder();
         }
 
         /// <summary>
         /// A get/set method for the Camera's rectangle
         /// </summary>
-        public Rectangle CameraRect { get { return cameraRect; } set { cameraRect = value; } }
+        private Rectangle CameraRect { get { return cameraRect; } set { cameraRect = value; } }
 
         /// <summary>
         /// An update method that moves all objects properly with the camera
         /// </summary>
         public void Update()
         {
+
             //Gets the player's left position and moves it with the camera's border
-            if (player.Position.X <= cameraRect.X + width / 4)
+            if (player.Position.X <= cameraRect.X + width / 4 && leftBorder < 1)
             {
                 foreach (Tile tiles in tile)
                 {
                     tiles.Push(8, 0);
                 }
+                leftBorder += 8;
+                rightBorder += 8;
                 player.Push(8, 0);
             }
 
             //Gets the player's right position and moves it with the camera's border
-            if (player.Position.X + player.Position.Width >= cameraRect.X + width - width / 4)
+            if (player.Position.X + player.Position.Width >= cameraRect.X + width - width / 4 && rightBorder > cameraRect.Width)
             {
                 foreach (Tile tiles in tile)
                 {
                     tiles.Push(-8, 0);
                 }
+                leftBorder -= 8;
+                rightBorder -= 8;
                 player.Push(-8, 0);
-
             }
+
+
+            //Bottom Border
+            if (bottomBorder < cameraRect.Height)
+            {
+                System.Diagnostics.Debug.WriteLine(bottomBorder + " " + cameraRect.Height);
+                foreach (Tile tiles in tile)
+                {
+                    tiles.Push(0, 8);
+                }
+                bottomBorder += 8;
+                player.Push(0, 8);
+            }
+
 
             //Check all Tiles
             CheckInCamera();
@@ -80,7 +102,7 @@ namespace Project_AXES
         /// <summary>
         /// This method looks at all tiles, finds the tiles that are in the camera, and loads them
         /// </summary>
-        public void CheckInCamera()
+        private void CheckInCamera()
         {
             foreach (Tile tiles in tile)
             {
@@ -94,6 +116,33 @@ namespace Project_AXES
                 else
                 {
                     tiles.InCamera = false;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// This method gets the list of tiles and finds out the furthest tile on either side
+        /// making sure that the camera doesn't move past the out-of-bounds window
+        /// </summary>
+        private void GetCameraBorder()
+        {
+            leftBorder = int.MaxValue;
+            rightBorder = int.MinValue;
+            bottomBorder = int.MinValue;
+            foreach (Tile tiles in tile)
+            {
+                if(tiles.Position.X < leftBorder)
+                {
+                    leftBorder = tiles.Position.X;
+                }
+                if(tiles.Position.X + tiles.Position.Width > rightBorder)
+                {
+                    rightBorder = tiles.Position.X + tiles.Position.Width;
+                }
+                if(tiles.Position.Y + tiles.Position.Height > bottomBorder)
+                {
+                    bottomBorder = tiles.Position.Y + tiles.Position.Height;
                 }
             }
         }
