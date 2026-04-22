@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< Updated upstream
-  <SourceFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/Skeleton Idle.png</SourceFile>
-  <SourceTime>2026-04-13T08:00:29.9960305-04:00</SourceTime>
-  <DestFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/Skeleton Idle.xnb</DestFile>
-  <DestTime>2026-04-22T09:23:35.8094685-04:00</DestTime>
-=======
-  <SourceFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/Skeleton Idle.png</SourceFile>
-  <SourceTime>2026-04-13T08:15:35.099596-04:00</SourceTime>
-  <DestFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/Skeleton Idle.xnb</DestFile>
-  <DestTime>2026-04-22T09:22:38.2647289-04:00</DestTime>
->>>>>>> Stashed changes
+  <SourceFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/Skeleton Idle.png</SourceFile>
+  <SourceTime>2017-05-04T23:22:32-04:00</SourceTime>
+  <DestFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/Skeleton Idle.xnb</DestFile>
+  <DestTime>2026-04-22T13:22:24.2057008-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

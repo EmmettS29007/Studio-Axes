@@ -162,7 +162,7 @@ namespace Project_AXES
                         }
                     }
                     dialogueManager.Update(gameTime, test);
-                    entityManager.Update(gameTime, player);
+                    entityManager.Update(gameTime);
                     camera.Update();
                     break;
 

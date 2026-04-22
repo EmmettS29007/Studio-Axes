@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< Updated upstream
-  <SourceFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/tempEnemySprite.jpg</SourceFile>
-  <SourceTime>2026-04-13T08:00:30.014536-04:00</SourceTime>
-  <DestFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/tempEnemySprite.xnb</DestFile>
-  <DestTime>2026-04-22T09:23:35.8449713-04:00</DestTime>
-=======
-  <SourceFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/tempEnemySprite.jpg</SourceFile>
-  <SourceTime>2026-04-13T08:15:35.1196881-04:00</SourceTime>
-  <DestFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/tempEnemySprite.xnb</DestFile>
-  <DestTime>2026-04-22T09:22:38.3072361-04:00</DestTime>
->>>>>>> Stashed changes
+  <SourceFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/tempEnemySprite.jpg</SourceFile>
+  <SourceTime>2026-03-27T02:22:44.844376-04:00</SourceTime>
+  <DestFile>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/tempEnemySprite.xnb</DestFile>
+  <DestTime>2026-04-22T13:22:24.2781998-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -14,15 +14,14 @@ namespace Project_AXES
 {
     public class Enemy : ICollidable, IDamageable
     {
-        private Texture2D enemySprite;
-
-        // Idk the verdict on portrait
-        // Texture2D portrait;
-
-
         // Field
+
+        // Main enemy data
+        private Texture2D enemySprite;
         private int health;
         private Vector2 position;
+
+        // Variables for moving and drawing
         private bool moving;
         private float range;
         private bool dead;
@@ -65,23 +64,39 @@ namespace Project_AXES
             set { moving = value; }
         }
 
+        /// <summary>
+        /// Allows for the X coordinate of the enemy to be accessed and changed
+        /// </summary>
         public float X
         {
             get { return position.X; }
             set { position.X = value; }
         }
 
+        /// <summary>
+        /// Allows for the enemy's health to be accessed and changed
+        /// </summary>
         public int Health
         {
             get { return health; }
             set { health = value; }
         }
         
+        /// <summary>
+        /// Allows for the enemy's current state (alive or dead) to be accessed
+        /// </summary>
         public bool isDead
         {
             get { return dead; }
         }
 
+        /// <summary>
+        /// Constructor for enemy
+        /// </summary>
+        /// <param name="enemySprite"> The sprite for the enemy </param>
+        /// <param name="health"> The enemy's health </param>
+        /// <param name="position"> The position of the enemy </param>
+        /// <param name="range"> The range in which the enenmy will be walking </param>
         public Enemy(Texture2D enemySprite, int health, Vector2 position, float range)
         {
             this.enemySprite = enemySprite;
@@ -90,20 +105,44 @@ namespace Project_AXES
             this.range = range;
         }
 
+        /// <summary>
+        /// Attacks the player, causing the player to take damage, and die once their health hits 0
+        /// </summary>
+        /// <param name="player"></param>
         public void Attack(Player player)
         {
-            player.Health--;
+            if (player.Health > 0)
+            {
+                player.Health--;
+            }
+
+            else
+            {
+                player.Die();
+            }
         }
 
+        /// <summary>
+        /// Allows for collision detection between 2 ICollidable classes
+        /// </summary>
+        /// <param name="other"> The other class to use to detect collision </param>
         public void DetectCollision(ICollidable other) { }
 
+
+        /// <summary>
+        /// Pushes the enemy a certain amount
+        /// </summary>
+        /// <param name="x"> The value to add to the enemy's x coordinate </param>
+        /// <param name="y"> The value to add to the enemy's y coordinate </param>
         public void Push(int x, int y)
         {
             this.position.X += x;
             this.position.Y += y;
         }
 
-
+        /// <summary>
+        /// Makes the enemy take damage, when health hits 0, the enemy dies
+        /// </summary>
         public void TakeDamage()
         {
             if (health > 0)
@@ -117,6 +156,9 @@ namespace Project_AXES
             }
         }
 
+        /// <summary>
+        /// Once the enemy dies, change its state to dead.
+        /// </summary>
         public void Die()
         {
             dead = true;
