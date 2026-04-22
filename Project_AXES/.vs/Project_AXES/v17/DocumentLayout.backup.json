@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,13 +134,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
               "RelativeDocumentMoniker": "EntityManager.cs",
               "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
               "RelativeToolTip": "EntityManager.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwCAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwFAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T17:20:12.435Z",
               "EditorCaption": ""
@@ -207,15 +207,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAgwJgAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAgwKQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:19:47.564Z"
+              "WhenOpened": "2026-04-22T17:19:47.564Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
