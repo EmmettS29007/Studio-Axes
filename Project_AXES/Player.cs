@@ -119,7 +119,7 @@ namespace Project_AXES
             yesFloor = false;
             xSpeed = 8;
             playerColor = Color.White;
-            attackDuration = 0.2;
+            attackDuration = 0.25;
         }
 
         //Properties
@@ -408,7 +408,6 @@ namespace Project_AXES
         {
             if ((keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K)))
             {
-                playerFrame = 0; //resets frame so full animation plays 
 
                 timerCurrent = attackDuration;
                 // If the player is facing right, attack to the right
@@ -416,14 +415,14 @@ namespace Project_AXES
                     (playerStateMovement == PlayerStateMovement.FacingRight) || 
                     (playerStateMovement == PlayerStateMovement.JumpRight))
                 {
-                    attack = new Rectangle(destination.X + (destination.Width), destination.Y, destination.Width, destination.Height);
+                    attack = new Rectangle(destination.X + (destination.Width), destination.Y, destination.Width*2, destination.Height);
                 }
                 // Else if the player is facing left, attack to the left
                 else if ((playerStateMovement == PlayerStateMovement.IdleLeft) || 
                     (playerStateMovement == PlayerStateMovement.FacingLeft) || (
                     playerStateMovement == PlayerStateMovement.JumpLeft))
                 {
-                    attack = new Rectangle(destination.X - (destination.Width), destination.Y, destination.Width, destination.Height);
+                    attack = new Rectangle(destination.X - (destination.Width*2), destination.Y, destination.Width*2, destination.Height);
                 }
                 playerStateEffects = PlayerStateEffects.Attack;
 
