@@ -15,9 +15,12 @@ namespace Project_AXES
         private List<Enemy> enemies;
         private List<Vector2> startingPositions;
         private Enemy milk;
+
+        private Player player;
+
         private bool win;
 
-        public EntityManager(List<Enemy> enemies, Texture2D milkSprite)
+        public EntityManager(List<Enemy> enemies, Texture2D milkSprite, Player player)
         {
             this.enemies = enemies;
             for (int i = 0; i < enemies.Count; i++)
@@ -33,9 +36,11 @@ namespace Project_AXES
 
             milk = new Enemy(milkSprite, 1, new Vector2(500, 500), 0);
             milk.Health = 1;
+
+            this.player = player;
         }
 
-        public void Update(GameTime gameTime, Player player)
+        public void Update(GameTime gameTime)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -59,11 +64,6 @@ namespace Project_AXES
                     enemies[i].X -= 2;
                 }
 
-                /* if (player's attack collides with enemy)
-                 * - TakeDamage()
-                 * 
-                */
-
                 if (player.Position.Intersects(enemies[i].Position))
                 {
                     if (player.Health > 0)
@@ -71,10 +71,15 @@ namespace Project_AXES
                         player.Health--;
                     }
 
-                    if (player.Health <= 0)
+                    else
                     {
                         player.Die();
                     }
+                }
+
+                if (player.Attack.Intersects(enemies[i].Position))
+                {
+                    enemies[i].TakeDamage();
                 }
 
             }

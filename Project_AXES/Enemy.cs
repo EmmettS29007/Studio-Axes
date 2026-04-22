@@ -19,17 +19,26 @@ namespace Project_AXES
         // Idk the verdict on portrait
         // Texture2D portrait;
 
+
+        // Field
         private int health;
         private Vector2 position;
         private bool moving;
         private float range;
         private bool dead;
 
+
+        /// <summary>
+        /// Returns the enemySprite
+        /// </summary>
         public Texture2D getSprite
         {
             get {  return enemySprite; }
         }
 
+        /// <summary>
+        /// Returns a rectangle using the Position Vector and the set size of enemies
+        /// </summary>
         public Rectangle Position
         {
             get { return new Rectangle(
@@ -39,11 +48,17 @@ namespace Project_AXES
                 78); }
         }
 
+        /// <summary>
+        /// Returns range
+        /// </summary>
         public float Range
         {
             get { return range; }
         }
 
+        /// <summary>
+        /// Allows for the current state of the enemy to change
+        /// </summary>
         public bool Moving
         {
             get { return moving; }
@@ -82,11 +97,24 @@ namespace Project_AXES
 
         public void DetectCollision(ICollidable other) { }
 
-        public void Push(int x, int y) { }
-
-        public void TakeDamage(int damage)
+        public void Push(int x, int y)
         {
-            health --;
+            this.position.X += x;
+            this.position.Y += y;
+        }
+
+
+        public void TakeDamage()
+        {
+            if (health > 0)
+            {
+                health--;
+            }
+
+            else
+            {
+                Die();
+            }
         }
 
         public void Die()

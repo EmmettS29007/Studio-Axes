@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Profiles/svg1108/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</SourceFile>
-  <SourceTime>2026-04-13T08:06:02.0102825-04:00</SourceTime>
-  <DestFile>D:/Profiles/svg1108/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/heart.xnb</DestFile>
-  <DestTime>2026-04-22T09:31:58.7517866-04:00</DestTime>
+<<<<<<< Updated upstream
+  <SourceFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</SourceFile>
+  <SourceTime>2026-04-13T08:00:30.0105367-04:00</SourceTime>
+  <DestFile>D:/Profiles/men6930/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/heart.xnb</DestFile>
+  <DestTime>2026-04-22T09:23:35.7234582-04:00</DestTime>
+=======
+  <SourceFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</SourceFile>
+  <SourceTime>2026-04-13T08:15:35.1146874-04:00</SourceTime>
+  <DestFile>D:/Profiles/cas1899/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/heart.xnb</DestFile>
+  <DestTime>2026-04-22T09:22:38.202121-04:00</DestTime>
+>>>>>>> Stashed changes
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

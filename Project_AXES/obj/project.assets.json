@@ -295,23 +295,39 @@
     ]
   },
   "packageFolders": {
-    "D:\\Profiles\\svg1108\\.nuget\\packages\\": {},
+<<<<<<< Updated upstream
+    "D:\\Profiles\\men6930\\.nuget\\packages\\": {},
+=======
+    "D:\\Profiles\\cas1899\\.nuget\\packages\\": {},
+>>>>>>> Stashed changes
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+<<<<<<< Updated upstream
+      "projectUniqueName": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
       "projectName": "Project_AXES",
-      "projectPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-      "packagesPath": "D:\\Profiles\\svg1108\\.nuget\\packages\\",
-      "outputPath": "D:\\Profiles\\svg1108\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+      "projectPath": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "D:\\Profiles\\men6930\\.nuget\\packages\\",
+      "outputPath": "D:\\Profiles\\men6930\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+=======
+      "projectUniqueName": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "projectName": "Project_AXES",
+      "projectPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "D:\\Profiles\\cas1899\\.nuget\\packages\\",
+      "outputPath": "D:\\Profiles\\cas1899\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Profiles\\svg1108\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< Updated upstream
+        "D:\\Profiles\\men6930\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "D:\\Profiles\\cas1899\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
