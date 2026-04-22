@@ -51,7 +51,7 @@ namespace Project_AXES
         private Texture2D playerSpriteSheet;
         private Rectangle spriteRectangle;
         private int widthOfSingleSprite = 128;
-        private int heightOfSingleSprite = 62;
+        private int heightOfSingleSprite = 60;
 
         //Position Data/Movement
         private Vector2 position;
@@ -171,35 +171,6 @@ namespace Project_AXES
             //**NOTE-- movement has been intentionally layered for the smoothest animation appearance
             //if you change the order, please ensure that the animations are alright
 
-            //---FALLING---
-
-            //If BottomCollision is Nothing, Gravity
-            if (yBottomCollision == CollisionTypes.None)
-            {
-                if (!yesFloor) { canJump = false; }
-                if (currentYSpeed + gravity < maxYSpeed && !canJump)
-                {
-                    currentYSpeed += gravity;
-                    //playerStateMovement = PlayerStateMovement.JumpLeft;
-                }
-            }
-            else //If else: 
-            {
-                //Checks if the player is moving down
-                if (currentYSpeed >= 0)
-                {
-                    //if it is: it's falling and landing on a floor
-                    currentYSpeed = 0;
-                }
-                else
-                {
-                    //if not: it's moving up and/or jumping so it should not be able to double jump
-                    playerStateMovement = PlayerStateMovement.JumpLeft;
-                    canJump = false;
-                }
-
-            }
-
             //If collides with the top: stop and move the other way
             if (yTopCollision == CollisionTypes.Ceiling)
             {
@@ -212,13 +183,11 @@ namespace Project_AXES
             if (previousKeyboard.IsKeyDown(Keys.D))
             {
                 playerStateMovement = PlayerStateMovement.IdleRight;
-                toFlip = false;
             }
             // If the previous key down was A, the character idles left.
             else if (previousKeyboard.IsKeyDown(Keys.A))
             {
                 playerStateMovement = PlayerStateMovement.IdleLeft;
-                toFlip = true;
             }
 
             //---LEFT AND RIGHT RUN---
@@ -253,6 +222,58 @@ namespace Project_AXES
                 canJump = false; 
             }
             destination.Y += (int)currentYSpeed;
+
+            //---FALLING---
+
+            //If BottomCollision is Nothing, Gravity
+            if (yBottomCollision == CollisionTypes.None)
+            {
+                if (!yesFloor) { canJump = false; }
+                if (currentYSpeed + gravity < maxYSpeed && !canJump)
+                {
+                    currentYSpeed += gravity;
+
+                    //--animation--
+                    // If the previous key down was D, the charachter jumps to the right
+                    if (previousKeyboard.IsKeyDown(Keys.D))
+                    {
+                        playerStateMovement = PlayerStateMovement.JumpRight;
+                    }
+                    // If the previous key down was A, the character jumps to the left.
+                    else if (previousKeyboard.IsKeyDown(Keys.A))
+                    {
+                        playerStateMovement = PlayerStateMovement.JumpLeft;
+                    }
+
+                }
+            }
+            else //If else: 
+            {
+                //Checks if the player is moving down
+                if (currentYSpeed >= 0)
+                {
+                    //if it is: landing on a floor
+                    currentYSpeed = 0;
+
+                    //--animation--
+                    // If charatcer was jumping right, the charachter idles to the right
+                    if (playerStateMovement == PlayerStateMovement.JumpRight)
+                    {
+                        playerStateMovement = PlayerStateMovement.IdleRight;
+                    }
+                    // If the previous key down was A, the character idles left.
+                    else if (playerStateMovement == PlayerStateMovement.JumpLeft)
+                    {
+                        playerStateMovement = PlayerStateMovement.IdleLeft;
+                    }
+                }
+                else
+                {
+                    //if not: it's moving up and/or jumping so it should not be able to double jump
+                    canJump = false;
+                }
+
+            }
 
             //---DAMAGE---
 
@@ -393,21 +414,13 @@ namespace Project_AXES
                 if ((playerStateMovement == PlayerStateMovement.IdleRight) || (playerStateMovement == PlayerStateMovement.FacingRight) || (playerStateMovement == PlayerStateMovement.JumpRight))
                 {
                     attack = new Rectangle(destination.X + (destination.Width / 2), destination.Y, destination.Width, destination.Height);
-
-                    //doesn't flip animation
-                    toFlip = false;
-                    playerStateEffects = PlayerStateEffects.Attack;
                 }
                 else if ((playerStateMovement == PlayerStateMovement.IdleLeft) || (playerStateMovement == PlayerStateMovement.FacingLeft) || (playerStateMovement == PlayerStateMovement.JumpLeft))
                 {
                     attack = new Rectangle(destination.X - (destination.Width / 2), destination.Y, destination.Width, destination.Height);
-
-                    //flips animation
-                    toFlip = true;
-                    playerStateEffects = PlayerStateEffects.Attack;
-                    
                 }
-                
+                playerStateEffects = PlayerStateEffects.Attack;
+
             }
             timerCurrent -= gt.ElapsedGameTime.TotalSeconds;
             if (timerCurrent <= 0)
@@ -416,7 +429,7 @@ namespace Project_AXES
             }
         }
 
-        //*********---------------------------ANIMATION--------------------------*********
+        //*****--------------------ANIMATION-------------------****
 
         /// <summary>
         /// Draws animation
@@ -431,7 +444,7 @@ namespace Project_AXES
             //draws the sprite
             sb.Draw(
                 playerSpriteSheet,                              // Whole sprite sheet
-                new Vector2(Position.X-125,Position.Y-10),      // Position of the sprite
+                new Vector2(Position.X-125,Position.Y-20),      // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
                     playerFrame * widthOfSingleSprite,          // - Left edge
                     playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
@@ -454,30 +467,40 @@ namespace Project_AXES
             //This is intentionally layered so that the effects display will always
             //take priority over movement display--but both can exit simultaneously 
 
+            //establishes previous player state 
+            PlayerStateMovement prevPlayerStateMovement = playerStateMovement;
+            PlayerStateEffects prevPlayerStateEffects = playerStateEffects;
+
             //cycles through movement animations
             switch (playerStateMovement)
             {
                 case PlayerStateMovement.IdleLeft:
+                    toFlip = true;
                     cycleFrameTotal = 5;
                     playerAnimation = 4;
                     break;
                 case PlayerStateMovement.IdleRight:
+                    toFlip = false;
                     cycleFrameTotal = 5;
                     playerAnimation = 4;
                     break;
                 case PlayerStateMovement.FacingLeft:
+                    toFlip = true;
                     cycleFrameTotal = 8;
                     playerAnimation = 6;
                     break;
                 case PlayerStateMovement.FacingRight:
+                    toFlip = false;
                     cycleFrameTotal = 8;
                     playerAnimation = 6;
                     break;
                 case PlayerStateMovement.JumpLeft:
+                    toFlip = true;
                     cycleFrameTotal = 4;
                     playerAnimation = 2;
                     break;
                 case PlayerStateMovement.JumpRight:
+                    toFlip = false;
                     cycleFrameTotal = 4;
                     playerAnimation = 2;
                     break;
@@ -516,8 +539,13 @@ namespace Project_AXES
                     break;
             }
 
-            System.Diagnostics.Debug.WriteLine(playerStateMovement);
-            System.Diagnostics.Debug.WriteLine(playerStateEffects);
+            //checks if the state has changed. if it has,
+            //resets frame so that the full animation will play
+            //and so that it wont accidentally play a blank frame
+            if ((playerStateMovement != prevPlayerStateMovement) || (playerStateEffects != prevPlayerStateEffects))
+            {
+                playerFrame = 0;
+            }
         }
 
         /// <summary>
