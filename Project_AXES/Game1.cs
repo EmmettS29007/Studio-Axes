@@ -181,7 +181,9 @@ namespace Project_AXES
             switch (gameState)
             {
                 case GameState.Menu:
-                    // temp
+                    _spriteBatch.DrawString(arial12, "Press P to play",
+                        new Vector2(screenWidth / 2, screenHeight / 2),
+                        Color.White);
                     break;
 
                 case GameState.Game:

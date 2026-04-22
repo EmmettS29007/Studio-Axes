@@ -21,7 +21,7 @@ namespace Project_AXES
         private int windowWidth;
         private int windowHeight;
 
-        //
+        //  Utilized for user input
         private List<Rectangle> buttonList;
         private MouseState mouse;
         private MouseState previousMouse;
@@ -32,7 +32,16 @@ namespace Project_AXES
             this.font = font;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
+            buttonList = new List<Rectangle>();
+            buttonOffset = button.Height + 50;
 
+            // Each element of the list is a new button
+            // buttonList[0] is the start button
+            // buttonList[1] is the help button
+            for (int i = 0; i < 2; i++)
+            {
+                buttonList.Add(new Rectangle(0, 0 + (buttonOffset * i), button.Width, button.Height));
+            }
         }
         public void Draw()
         {
