@@ -6,13 +6,25 @@ using Project_Axes;
 using System.Collections.Generic;
 using static System.Net.Mime.MediaTypeNames;
 
+
 namespace Project_AXES
 {
+
+    enum GameState
+    {
+        Menu,
+        Game,
+        GameOver
+    }
+
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private KeyboardState kbState;
+
+        // Game States
+        private GameState gameState;
 
         //screen specs
         private int screenWidth;
@@ -67,6 +79,7 @@ namespace Project_AXES
             string daTask = "TRY TOUIIOUTKLHRBHJSFAFAFAFFFBHFEEFHA BARK BARK VBARK";
             task[0] = daTask;
             enemies = new List<Enemy>();
+            gameState = GameState.Menu;
 
             base.Initialize();
         }
@@ -118,25 +131,42 @@ namespace Project_AXES
             KeyboardState kbPrevState = kbState;
             kbState = Keyboard.GetState();
 
-            //player
-            player.Update(gameTime);
-            player.PreCollision();
-
-            //tile manager
-            myTileManager.CollisionCheck(player);
-
-            //dialogue
-            if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+            // The game's FSM
+            switch (gameState)
             {
-                test = true;
-                if (test)
-                {
-                    dialogueManager.FileName = "Content/example_dialogue.txt";
-                }
+                case GameState.Menu:
+                    if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    {
+                        gameState = GameState.Game;
+                    }
+                    break;
+
+                case GameState.Game:
+                    // Updates the player and checks collision
+                    player.Update(gameTime);
+                    player.PreCollision();
+
+                    // Checks collision for each player
+                    myTileManager.CollisionCheck(player);
+
+                    // Dialogue Debugging
+                    if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    {
+                        test = true;
+                        if (test)
+                        {
+                            dialogueManager.FileName = "Content/example_dialogue.txt";
+                        }
+                    }
+                    dialogueManager.Update(gameTime, test);
+                    entityManager.Update(gameTime, player);
+                    camera.Update();
+                    break;
+
+                case GameState.GameOver:
+                    break;
             }
-            dialogueManager.Update(gameTime, test);
-            entityManager.Update(gameTime, player);
-            camera.Update();
+
 
             base.Update(gameTime);
         }
@@ -147,11 +177,25 @@ namespace Project_AXES
 
             _spriteBatch.Begin();
 
-            myTileManager.DisplayTiles();
-            player.Draw(_spriteBatch);
-            dialogueManager.Draw(_spriteBatch);
-            hud.Draw(_spriteBatch, screenHeight);
-            entityManager.Draw(_spriteBatch);
+            switch (gameState)
+            {
+                case GameState.Menu:
+                    // temp
+                    break;
+
+                case GameState.Game:
+                    myTileManager.DisplayTiles();
+                    player.Draw(_spriteBatch);
+                    dialogueManager.Draw(_spriteBatch);
+                    hud.Draw(_spriteBatch, screenHeight);
+                    entityManager.Draw(_spriteBatch);
+                    break;
+
+                case GameState.GameOver:
+                    break;
+            }
+
+
 
             _spriteBatch.End();
 

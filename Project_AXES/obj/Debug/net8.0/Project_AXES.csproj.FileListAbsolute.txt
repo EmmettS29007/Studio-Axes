@@ -394,3 +394,4 @@ C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\purple_txt_box.xnb
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\Skeleton Idle.xnb
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\tempEnemySprite.xnb
+D:\Profiles\men6930\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\knightSpriteSheet.xnb
