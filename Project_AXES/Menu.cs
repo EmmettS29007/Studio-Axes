@@ -43,6 +43,35 @@ namespace Project_AXES
                 buttonList.Add(new Rectangle(0, 0 + (buttonOffset * i), button.Width, button.Height));
             }
         }
+        public void Update(GameState gs)
+        {
+            previousMouse = mouse;
+            mouse = Mouse.GetState();
+
+            for (int i = 0; i < buttonList.Count; i++)
+            {
+                switch (i)
+                {
+                    // If the rectangle is the start button and the left button has been pressed once
+                    case 0:
+                        if (buttonList[i].Contains(mouse.X, mouse.Y) 
+                            && (previousMouse.LeftButton == ButtonState.Released 
+                                && mouse.LeftButton == ButtonState.Pressed))
+                        {
+                            gs = GameState.Game;
+                        }
+                            break;
+                    case 1:
+                        if (buttonList[i].Contains(mouse.X, mouse.Y)
+                            && (previousMouse.LeftButton == ButtonState.Released
+                                && mouse.LeftButton == ButtonState.Pressed))
+                        {
+                            gs = GameState.Game;
+                        }
+                        break;
+                }
+            }
+        }
         public void Draw()
         {
             
