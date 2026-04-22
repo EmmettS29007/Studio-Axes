@@ -36,8 +36,9 @@ namespace Project_AXES
         private Player player;
 
         //Tile Manager 
-        Texture2D tileSet;
-        TileManager myTileManager;
+        private Texture2D tileSet;
+        private TileManager myTileManager;
+        private Texture2D myBackground;
 
         //Dialogue Manager
         private DialogueManager dialogueManager;
@@ -100,6 +101,9 @@ namespace Project_AXES
             tileSet = Content.Load<Texture2D>("1_Industrial_Tileset_1B");
             myTileManager = new TileManager(tileSet, _spriteBatch);
             myTileManager.AssignTiles("../../../Content/textureMappingData.txt");
+
+            //BG Texture
+            myBackground = Content.Load<Texture2D>("10");
 
             //Dialogue Box
             arial12 = Content.Load<SpriteFont>("arial-12");
@@ -174,7 +178,7 @@ namespace Project_AXES
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
 
@@ -187,8 +191,10 @@ namespace Project_AXES
                     break;
 
                 case GameState.Game:
-                    myTileManager.DisplayTiles();
-                    player.Draw(_spriteBatch);
+                    //this is layered for view!! do not change layering!
+                    _spriteBatch.Draw(myBackground, Vector2.Zero, Color.White); //bg
+                    myTileManager.DisplayTiles(); //tiles
+                    player.Draw(_spriteBatch); //player
                     dialogueManager.Draw(_spriteBatch);
                     hud.Draw(_spriteBatch, screenHeight);
                     entityManager.Draw(_spriteBatch);

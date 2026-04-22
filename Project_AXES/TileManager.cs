@@ -122,31 +122,14 @@ namespace Project_AXES
                     upperLeftY = int.Parse(splitData[1]);
 
                     //sorts b/t collideable and non colliudeable tiles
-                    if (splitData.Length == 4) // this indicates that this is a transparent tile
-                    {
-                        //tile is placed in 2D tileList array at correct placement
-                        Tile myTile = new Tile(
-                            spriteSheet,
-                            new Rectangle //drawn rectangle
-                            (currentColumn * tileWidth,
-                            (currentRow * tileHeight) + 75, //100 is offset from top
-                            tileWidth, tileHeight),
-                            new Rectangle //rectangle taken from sprite sheet
-                            (upperLeftX, upperLeftY,
-                            sheetTileWidth, sheetTileHeight),
-                            spriteBatch);
-
-                        //adds to array
-                        tileList[currentColumn, currentRow] = myTile;
-                    }
-                    else if (splitData.Length == 3) // this indicates that this is a background tile
+                    if (splitData.Length == 3) // this indicates that this is a background tile
                     {
                         //tile is placed in 2D tileList array at correct placement
                         Tile myTile = new Tile(
                             spriteSheet,
                             new Rectangle //drawn rectangle
                             (currentColumn * tileWidth, 
-                            (currentRow * tileHeight)+75, //100 is offset from top
+                            (currentRow * tileHeight),
                             tileWidth, tileHeight),
                             new Rectangle //rectangle taken from sprite sheet
                             (upperLeftX, upperLeftY,
@@ -162,7 +145,7 @@ namespace Project_AXES
                             spriteSheet,
                             new Rectangle //drawn rectangle
                             (currentColumn * tileWidth,
-                            (currentRow * tileHeight)+75, //100 is offset from top
+                            (currentRow * tileHeight),
                             tileWidth, tileHeight),
                             new Rectangle //rectangle taken from sprite sheet
                             (upperLeftX, upperLeftY,
@@ -207,7 +190,7 @@ namespace Project_AXES
             {
                 for (int c = 0; c < tileList.GetLength(1); c++)
                 {
-                    if (tileList[r, c].InCamera && tileList[r, c].Visible)
+                    if (tileList[r, c].InCamera)
                     {
                         tileList[r, c].Draw(spriteBatch);
                     }
