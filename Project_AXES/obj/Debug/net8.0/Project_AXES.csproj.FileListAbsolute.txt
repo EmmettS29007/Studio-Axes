@@ -404,3 +404,4 @@ D:\Profiles\cas1899\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\C
 C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\knight-sprite-sheet.xnb
 C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\knightSpriteSheet.xnb
 C:\Users\chlo\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\10.xnb
+C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\10.xnb
