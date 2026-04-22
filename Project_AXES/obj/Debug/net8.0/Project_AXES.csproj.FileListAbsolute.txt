@@ -386,3 +386,11 @@ C:\Users\chlo\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\refint\
 C:\Users\chlo\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.pdb
 C:\Users\chlo\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.genruntimeconfig.cache
 C:\Users\chlo\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\ref\Project_AXES.dll
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\example_dialogue.txt
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\knight-sprite-sheet.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\arial-12.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\heart.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\knightSpriteSheet.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\purple_txt_box.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\Skeleton Idle.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\tempEnemySprite.xnb
