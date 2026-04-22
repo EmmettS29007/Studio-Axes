@@ -23,12 +23,13 @@ namespace Project_AXES
         protected SpriteBatch sb;
         protected Rectangle spriteSheetRect;
         protected bool inCamera;
+        protected bool visible;
 
 
         public bool InCamera { get { return inCamera; } set { inCamera = value; } }
         public Rectangle Position { get { return sourceRect; } }
 
-        //---CONSTRUCTOR---
+        //---CONSTRUCTORS---
         /// <summary>
         /// Ctor for tiles
         /// </summary>
@@ -42,8 +43,31 @@ namespace Project_AXES
             this.sb = sb;
             this.sourceRect = sourceRect;
             this.spriteSheetRect = spriteSheetRect;
+            visible = true;
             inCamera = false;
         }
+
+        /// <summary>
+        /// Ctor for invisible tiles
+        /// </summary>
+        /// <param name="spriteSheet">sprite sheet</param>
+        /// <param name="sourceRect">rectangle this is printed</param>
+        /// <param name="spriteSheetRect">rectangle that is taken from the sprite sheet</param>
+        /// <param name="sb"></param>
+        /// <param name="visible">if the tile is visible or not</param>
+        public Tile(Texture2D spriteSheet, Rectangle sourceRect, Rectangle spriteSheetRect, SpriteBatch sb, bool visible)
+        {
+            this.spriteSheet = spriteSheet;
+            this.sb = sb;
+            this.sourceRect = sourceRect;
+            this.spriteSheetRect = spriteSheetRect;
+            this.visible = visible;
+            inCamera = false;
+        }
+
+        //---PROPERTIES---
+        public bool Visible { get { return visible; } }
+
         //---METHODS---
 
         /// <summary>
