@@ -180,7 +180,7 @@ namespace Project_AXES
                 if (currentYSpeed + gravity < maxYSpeed && !canJump)
                 {
                     currentYSpeed += gravity;
-                    playerStateMovement = PlayerStateMovement.JumpLeft;
+                    //playerStateMovement = PlayerStateMovement.JumpLeft;
                 }
             }
             else //If else: 

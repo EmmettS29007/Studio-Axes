@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bashe\\.nuget\\packages\\": {},
+    "C:\\Users\\kylas\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "projectUniqueName": "C:\\Users\\kylas\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
       "projectName": "Project_AXES",
-      "projectPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-      "packagesPath": "C:\\Users\\Bashe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+      "projectPath": "C:\\Users\\kylas\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "C:\\Users\\kylas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kylas\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Bashe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kylas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -324,6 +324,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -338,10 +339,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "MonoGame.Content.Builder.Task": {
@@ -369,16 +371,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }

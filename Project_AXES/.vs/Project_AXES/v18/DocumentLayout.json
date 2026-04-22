@@ -70,8 +70,7 @@
               "ViewState": "AgIAADwAAAAAAAAAAAAYwE8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T17:29:57.885Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -87,8 +86,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\.nuget\\packages\\monogame.content.builder.task\\3.8.4.1\\build\\MonoGame.Content.Builder.Task.targets",
               "ViewState": "AgIAAJgAAAAAAAAAAAAwwKsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-04-20T18:35:48.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T18:35:48.492Z"
             },
             {
               "$type": "Document",
@@ -158,7 +156,7 @@
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\kylas\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAG0BAAAAAAAAAAAwwH0BAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAgwLYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T17:29:57.927Z",
               "EditorCaption": ""
