@@ -32,8 +32,6 @@ namespace Project_Axes
         // Used for checking if [ENTER] was pressed, which progresses the dialogue
         private KeyboardState kbState;
         private KeyboardState kbPrevState;
-        // Used for checking if the game is still in a "dialogue" state
-        private bool dialogueActivated;
 
         /// <summary>
         /// Private variable used for dialogue line counting
@@ -67,7 +65,6 @@ namespace Project_Axes
             dialogue = new List<string>();
             filename = null;
             currentLine = null;
-            dialogueActivated = false;
         }
 
         /// <summary>
@@ -128,11 +125,10 @@ namespace Project_Axes
             // Empties the dialogue lst
             // The filename is nulled, and thus needs to be reassigned
 
-            // Resets the dialogue List by resetting the variable
+            // Resets the dialogue List by re-initializing the list
             dialogue = null;
             dialogue = new List<string>();
             currentLine = null;
-            dialogueActivated = false;
             i = 0;
 
         }
@@ -148,23 +144,21 @@ namespace Project_Axes
             kbPrevState = kbState;
             kbState = Keyboard.GetState();
 
-            // Activates dialogue depending on the external conditional, ideally 
-            // changed in Game1
-            dialogueActivated = dialogueConditional;
 
-            // If the file is null, the dialogue is added to dialogue list.
-            if (filename != null)
+            // If the file is null, the dialogue is added to dialogue list and if dialogue is already
+            // inactive
+            if (filename != null && dialogue.Count <= 0)
             {
                 ReadDialogue(filename);
                 filename = null;
             }
-            if (dialogueActivated)
+            if (dialogueConditional)
             {
-                if (dialogue.Count != 0 && i < dialogue.Count)
+                if (dialogue.Count > 0 && i < dialogue.Count)
                 {
                     currentLine = dialogue[i];
                 }
-                if (dialogueActivated && (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter)))
+                if (dialogueConditional && (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter)))
                 {
                     i++;
                 }
@@ -184,7 +178,7 @@ namespace Project_Axes
         /// <param name="sb">The spritebatch to take the font and text box from</param>
         public void Draw(SpriteBatch sb)
         {
-            if (dialogueActivated)
+            if (dialogue.Count > 0)
             {
                 sb.Draw(dialogueSprite, dialoguePosition, Color.White);
 
