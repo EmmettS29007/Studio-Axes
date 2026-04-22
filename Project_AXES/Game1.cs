@@ -44,7 +44,7 @@ namespace Project_AXES
         private Texture2D heart;
 
         // Temporary task string for hud
-        private string[] task = new string[2];
+        private string[] task;
 
         //Camera
         private Camera camera;
@@ -64,8 +64,11 @@ namespace Project_AXES
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.IsFullScreen = false;
             _graphics.ApplyChanges();
-            string daTask = "TRY TOUIIOUTKLHRBHJSFAFAFAFFFBHFEEFHA BARK BARK VBARK";
-            task[0] = daTask;
+
+            task = new string[2];
+            string task1 = "Try out the game! (WIP)";
+            task[0] = task1;
+
             enemies = new List<Enemy>();
 
             base.Initialize();
@@ -100,10 +103,10 @@ namespace Project_AXES
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("tempEnemySprite");
 
-            enemy = new Enemy(enemySprite, 3, new Vector2(200, 300), 76);
+            enemy = new Enemy(enemySprite, 3, new Vector2(900, 700), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies,enemySprite);
+            entityManager = new EntityManager(enemies, enemySprite, player);
 
             //Camera
             camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
@@ -135,7 +138,7 @@ namespace Project_AXES
                 }
             }
             dialogueManager.Update(gameTime, test);
-            entityManager.Update(gameTime, player);
+            entityManager.Update(gameTime);
             camera.Update();
 
             base.Update(gameTime);

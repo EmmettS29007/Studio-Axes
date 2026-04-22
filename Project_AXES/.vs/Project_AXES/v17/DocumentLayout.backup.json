@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\",
+  "WorkspaceRootPath": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\project_axes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\project_axes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|c:\\users\\bashe\\onedrive\\documents\\github\\studio-axes\\project_axes\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\profiles\\anv9974\\documents\\github\\studio-axes\\project_axes\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,38 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAYwHkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAhwIwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T18:09:54.269Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EntityManager.cs",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
+              "RelativeDocumentMoniker": "EntityManager.cs",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
+              "RelativeToolTip": "EntityManager.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAlwEIAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T12:06:18.032Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Enemy.cs",
+              "RelativeToolTip": "Enemy.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T11:58:42.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
+              "DocumentMoniker": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\Bashe\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
+              "ToolTip": "D:\\Profiles\\anv9974\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAPoBAAAAAAAAAAAAwAgCAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAcwHcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-20T20:44:28.089Z",
               "EditorCaption": ""
