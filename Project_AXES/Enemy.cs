@@ -65,18 +65,27 @@ namespace Project_AXES
             set { moving = value; }
         }
 
+        /// <summary>
+        /// Gives get and set properties to the enemy's x coordinate
+        /// </summary>
         public float X
         {
             get { return position.X; }
             set { position.X = value; }
         }
 
+        /// <summary>
+        /// Gives get and set properties to the enemy's health
+        /// </summary>
         public int Health
         {
             get { return health; }
             set { health = value; }
         }
         
+        /// <summary>
+        /// Allows for the enemy's current state (alive or dead) to be acquired
+        /// </summary>
         public bool isDead
         {
             get { return dead; }
