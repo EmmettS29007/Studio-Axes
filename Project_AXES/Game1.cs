@@ -60,6 +60,9 @@ namespace Project_AXES
         // Temporary task string for hud
         private string[] task;
 
+        // Menu
+        private Menu menu;
+
         //Camera
         private Camera camera;
 
@@ -128,6 +131,9 @@ namespace Project_AXES
 
             //Camera
             camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
+
+            // Menu
+            menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);
         }
 
         protected override void Update(GameTime gameTime)
@@ -147,6 +153,7 @@ namespace Project_AXES
                     {
                         gameState = GameState.Game;
                     }
+                    // menu.Update(gameState);
                     break;
 
                 case GameState.Game:
@@ -189,6 +196,7 @@ namespace Project_AXES
                     _spriteBatch.DrawString(arial12, "Press P to play",
                         new Vector2(screenWidth / 2, screenHeight / 2),
                         Color.White);
+                    menu.Draw(_spriteBatch);
                     break;
 
                 case GameState.Game:
