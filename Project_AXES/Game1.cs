@@ -14,7 +14,8 @@ namespace Project_AXES
     {
         Menu,
         Game,
-        GameOver
+        GameOver,
+        Win
     }
 
     public class Game1 : Game

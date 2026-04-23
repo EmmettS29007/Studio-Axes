@@ -15,23 +15,26 @@ namespace Project_AXES
         private SpriteFont font;
         private Texture2D title;
         private Texture2D button;
+        private Texture2D controls;
 
         // Utilized for button positioning
         private int buttonOffset;
         private int windowWidth;
         private int windowHeight;
+        private List<Rectangle> buttonList;
+        private Rectangle controlsGuide;
 
         //  Utilized for user input
-        private List<Rectangle> buttonList;
         private MouseState mouse;
         private MouseState previousMouse;
-        public Menu(SpriteFont font, Texture2D button, Texture2D title, int windowWidth, int windowHeight)
+        public Menu(SpriteFont font, Texture2D button, Texture2D title, Texture2D controls, int windowWidth, int windowHeight)
         {
             this.title = title;
             this.button = button;
             this.font = font;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
+            this.controls = controls;
             buttonList = new List<Rectangle>();
             buttonOffset = button.Height + 50;
 
@@ -62,19 +65,35 @@ namespace Project_AXES
                         }
                             break;
                     case 1:
-                        if (buttonList[i].Contains(mouse.X, mouse.Y)
+                        // If the control rectangle does not exist, and the mouse is inside of the help buttons
+                        // and the left mouse button is pressed once...
+                        if (controlsGuide.IsEmpty && buttonList[i].Contains(mouse.X, mouse.Y)
                             && (previousMouse.LeftButton == ButtonState.Released
                                 && mouse.LeftButton == ButtonState.Pressed))
                         {
-                            gs = GameState.Game;
+                            // Create the controls guide rectangle
+                            controlsGuide = new Rectangle(((windowWidth - controls.Width) / 2),
+                                (windowHeight - controls.Height),
+                                controls.Width,
+                                controls.Height);
+                        }
+                        // If the control rectangle exists , and the mouse is outside of the guide
+                        // and the left mouse button is pressed once...
+                        else if (!controlsGuide.IsEmpty 
+                            && !(controlsGuide.Contains(mouse.X, mouse.Y))
+                            && (previousMouse.LeftButton == ButtonState.Released
+                                && mouse.LeftButton == ButtonState.Pressed))
+                        {
+                            // Leave the controls guide
+                            controlsGuide = new Rectangle(0, 0, 0, 0);
                         }
                         break;
                 }
             }
         }
-        public void Draw()
+        public void Draw(SpriteBatch sb)
         {
-            
+            // sb.Draw(button, buttonList[0], Color.White);
         }
     }
 }
