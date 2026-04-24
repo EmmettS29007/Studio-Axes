@@ -68,6 +68,18 @@
 /processorParam:Quality=Best
 /build:backgroundmusicforvideos-game-gaming-background-music-385611.mp3
 
+#begin controls_guide.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:controls_guide.png
+
 #begin example_dialogue.txt
 /copy:example_dialogue.txt
 

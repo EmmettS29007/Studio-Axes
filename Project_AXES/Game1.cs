@@ -71,6 +71,7 @@ namespace Project_AXES
         // Menu
         private Menu menu;
         private Texture2D titleScreen;
+        private Texture2D controlsGuide;
 
         //Camera
         private Camera camera;
@@ -160,7 +161,8 @@ namespace Project_AXES
 
             // Menu
             titleScreen = Content.Load<Texture2D>("titleScreen");
-            menu = new Menu(arial12, textBox, titleScreen, textBox, screenWidth, screenHeight);
+            controlsGuide = Content.Load<Texture2D>("controls_guide");
+            menu = new Menu(arial12, textBox, titleScreen, controlsGuide, screenWidth, screenHeight);
 
 
 
@@ -191,7 +193,7 @@ namespace Project_AXES
                     myTileManager.CollisionCheck(player);
 
                     // Dialogue Debugging
-                    if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    if (debug && kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
                     {
                         test = true;
                         if (test)

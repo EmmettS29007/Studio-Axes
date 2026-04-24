@@ -47,7 +47,7 @@ namespace Project_AXES
             for (int i = 0; i < 2; i++)
             {
                 buttonList.Add(new Rectangle(((windowWidth - controls.Width) / 2),
-                        ((windowHeight - controls.Height)) / 2 + (buttonOffset * i),
+                        ((windowHeight + controls.Height)) / 4 + (buttonOffset * i),
                         button.Width, 
                         button.Height));
             }
@@ -108,9 +108,10 @@ namespace Project_AXES
             button.Height / 2 + buttonList[0].Y),
             Color.White);
 
+            // Draws the text for the help button
             sb.DrawString(font,
-            "CONTROLS / HELP (broken do not click)",
-            new Vector2(((button.Width - font.MeasureString("CONTROLS / HELP (broken do not click)").X) / 2) + buttonList[1].X,
+            "CONTROLS / HELP",
+            new Vector2(((button.Width - font.MeasureString("CONTROLS / HELP").X) / 2) + buttonList[1].X,
             button.Height / 2 + buttonList[1].Y),
             Color.White);
 
