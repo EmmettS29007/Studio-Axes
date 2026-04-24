@@ -1,7 +1,9 @@
 ﻿//using AXES_Player;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using Project_Axes;
 using System.Collections.Generic;
 using static System.Net.Mime.MediaTypeNames;
@@ -66,6 +68,10 @@ namespace Project_AXES
         //Camera
         private Camera camera;
 
+        //Audio
+        private Song backgroundMusic;
+        private SoundEffect hit;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -75,7 +81,7 @@ namespace Project_AXES
 
         protected override void Initialize()
         {
-            screenHeight = 1080; 
+            screenHeight = 1080;
             screenWidth = 1920;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.PreferredBackBufferWidth = screenWidth;
@@ -96,10 +102,18 @@ namespace Project_AXES
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            //Audio
+            backgroundMusic = Content.Load<Song>
+                ("backgroundmusicforvideos-game-gaming-background-music-385611");
+            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.IsRepeating = true;
+
+            hit = Content.Load<SoundEffect>("attack");
+
             //Player Textures
             playerTexture = Content.Load<Texture2D>("_Run");
             playerSpriteSheet = Content.Load<Texture2D>("knightSpriteSheet");
-            player = new Player(playerSpriteSheet,playerTexture, 3, new Vector2(0, 0));
+            player = new Player(playerSpriteSheet, playerTexture, 3, new Vector2(0, 0), hit);
 
             //Tile Mapping
             tileSet = Content.Load<Texture2D>("1_Industrial_Tileset_1B");
@@ -134,6 +148,9 @@ namespace Project_AXES
 
             // Menu
             menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);
+
+
+
         }
 
         protected override void Update(GameTime gameTime)

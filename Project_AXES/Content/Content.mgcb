@@ -56,6 +56,18 @@
 /processorParam:TextureFormat=Compressed
 /build:arial-12.spritefont
 
+#begin attack.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:attack.mp3
+
+#begin backgroundmusicforvideos-game-gaming-background-music-385611.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:backgroundmusicforvideos-game-gaming-background-music-385611.mp3
+
 #begin example_dialogue.txt
 /copy:example_dialogue.txt
 

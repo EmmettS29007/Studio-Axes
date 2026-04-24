@@ -1,5 +1,6 @@
 ﻿//using DamageableInterface;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Project_AXES;
@@ -45,30 +46,30 @@ namespace Project_AXES
         Attack,
         Dead,
     }
-    public class Player : ICollidable , IDamageable
+    public class Player : ICollidable, IDamageable
     {
         //Sprites/Textures
         private Texture2D playerSpriteSheet;
-        private Rectangle spriteRectangle;
         private int widthOfSingleSprite = 128;
         private int heightOfSingleSprite = 60;
 
         //Position Data/Movement
-        private Vector2 position;
         private Rectangle destination;
         private float currentYSpeed;
         private CollisionTypes yTopCollision;
         private CollisionTypes yBottomCollision;
         private bool canJump;
         private bool yesFloor;
-        private int collisionChange;
         private int xSpeed;
         private PlayerStateMovement playerStateMovement;
         private PlayerStateEffects playerStateEffects;
+        private bool sideCollision;
+        private Rectangle playerMidline;
 
         // Attacking data
         private Rectangle attack;
         private double attackDuration;
+        private SoundEffect hit;
 
         // Time used for Attacking
         private double timerCurrent;
@@ -78,7 +79,7 @@ namespace Project_AXES
         private KeyboardState previousKeyboard;
         private float gravity;
         private float maxYSpeed;
-        
+
         //Basic Data
         private Color myColor;
         private int health;
@@ -93,24 +94,26 @@ namespace Project_AXES
         private double secondsPerFrame = .1;
         private bool toFlip = false;
 
-
         /// <summary>
         /// The Constructor for the player
         /// </summary>
         /// <param name="playerTexture">The texture of the player</param>
         /// <param name="health">The player's health</param>
         /// <param name="position">The location of the player</param>
-        public Player(Texture2D playerSpriteSheet, Texture2D playerTexture, int health, Vector2 position)
+        public Player(Texture2D playerSpriteSheet, Texture2D playerTexture, int health, Vector2 position, SoundEffect hit)
         {
             this.playerSpriteSheet = playerSpriteSheet;
             this.health = health;
-            this.position = new Vector2(32,64);
             destination = new Rectangle   //collision box
                 ((int)position.X,       //x
                 (int)position.Y - 400,  //y
                 heightOfSingleSprite,   //height
                 widthOfSingleSprite);   //width 
-            spriteRectangle = new Rectangle(44 * 17 + 14, heightOfSingleSprite - 36, 28, 36);
+            playerMidline = new Rectangle //A line to allow for better collision with walls/floors
+                (destination.X + 8,
+                destination.Y,
+                destination.Width - 16,
+                destination.Height);
             gravity = .75f;
             currentYSpeed = 0;
             maxYSpeed = 24;
@@ -120,15 +123,13 @@ namespace Project_AXES
             xSpeed = 8;
             playerColor = Color.White;
             attackDuration = 0.25;
+            this.hit = hit;
+            sideCollision = false;
         }
 
         //Properties
 
         public int Health { get { return health; } set { health = value; } }
-
-        /// <summary>
-        /// The 
-        /// </summary>
         public Rectangle Attack { get { return attack; } }
 
 
@@ -153,9 +154,10 @@ namespace Project_AXES
         /// <param name="sb">The spritebatch</param>
         public void Draw(SpriteBatch sb)
         {
-            DrawPlayer(sb,SpriteEffects.None);
+            DrawPlayer(sb, SpriteEffects.None);
             DebugLib.DrawRectOutline(sb, destination, 3, myColor);
             DebugLib.DrawRectOutline(sb, attack, 3, myColor);
+            DebugLib.DrawRectOutline(sb, playerMidline, 3, myColor);
         }
 
         /// <summary>
@@ -218,8 +220,8 @@ namespace Project_AXES
                 {
                     playerStateMovement = PlayerStateMovement.JumpLeft;
                 }
-                currentYSpeed = -24; 
-                canJump = false; 
+                currentYSpeed = -24;
+                canJump = false;
             }
             destination.Y += (int)currentYSpeed;
 
@@ -281,6 +283,9 @@ namespace Project_AXES
             {
                 this.TakeDamage(1);
             }
+
+            playerMidline.X = destination.X + 8;
+            playerMidline.Y = destination.Y;
         }
 
         //******----------------COLLISIONS--------------------******
@@ -310,23 +315,9 @@ namespace Project_AXES
 
                 //Gains an overlap
                 Rectangle overlap = Rectangle.Intersect(destination, otherObject.Position);
-                if (overlap.Width >= overlap.Height) //Height overlap
+                if (overlap.Height >= overlap.Width) //Width overlap
                 {
-                    yPush = otherObject.Position.Y - destination.Y;
-                    if (yPush < 0) //if it overlaps upwards
-                    {
-                        yPush = overlap.Height;
-                        yTopCollision = CollisionTypes.Ceiling;
-                    }
-                    else if (yPush > 0) //if it overlaps downwards
-                    {
-                        yPush = -overlap.Height + 1;
-                        yBottomCollision = CollisionTypes.Floor;
-                        canJump = true;
-                    }
-                }
-                else //Side overlap
-                {
+                    sideCollision = true;
                     xPush = otherObject.Position.X - destination.X;
                     if (xPush < 0)
                     {
@@ -335,6 +326,25 @@ namespace Project_AXES
                     else if (xPush > 0)
                     {
                         xPush = -overlap.Width;
+                    }
+                }
+                else //Height overlap
+                {
+                    if (playerMidline.Intersects(otherObject.Position))
+                    //Check if it's truly intersecting with the floor/ceiling
+                    {
+                        yPush = otherObject.Position.Y - destination.Y;
+                        if (yPush < 0) //if it overlaps upwards
+                        {
+                            yPush = overlap.Height;
+                            yTopCollision = CollisionTypes.Ceiling;
+                        }
+                        else if (yPush > 0) //if it overlaps downwards
+                        {
+                            yPush = -overlap.Height + 1;
+                            yBottomCollision = CollisionTypes.Floor;
+                            canJump = true;
+                        }
                     }
                 }
                 Push(xPush, yPush);
@@ -359,7 +369,6 @@ namespace Project_AXES
         {
             yTopCollision = CollisionTypes.None;
             yBottomCollision = CollisionTypes.None;
-            collisionChange = 0;
             yesFloor = false;
             xSpeed = 8;
         }
@@ -408,21 +417,21 @@ namespace Project_AXES
         {
             if ((keyboard.IsKeyDown(Keys.K) && previousKeyboard.IsKeyUp(Keys.K)))
             {
-
+                hit.Play();
                 timerCurrent = attackDuration;
                 // If the player is facing right, attack to the right
                 if ((playerStateMovement == PlayerStateMovement.IdleRight) ||
-                    (playerStateMovement == PlayerStateMovement.FacingRight) || 
+                    (playerStateMovement == PlayerStateMovement.FacingRight) ||
                     (playerStateMovement == PlayerStateMovement.JumpRight))
                 {
-                    attack = new Rectangle(destination.X + (destination.Width), destination.Y, destination.Width*2, destination.Height);
+                    attack = new Rectangle(destination.X + (destination.Width), destination.Y, destination.Width * 2, destination.Height);
                 }
                 // Else if the player is facing left, attack to the left
-                else if ((playerStateMovement == PlayerStateMovement.IdleLeft) || 
+                else if ((playerStateMovement == PlayerStateMovement.IdleLeft) ||
                     (playerStateMovement == PlayerStateMovement.FacingLeft) || (
                     playerStateMovement == PlayerStateMovement.JumpLeft))
                 {
-                    attack = new Rectangle(destination.X - (destination.Width*2), destination.Y, destination.Width*2, destination.Height);
+                    attack = new Rectangle(destination.X - (destination.Width * 2), destination.Y, destination.Width * 2, destination.Height);
                 }
                 playerStateEffects = PlayerStateEffects.Attack;
 
@@ -449,7 +458,7 @@ namespace Project_AXES
             //draws the sprite
             sb.Draw(
                 playerSpriteSheet,                              // Whole sprite sheet
-                new Vector2(Position.X-125,Position.Y-20),      // Position of the sprite
+                new Vector2(Position.X - 125, Position.Y - 20),      // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
                     playerFrame * widthOfSingleSprite,          // - Left edge
                     playerAnimation * heightOfSingleSprite,     // - Top of sprite sheet
@@ -520,7 +529,7 @@ namespace Project_AXES
                 case PlayerStateEffects.TakeDamage:
                     cycleFrameTotal = 2;
                     playerAnimation = 3;
-                    if (playerFrame==1) //after animation plays, returns to none
+                    if (playerFrame == 1) //after animation plays, returns to none
                     {
                         playerStateEffects = PlayerStateEffects.None;
                     }

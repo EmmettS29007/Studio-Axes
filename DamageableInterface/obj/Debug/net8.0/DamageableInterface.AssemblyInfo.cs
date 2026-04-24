@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DamageableInterface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55707fa7fd87e5be8de5aab5d31889b2c138de44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24237b1cad19397d00fd9ea0db4cfa08bd05fb3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DamageableInterface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DamageableInterface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

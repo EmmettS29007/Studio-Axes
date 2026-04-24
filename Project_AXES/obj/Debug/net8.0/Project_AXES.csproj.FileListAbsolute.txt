@@ -90,3 +90,7 @@ C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.pdb
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.genruntimeconfig.cache
 C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\ref\Project_AXES.dll
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\attack.ogg
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\attack.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\backgroundmusicforvideos-game-gaming-background-music-385611.ogg
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\backgroundmusicforvideos-game-gaming-background-music-385611.xnb
