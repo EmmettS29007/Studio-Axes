@@ -25,6 +25,16 @@ namespace Project_AXES
         // Win (?)
         private bool win;
 
+        public Enemy Milk
+        {
+            get { return milk; }
+        }
+
+        public bool Win
+        {
+            get { return win; }
+        }
+
 
         /// <summary>
         /// Constructor for EntityManager, taking 3 variables
@@ -127,6 +137,11 @@ namespace Project_AXES
             {
                 // Kill da milk
                 milk.Die();
+            }
+
+            if (milk.isDead)
+            {
+                win = true;
             }
         }
 

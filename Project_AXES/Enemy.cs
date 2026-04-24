@@ -23,8 +23,11 @@ namespace Project_AXES
         // Field
         private int health;
         private Vector2 position;
+
         private bool moving;
         private float range;
+        private float distanceTraveled = 0;
+
         private bool dead;
 
 
@@ -108,7 +111,7 @@ namespace Project_AXES
 
         public void Push(int x, int y)
         {
-            this.position.X += x;
+            this.X += x;
             this.position.Y += y;
         }
 

@@ -144,7 +144,7 @@ namespace Project_AXES
             entityManager = new EntityManager(enemies, enemySprite, player);
 
             //Camera
-            camera = new(player, myTileManager.TileList, screenWidth, screenHeight);
+            camera = new(player, enemies, entityManager.Milk, myTileManager.TileList, screenWidth, screenHeight);
 
             // Menu
             menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);

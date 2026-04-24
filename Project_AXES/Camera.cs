@@ -14,6 +14,9 @@ namespace Project_AXES
         //The player the camera follows
         private Player player;
 
+        private List<Enemy> enemies;
+        private Enemy milk;
+
         //The List of Tiles and #Loaded
         private Tile[,] tile;
         private int loaded;
@@ -33,9 +36,11 @@ namespace Project_AXES
         /// <param name="tile">The list of tiles</param>
         /// <param name="width">The width of the screen</param>
         /// <param name="height">the height of the screen</param>
-        public Camera(Player player, Tile[,] tile, int width, int height)
+        public Camera(Player player, List<Enemy> enemies, Enemy milk, Tile[,] tile, int width, int height)
         {
             this.player = player;
+            this.enemies = enemies;
+            this.milk = milk;
             this.tile = tile;
             this.width = width;
             this.height = height;
@@ -65,6 +70,13 @@ namespace Project_AXES
                 leftBorder += 8;
                 rightBorder += 8;
                 player.Push(8, 0);
+
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].Push(8, 0);
+                }
+
+                milk.Push(8, 0);
             }
 
             //Gets the player's right position and moves it with the camera's border
@@ -77,8 +89,15 @@ namespace Project_AXES
                 leftBorder -= 8;
                 rightBorder -= 8;
                 player.Push(-8, 0);
-            }
 
+
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].Push(-8, 0);
+                }
+
+                milk.Push(-8, 0);
+            }
 
             //Bottom Border
             if (bottomBorder < cameraRect.Height)
