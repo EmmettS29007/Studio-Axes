@@ -92,10 +92,28 @@ namespace Project_AXES
         }
         public void Draw(SpriteBatch sb)
         {
+            sb.Draw(title, 
+                new Rectangle(0,0, windowWidth, windowHeight), 
+                Color.White);
+
             for (int i = 0; i < buttonList.Count; i++)
             {
                 sb.Draw(button, buttonList[i], Color.White);
             }
+
+            // Draws the text for the start button
+            sb.DrawString(font,
+            "START GAME",
+            new Vector2(((button.Width - font.MeasureString("START GAME").X) / 2) + buttonList[0].X,
+            button.Height / 2 + buttonList[0].Y),
+            Color.White);
+
+            sb.DrawString(font,
+            "CONTROLS / HELP (broken do not click)",
+            new Vector2(((button.Width - font.MeasureString("CONTROLS / HELP (broken do not click)").X) / 2) + buttonList[1].X,
+            button.Height / 2 + buttonList[1].Y),
+            Color.White);
+
             if (!controlsGuide.IsEmpty)
             {
                 sb.Draw(controls, controlsGuide, Color.White);

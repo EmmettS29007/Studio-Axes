@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/npc_idle.png</SourceFile>
-  <SourceTime>2026-04-24T15:06:33.869638-04:00</SourceTime>
-  <DestFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/npc_idle.xnb</DestFile>
-  <DestTime>2026-04-24T15:35:07.894842-04:00</DestTime>
+  <SourceFile>C:/Users/misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/npc_idle.png</SourceFile>
+  <SourceTime>2026-04-24T16:21:30.2601881-04:00</SourceTime>
+  <DestFile>C:/Users/misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/npc_idle.xnb</DestFile>
+  <DestTime>2026-04-24T16:46:47.8786886-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
