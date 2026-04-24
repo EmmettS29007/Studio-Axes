@@ -61,7 +61,7 @@ namespace Project_AXES
             }
 
             // Set up the milk
-            milk = new Enemy(milkSprite, 1, new Vector2(500, 500), 0);
+            milk = new Enemy(milkSprite, 1, new Vector2(900, 500), 0);
 
             // Set up the player
             this.player = player;
