@@ -12,7 +12,7 @@ namespace Project_AXES
 {
     public class EntityManager
     {
-        // Field
+        //---FIELDS---
 
         // Enemies
         private List<Enemy> enemies;
@@ -168,12 +168,9 @@ namespace Project_AXES
             // For each enemy in the enemies List...
             foreach (Enemy enemy in enemies)
             {
-                // If the enemy isn't dead...
-                if (enemy.isDead == false)
-                {
-                    // Draw the enemy to the screen
-                    enemy.DrawEnemy(sb);
-                }
+                // Draw the enemy to the screen
+                // Enemy will go invisible upon death 
+                enemy.DrawEnemy(sb);
             }
 
             // If the milk isn't dead...
