@@ -120,7 +120,11 @@ namespace Project_AXES
 
         public void Attack(Player player)
         {
-            player.Health--;
+            //if the enemy isn't dead, deals damage
+            if (!dead)
+            {
+                player.Health--;
+            }
         }
 
         public void DetectCollision(ICollidable other) { }
@@ -146,7 +150,11 @@ namespace Project_AXES
         }
 
         public void Die()
-        {
+        {   
+            //death animation
+            enemyFrame = 0; //resets for full explosion
+            enemyAnimation = 1;
+
             dead = true;
         }
 
@@ -169,9 +177,9 @@ namespace Project_AXES
                 new Vector2(Position.X, Position.Y),            // Position of the sprite
                 new Rectangle(                                  // Which portion of the sheet is drawn:
                     enemyFrame * 64,                            // - Left edge
-                    enemyAnimation * enemySprite.Height,        // - Top of sprite sheet
+                    enemyAnimation * 64,        // - Top of sprite sheet
                     64,                                         // - Width 
-                    enemySprite.Height),                        // - Height
+                    64),                        // - Height
                 Color.White,                                    // Color
                 0.0f,                                           // No rotation
                 Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
@@ -196,10 +204,16 @@ namespace Project_AXES
                 // Change which frame is active, ensuring the frame is reset back to the first 
                 enemyFrame++;
 
-                if (enemyFrame >= cycleFrameTotal)
+                //sets up death
+                if (isDead == true && enemyFrame >= cycleFrameTotal)
+                {
+                    enemyFrame = cycleFrameTotal; //freezes enemy in an invisible sprite
+                }
+                else if (enemyFrame >= cycleFrameTotal)
                 {
                     enemyFrame = 0;
                 }
+
 
 
                 // Reset the time counter, keeping remaining elapsed time

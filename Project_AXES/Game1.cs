@@ -144,7 +144,7 @@ namespace Project_AXES
             npc = new NPC(npcSpritesheet, new Rectangle(900, 750,250,1000));
 
             //Enemy and EntityManager Setup
-            enemySprite = Content.Load<Texture2D>("npc1-Sheet");
+            enemySprite = Content.Load<Texture2D>("KABLOOEY");
 
             enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
             enemies.Add(enemy);

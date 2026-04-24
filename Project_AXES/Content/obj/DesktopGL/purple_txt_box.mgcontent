@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< Updated upstream
-  <SourceFile>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</SourceFile>
-  <SourceTime>2026-04-24T11:06:30.4532926-04:00</SourceTime>
-  <DestFile>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/purple_txt_box.xnb</DestFile>
-  <DestTime>2026-04-24T11:13:30.4947277-04:00</DestTime>
-=======
   <SourceFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</SourceFile>
   <SourceTime>2026-04-11T15:19:19.2917349-04:00</SourceTime>
   <DestFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/purple_txt_box.xnb</DestFile>
-  <DestTime>2026-04-24T10:45:09.8191339-04:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2026-04-24T15:35:07.9217891-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

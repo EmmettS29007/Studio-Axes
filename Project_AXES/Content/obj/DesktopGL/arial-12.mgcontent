@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< Updated upstream
-  <SourceFile>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-12.spritefont</SourceFile>
-  <SourceTime>2026-04-24T11:06:30.249201-04:00</SourceTime>
-  <DestFile>C:/Users/Bashe/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/arial-12.xnb</DestFile>
-  <DestTime>2026-04-24T11:13:26.0452216-04:00</DestTime>
-=======
   <SourceFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-12.spritefont</SourceFile>
   <SourceTime>2026-04-11T15:19:19.2756868-04:00</SourceTime>
   <DestFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/arial-12.xnb</DestFile>
-  <DestTime>2026-04-24T10:45:09.6487978-04:00</DestTime>
->>>>>>> Stashed changes
+  <DestTime>2026-04-24T15:34:59.7277679-04:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
