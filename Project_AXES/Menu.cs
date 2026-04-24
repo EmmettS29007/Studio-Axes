@@ -20,7 +20,7 @@ namespace Project_AXES
         private Texture2D button;
         private Texture2D controls;
 
-        // Utilized for button positioning
+        // Utilized for button positioning and drawing
         private int buttonOffset;
         private int windowWidth;
         private int windowHeight;
@@ -46,48 +46,59 @@ namespace Project_AXES
             // buttonList[1] is the help button
             for (int i = 0; i < 2; i++)
             {
-                buttonList.Add(new Rectangle(0, 0 + (buttonOffset * i), button.Width, button.Height));
+                buttonList.Add(new Rectangle(((windowWidth - controls.Width) / 2),
+                        ((windowHeight - controls.Height)) / 2 + (buttonOffset * i),
+                        button.Width, 
+                        button.Height));
             }
         }
-        public void Update(GameState gs)
+        public GameState Update()
         {
             previousMouse = mouse;
             mouse = Mouse.GetState();
 
-            if (buttonList[0].Contains(mouse.X, mouse.Y) 
-                && (previousMouse.LeftButton == ButtonState.Released 
-                    && mouse.LeftButton == ButtonState.Pressed))
+            // Checks if the LMB was pressed once...
+            if ((previousMouse.LeftButton == ButtonState.Pressed
+                    && mouse.LeftButton == ButtonState.Released))
             {
-                gs = GameState.Game;
+                // If the start button was pressed...
+                if (buttonList[0].Contains(mouse.X, mouse.Y))
+                {
+                    // Start the game!
+                    return GameState.Game;
+                }
+                // If the control rectangle does not exist, and the mouse is inside of the help button
+                if (controlsGuide.IsEmpty && buttonList[1].Contains(mouse.X, mouse.Y))
+                {
+                    // Create the controls guide rectangle
+                    controlsGuide = new Rectangle(((windowWidth - controls.Width) / 2),
+                        ((windowHeight - controls.Height)) / 2,
+                        controls.Width,
+                        controls.Height); 
+                    // And stay in the menu
+                    return GameState.Menu;
+                }
+                // If the control rectangle exists , and the mouse is outside of the guide
+                if (!controlsGuide.IsEmpty
+                    && !(controlsGuide.Contains(mouse.X, mouse.Y)))
+                {
+                    // Leave the controls guide and stay in the menu
+                    controlsGuide = new Rectangle(0, 0, 0, 0);
+                    return GameState.Menu;
+                }
             }
-            // If the control rectangle does not exist, and the mouse is inside of the help buttons
-            // and the left mouse button is pressed once...
-            else if (controlsGuide.IsEmpty && buttonList[1].Contains(mouse.X, mouse.Y)
-                && (previousMouse.LeftButton == ButtonState.Released
-                    && mouse.LeftButton == ButtonState.Pressed))
-            {
-                // Create the controls guide rectangle
-                controlsGuide = new Rectangle(((windowWidth - controls.Width) / 2),
-                    (windowHeight - controls.Height),
-                    controls.Width,
-                    controls.Height);
-            }
-            // If the control rectangle exists , and the mouse is outside of the guide
-            // and the left mouse button is pressed once...
-            else if (!controlsGuide.IsEmpty 
-                && !(controlsGuide.Contains(mouse.X, mouse.Y))
-                && (previousMouse.LeftButton == ButtonState.Released
-                    && mouse.LeftButton == ButtonState.Pressed))
-            {
-                // Leave the controls guide
-                controlsGuide = new Rectangle(0, 0, 0, 0);
-            }
+            // Else, stay in the menu when doing nothing
+            return GameState.Menu;
         }
         public void Draw(SpriteBatch sb)
         {
             for (int i = 0; i < buttonList.Count; i++)
             {
                 sb.Draw(button, buttonList[i], Color.White);
+            }
+            if (!controlsGuide.IsEmpty)
+            {
+                sb.Draw(controls, controlsGuide, Color.White);
             }
         }
     }

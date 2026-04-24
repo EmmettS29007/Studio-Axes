@@ -166,11 +166,7 @@ namespace Project_AXES
             switch (gameState)
             {
                 case GameState.Menu:
-                    if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
-                    {
-                        gameState = GameState.Game;
-                    }
-                    // menu.Update(gameState);
+                    gameState = menu.Update();
                     break;
 
                 case GameState.Game:
@@ -210,9 +206,6 @@ namespace Project_AXES
             switch (gameState)
             {
                 case GameState.Menu:
-                    _spriteBatch.DrawString(arial12, "Press P to play",
-                        new Vector2(screenWidth / 2, screenHeight / 2),
-                        Color.White);
                     menu.Draw(_spriteBatch);
                     break;
 
