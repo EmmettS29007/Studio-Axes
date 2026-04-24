@@ -254,3 +254,7 @@ C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Conten
 C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc1-Sheet.xnb
 C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc_idle.xnb
 C:\Users\misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\titleScreen.xnb
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc_dialogue.txt
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc1-Sheet.xnb
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc_idle.xnb
+C:\Users\andre\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\titleScreen.xnb

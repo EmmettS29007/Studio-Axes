@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Project_Axes;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using static System.Net.Mime.MediaTypeNames;
 
 
@@ -28,6 +29,7 @@ namespace Project_AXES
 
         // Game States
         private GameState gameState;
+        private bool debug;
 
         //screen specs
         private int screenWidth;
@@ -99,6 +101,7 @@ namespace Project_AXES
 
             enemies = new List<Enemy>();
             gameState = GameState.Menu;
+            debug = false;
 
             base.Initialize();
         }
@@ -215,6 +218,11 @@ namespace Project_AXES
                         }
                     }
 
+                    if (kbPrevState.IsKeyDown(Keys.Tab) && kbState.IsKeyUp(Keys.Tab))
+                    {
+                        debug = !debug;
+                    }
+
                     break;
 
                 case GameState.GameOver:
@@ -243,6 +251,12 @@ namespace Project_AXES
                     hud.Draw(_spriteBatch, screenHeight);
                     entityManager.Draw(_spriteBatch);
                     dialogueManager.Draw(_spriteBatch);
+
+                    if (debug == true)
+                    {
+                        DrawDebug(_spriteBatch);
+                    }
+
                     break;
 
                 case GameState.GameOver:
@@ -250,10 +264,44 @@ namespace Project_AXES
             }
 
 
-
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawDebug (SpriteBatch sb)
+        {
+            sb.DrawString
+                (arial12,
+                "Press P to see test dialogue",
+                new Vector2
+                    (screenWidth/2 - arial12.MeasureString("Press P to see test dialogue").X,
+                    screenHeight - 70),
+                Color.Pink);
+
+            sb.DrawString
+                (arial12,
+                $"Player Coords - X: {player.Position.X}, Y: {player.Position.Y}",
+                new Vector2
+                    (20,
+                    screenHeight - 130),
+                Color.Pink);
+
+            sb.DrawString
+                (arial12,
+                "Press TAB to exit debug mode",
+                new Vector2
+                    (20,
+                    screenHeight - 160),
+                Color.Pink);
+
+            sb.DrawString
+                (arial12,
+                $"Enemies Left {enemies.Count}",
+                new Vector2
+                    (20,
+                    screenHeight - 190),
+                Color.Pink);
         }
     }
 }
