@@ -150,15 +150,13 @@ namespace Project_AXES
                 milk.Die();
             }
 
-<<<<<<< Updated upstream
             if (milk.isDead)
             {
                 win = true;
             }
-=======
+
             //Updates npc frame
             npc.UpdateNPCFrame(gameTime);
->>>>>>> Stashed changes
         }
 
         /// <summary>

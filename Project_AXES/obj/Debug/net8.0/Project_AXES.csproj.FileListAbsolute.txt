@@ -246,3 +246,7 @@ C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8
 C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc_idle.xnb
 C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\npc_dialogue.txt
 >>>>>>> Stashed changes
+C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\attack.ogg
+C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\attack.xnb
+C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\backgroundmusicforvideos-game-gaming-background-music-385611.ogg
+C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\backgroundmusicforvideos-game-gaming-background-music-385611.xnb

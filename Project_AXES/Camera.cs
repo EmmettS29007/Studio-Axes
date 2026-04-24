@@ -14,13 +14,10 @@ namespace Project_AXES
         //The player the camera follows
         private Player player;
 
-<<<<<<< Updated upstream
+        //Entities
         private List<Enemy> enemies;
         private Enemy milk;
-=======
-        //NPC
         private NPC npc;
->>>>>>> Stashed changes
 
         //The List of Tiles and #Loaded
         private Tile[,] tile;
@@ -41,18 +38,12 @@ namespace Project_AXES
         /// <param name="tile">The list of tiles</param>
         /// <param name="width">The width of the screen</param>
         /// <param name="height">the height of the screen</param>
-<<<<<<< Updated upstream
-        public Camera(Player player, List<Enemy> enemies, Enemy milk, Tile[,] tile, int width, int height)
+        public Camera(Player player, List<Enemy> enemies, Enemy milk, NPC npc, Tile[,] tile, int width, int height)
         {
             this.player = player;
             this.enemies = enemies;
             this.milk = milk;
-=======
-        public Camera(Player player, NPC npc, Tile[,] tile, int width, int height)
-        {
-            this.player = player;
             this.npc = npc;
->>>>>>> Stashed changes
             this.tile = tile;
             this.width = width;
             this.height = height;
@@ -82,7 +73,6 @@ namespace Project_AXES
                 leftBorder += 8;
                 rightBorder += 8;
                 player.Push(8, 0);
-<<<<<<< Updated upstream
 
                 for (int i = 0; i < enemies.Count; i++)
                 {
@@ -90,9 +80,7 @@ namespace Project_AXES
                 }
 
                 milk.Push(8, 0);
-=======
                 npc.X += 8; //moves npc out of way as well
->>>>>>> Stashed changes
             }
 
             //Gets the player's right position and moves it with the camera's border
@@ -105,12 +93,6 @@ namespace Project_AXES
                 leftBorder -= 8;
                 rightBorder -= 8;
                 player.Push(-8, 0);
-<<<<<<< Updated upstream
-=======
-                npc.X -= 8;  //moves npc out of way as well
-            }
->>>>>>> Stashed changes
-
 
                 for (int i = 0; i < enemies.Count; i++)
                 {
@@ -118,6 +100,7 @@ namespace Project_AXES
                 }
 
                 milk.Push(-8, 0);
+                npc.X -= 8;  //moves npc out of way as well
             }
 
             //Bottom Border

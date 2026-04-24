@@ -106,7 +106,6 @@ namespace Project_AXES
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-<<<<<<< Updated upstream
             //Audio
             backgroundMusic = Content.Load<Song>
                 ("backgroundmusicforvideos-game-gaming-background-music-385611");
@@ -115,10 +114,7 @@ namespace Project_AXES
 
             hit = Content.Load<SoundEffect>("attack");
 
-            //Player Textures
-=======
             //Player Setup
->>>>>>> Stashed changes
             playerTexture = Content.Load<Texture2D>("_Run");
             playerSpriteSheet = Content.Load<Texture2D>("knightSpriteSheet");
             player = new Player(playerSpriteSheet, playerTexture, 3, new Vector2(0, 0), hit);
@@ -156,11 +152,7 @@ namespace Project_AXES
             entityManager = new EntityManager(enemies, enemySprite, player, npc);
 
             //Camera
-<<<<<<< Updated upstream
-            camera = new(player, enemies, entityManager.Milk, myTileManager.TileList, screenWidth, screenHeight);
-=======
-            camera = new(player, npc, myTileManager.TileList, screenWidth, screenHeight);
->>>>>>> Stashed changes
+            camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
 
             // Menu
             menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);
