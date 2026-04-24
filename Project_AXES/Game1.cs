@@ -68,6 +68,7 @@ namespace Project_AXES
 
         // Menu
         private Menu menu;
+        private Texture2D titleScreen;
 
         //Camera
         private Camera camera;
@@ -155,7 +156,8 @@ namespace Project_AXES
             camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
 
             // Menu
-            menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);
+            titleScreen = Content.Load<Texture2D>("titleScreen");
+            menu = new Menu(arial12, textBox, titleScreen, textBox, screenWidth, screenHeight);
 
 
 

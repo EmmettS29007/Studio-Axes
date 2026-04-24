@@ -58,8 +58,9 @@ namespace Project_Axes
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
             this.dialogueSprite = dialogueSprite;
+            // The dialogue will always be placed at the top of the screen
             dialoguePosition = new Rectangle(((windowWidth - dialogueSprite.Width )/ 2),
-                (windowHeight - dialogueSprite.Height),
+                (0),
                 dialogueSprite.Width,
                 dialogueSprite.Height);
             dialogue = new List<string>();
