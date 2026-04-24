@@ -95,6 +95,33 @@
 /processorParam:TextureFormat=Color
 /build:knightSpriteSheet.png
 
+#begin npc_dialogue.txt
+/copy:npc_dialogue.txt
+
+#begin npc_idle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:npc_idle.png
+
+#begin npc1-Sheet.PNG
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:npc1-Sheet.PNG
+
 #begin purple_txt_box.png
 /importer:TextureImporter
 /processor:TextureProcessor

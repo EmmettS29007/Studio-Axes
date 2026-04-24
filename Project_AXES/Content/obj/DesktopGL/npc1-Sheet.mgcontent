@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< Updated upstream
-  <SourceFile>C:/Users/misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</SourceFile>
-  <SourceTime>2026-04-22T13:26:47.5656081-04:00</SourceTime>
-  <DestFile>C:/Users/misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/_Run.xnb</DestFile>
-  <DestTime>2026-04-24T14:04:10.9221406-04:00</DestTime>
-=======
-  <SourceFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</SourceFile>
-  <SourceTime>2026-04-11T15:19:19.2746896-04:00</SourceTime>
-  <DestFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/Content/_Run.xnb</DestFile>
-  <DestTime>2026-04-24T10:30:33.6985661-04:00</DestTime>
->>>>>>> Stashed changes
+  <SourceFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/npc1-Sheet.PNG</SourceFile>
+  <SourceTime>2026-04-24T12:04:42.012159-04:00</SourceTime>
+  <DestFile>C:/Users/kylas/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/bin/DesktopGL/npc1-Sheet.xnb</DestFile>
+  <DestTime>2026-04-24T12:05:06.2474648-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T06:31:02-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

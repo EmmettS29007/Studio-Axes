@@ -19,6 +19,9 @@ namespace Project_AXES
         private List<Vector2> startingPositions;
         private Enemy milk;
 
+        //NPC
+        private NPC npc;
+
         // Player
         private Player player;
 
@@ -42,7 +45,7 @@ namespace Project_AXES
         /// <param name="enemies"> A list of enemies to manage </param>
         /// <param name="milkSprite"> The milk's sprite </param>
         /// <param name="player"> The player </param>
-        public EntityManager(List<Enemy> enemies, Texture2D milkSprite, Player player)
+        public EntityManager(List<Enemy> enemies, Texture2D milkSprite, Player player, NPC npc)
         {
             // Set up the local list of enemies
             this.enemies = enemies;
@@ -59,13 +62,17 @@ namespace Project_AXES
 
             // Set up the milk
             milk = new Enemy(milkSprite, 1, new Vector2(500, 500), 0);
-            
+
             // Set up the player
             this.player = player;
+
+            //Set up NPC
+            this.npc = npc;
         }
 
         /// <summary>
-        /// Update method for EntityManager, allows for real-time updates for the entities being managed
+        /// Update method for EntityManager, 
+        /// allows for real-time updates for the entities being managed
         /// </summary>
         /// <param name="gameTime"> The elapsedTime</param>
         public void Update(GameTime gameTime)
@@ -73,11 +80,14 @@ namespace Project_AXES
             // For the amount of enemies in enemies...
             for (int i = 0; i < enemies.Count; i++)
             {
+                enemies[i].UpdateEnemyFrame(gameTime); //updates the frame for movement
+
                 // If an enemy's current x coord equals their starting x coord...
                 if (enemies[i].X == startingPositions[i].X)
                 {
                     // Tell the enemy to start moving right
                     enemies[i].Moving = true;
+                    enemies[i].ToFlip = false; // takes care of appearance
                 }
 
                 // If the enemy has reached their range...
@@ -85,6 +95,7 @@ namespace Project_AXES
                 {
                     // Tell the enemy to start moving left
                     enemies[i].Moving = false;
+                    enemies[i].ToFlip = true; //appearance
                 }
 
                 // If the enemy should be moving right...
@@ -139,10 +150,15 @@ namespace Project_AXES
                 milk.Die();
             }
 
+<<<<<<< Updated upstream
             if (milk.isDead)
             {
                 win = true;
             }
+=======
+            //Updates npc frame
+            npc.UpdateNPCFrame(gameTime);
+>>>>>>> Stashed changes
         }
 
         /// <summary>
@@ -158,7 +174,7 @@ namespace Project_AXES
                 if (enemy.isDead == false)
                 {
                     // Draw the enemy to the screen
-                    sb.Draw(enemy.getSprite, enemy.Position, Color.White);
+                    enemy.DrawEnemy(sb);
                 }
             }
 
@@ -168,6 +184,9 @@ namespace Project_AXES
                 // Draw the milk to the screen
                 sb.Draw(milk.getSprite, milk.Position, Color.White);
             }
+
+            // Draw npc
+            npc.DrawNPC(sb);
         }
 
     }

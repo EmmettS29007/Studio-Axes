@@ -55,6 +55,10 @@ namespace Project_AXES
         private EntityManager entityManager;
         private List<Enemy> enemies;
 
+        //NPC 
+        private Texture2D npcSpritesheet;
+        private NPC npc;
+
         //HUD
         private HUD hud;
         private Texture2D heart;
@@ -102,6 +106,7 @@ namespace Project_AXES
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+<<<<<<< Updated upstream
             //Audio
             backgroundMusic = Content.Load<Song>
                 ("backgroundmusicforvideos-game-gaming-background-music-385611");
@@ -111,6 +116,9 @@ namespace Project_AXES
             hit = Content.Load<SoundEffect>("attack");
 
             //Player Textures
+=======
+            //Player Setup
+>>>>>>> Stashed changes
             playerTexture = Content.Load<Texture2D>("_Run");
             playerSpriteSheet = Content.Load<Texture2D>("knightSpriteSheet");
             player = new Player(playerSpriteSheet, playerTexture, 3, new Vector2(0, 0), hit);
@@ -135,16 +143,24 @@ namespace Project_AXES
             heart = Content.Load<Texture2D>("heart");
             hud = new HUD(heart, task, arial12, player);
 
-            //Enemy and EntityManager Setup
-            enemySprite = Content.Load<Texture2D>("tempEnemySprite");
+            //NPC Setup
+            npcSpritesheet = Content.Load<Texture2D>("npc_idle");
+            npc = new NPC(npcSpritesheet, new Rectangle(900, 750,250,1000));
 
-            enemy = new Enemy(enemySprite, 3, new Vector2(900, 700), 76);
+            //Enemy and EntityManager Setup
+            enemySprite = Content.Load<Texture2D>("npc1-Sheet");
+
+            enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies, enemySprite, player);
+            entityManager = new EntityManager(enemies, enemySprite, player, npc);
 
             //Camera
+<<<<<<< Updated upstream
             camera = new(player, enemies, entityManager.Milk, myTileManager.TileList, screenWidth, screenHeight);
+=======
+            camera = new(player, npc, myTileManager.TileList, screenWidth, screenHeight);
+>>>>>>> Stashed changes
 
             // Menu
             menu = new Menu(arial12, textBox, textBox, textBox, screenWidth, screenHeight);
@@ -189,6 +205,22 @@ namespace Project_AXES
                     dialogueManager.Update(gameTime, test);
                     entityManager.Update(gameTime);
                     camera.Update();
+
+                    //NPC stuff
+                    // Checks if player is in interact range w/ npc
+                    if (npc.Interact(player))
+                    {
+                        // Dialogue Debugging
+                        if (kbPrevState.IsKeyDown(Keys.E) && kbState.IsKeyUp(Keys.E))
+                        {
+                            test = true;
+                            if (test)
+                            {
+                                dialogueManager.FileName = "Content/npc_dialogue.txt";
+                            }
+                        }
+                    }
+
                     break;
 
                 case GameState.GameOver:
@@ -214,9 +246,9 @@ namespace Project_AXES
                     _spriteBatch.Draw(myBackground, Vector2.Zero, Color.White); //bg
                     myTileManager.DisplayTiles(); //tiles
                     player.Draw(_spriteBatch); //player
-                    dialogueManager.Draw(_spriteBatch);
                     hud.Draw(_spriteBatch, screenHeight);
                     entityManager.Draw(_spriteBatch);
+                    dialogueManager.Draw(_spriteBatch);
                     break;
 
                 case GameState.GameOver:

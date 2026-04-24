@@ -93,6 +93,8 @@ namespace Project_AXES
         private double timeCounter = 0; //for frame switching
         private double secondsPerFrame = .1;
         private bool toFlip = false;
+        PlayerStateMovement prevPlayerStateMovement;
+        PlayerStateEffects prevPlayerStateEffects;
 
         /// <summary>
         /// The Constructor for the player
@@ -481,9 +483,6 @@ namespace Project_AXES
             //This is intentionally layered so that the effects display will always
             //take priority over movement display--but both can exit simultaneously 
 
-            //establishes previous player state 
-            PlayerStateMovement prevPlayerStateMovement = playerStateMovement;
-            PlayerStateEffects prevPlayerStateEffects = playerStateEffects;
 
             //cycles through movement animations
             switch (playerStateMovement)
@@ -560,6 +559,10 @@ namespace Project_AXES
             {
                 playerFrame = 0;
             }
+
+            //establishes player state to check it after it changes next cycle
+            prevPlayerStateMovement = playerStateMovement;
+            prevPlayerStateEffects = playerStateEffects;
         }
 
         /// <summary>
@@ -593,8 +596,5 @@ namespace Project_AXES
                 timeCounter -= secondsPerFrame;
             }
         }
-
-
-
     }
 }
