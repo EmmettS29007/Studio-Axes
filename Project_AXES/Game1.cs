@@ -224,10 +224,27 @@ namespace Project_AXES
                     {
                         debug = !debug;
                     }
-
+                    if (player.Health <= 0)
+                    {
+                        gameState = GameState.GameOver;
+                    }
+                    if (entityManager.Win)
+                    {
+                        gameState = GameState.Win;
+                    }
                     break;
 
                 case GameState.GameOver:
+                    if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
+                    {
+                        gameState = GameState.Menu;
+                    }
+                    break;
+                case GameState.Win:
+                    if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
+                    {
+                        gameState = GameState.Menu;
+                    }
                     break;
             }
             base.Update(gameTime);
@@ -262,6 +279,16 @@ namespace Project_AXES
                     break;
 
                 case GameState.GameOver:
+                    _spriteBatch.DrawString(arial12, 
+                        "YOU DIED BEFORE U GOT DA MILK D:" +
+                        "\nPRESS ENTER TO PLAY AGAIN", 
+                        Vector2.Zero, Color.White);
+                    break;
+                case GameState.Win:
+                    _spriteBatch.DrawString(arial12, 
+                        "YOU GOT DA MILK :D" +
+                        "\nPRESS ENTER TO PLAY AGAIN", 
+                        Vector2.Zero, Color.White);
                     break;
             }
 
