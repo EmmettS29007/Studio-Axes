@@ -56,6 +56,7 @@ namespace Project_AXES
         private Enemy enemy;
         private EntityManager entityManager;
         private List<Enemy> enemies;
+        private Texture2D milkSprite;
 
         //NPC 
         private Texture2D npcSpritesheet;
@@ -148,13 +149,16 @@ namespace Project_AXES
             npcSpritesheet = Content.Load<Texture2D>("npc_idle");
             npc = new NPC(npcSpritesheet, new Rectangle(900, 750,250,1000));
 
+            //...milk
+            milkSprite = Content.Load<Texture2D>("milk");
+
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("KABLOOEY");
 
             enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies, enemySprite, player, npc);
+            entityManager = new EntityManager(enemies, milkSprite, player, npc);
 
             //Camera
             camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
