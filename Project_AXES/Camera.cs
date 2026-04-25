@@ -183,9 +183,9 @@ namespace Project_AXES
                 //all tiles and the boarder
                 foreach (Tile tiles in tile)
                 {
-                    tiles.Push(8, 0);
+                    tiles.Push(1, 0);
                 }
-                leftBorder += 8;
+                leftBorder += 1;
             }        
 
             //then reset the player and npc as they have set starting values!
