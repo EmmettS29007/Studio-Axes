@@ -17,7 +17,7 @@ namespace Project_AXES
 
         private bool moving;
         private float range;
-        private float distanceTraveled = 0;
+        private bool pushed;
 
         private bool dead;
 
@@ -85,6 +85,15 @@ namespace Project_AXES
         {
             get { return moving; }
             set { moving = value; }
+        }
+
+        /// <summary>
+        /// Allows for checking to see whether or not the enemy has been pushed
+        /// </summary>
+        public bool beingPushed
+        {
+            get { return pushed; }
+            set { pushed = value; }
         }
 
         /// <summary>

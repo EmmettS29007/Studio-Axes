@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj": {}
+    "C:\\Users\\andre\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj": {
+    "C:\\Users\\andre\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
         "projectName": "Project_AXES",
-        "projectPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-        "packagesPath": "C:\\Users\\Misty\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
