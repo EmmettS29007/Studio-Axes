@@ -56,6 +56,7 @@ namespace Project_AXES
         private Enemy enemy;
         private EntityManager entityManager;
         private List<Enemy> enemies;
+        private Texture2D milkSprite;
 
         //NPC 
         private Texture2D npcSpritesheet;
@@ -148,13 +149,16 @@ namespace Project_AXES
             npcSpritesheet = Content.Load<Texture2D>("npc_idle");
             npc = new NPC(npcSpritesheet, new Rectangle(900, 750,250,1000));
 
+            //...milk
+            milkSprite = Content.Load<Texture2D>("milk");
+
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("KABLOOEY");
 
             enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies, enemySprite, player, npc);
+            entityManager = new EntityManager(enemies, milkSprite, player, npc);
 
             //Camera
             camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
@@ -192,15 +196,6 @@ namespace Project_AXES
                     // Checks collision for each player
                     myTileManager.CollisionCheck(player);
 
-                    // Dialogue Debugging
-                    if (debug && kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
-                    {
-                        test = true;
-                        if (test)
-                        {
-                            dialogueManager.FileName = "Content/example_dialogue.txt";
-                        }
-                    }
                     dialogueManager.Update(gameTime, test);
                     entityManager.Update(gameTime);
                     camera.Update();
@@ -224,12 +219,27 @@ namespace Project_AXES
                     {
                         debug = !debug;
                     }
+                    // Dialogue Debugging
+                    if (debug && kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    {
+                        test = true;
+                        if (test)
+                        {
+                            dialogueManager.FileName = "Content/example_dialogue.txt";
+                        }
+                    }
+
+                    // If the player health is zero...
                     if (player.Health <= 0)
                     {
+                        // Enter GameOver state
+                        player.Health = player.Max;
                         gameState = GameState.GameOver;
                     }
+                    // If the milk is collected...
                     if (entityManager.Win)
                     {
+                        // Enter Win state
                         gameState = GameState.Win;
                     }
                     break;

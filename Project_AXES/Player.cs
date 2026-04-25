@@ -48,6 +48,8 @@ namespace Project_AXES
     }
     public class Player : ICollidable, IDamageable
     {
+        // Players maximum health
+        const int MaxHealth = 3;
         //Sprites/Textures
         private Texture2D playerSpriteSheet;
         private int widthOfSingleSprite = 128;
@@ -91,6 +93,7 @@ namespace Project_AXES
         private int playerFrame = 0; //frame in said cycle
         private int cycleFrameTotal = 11; //frame total in the cycle
         private double timeCounter = 0; //for frame switching
+        private double otherTimeCounter = 0; //for checking animations end properly
         private double secondsPerFrame = .1;
         private bool toFlip = false;
         PlayerStateMovement prevPlayerStateMovement;
@@ -132,6 +135,8 @@ namespace Project_AXES
         //Properties
 
         public int Health { get { return health; } set { health = value; } }
+
+        public int Max { get { return MaxHealth; } }
         public Rectangle Attack { get { return attack; } }
 
 
@@ -436,6 +441,7 @@ namespace Project_AXES
                     attack = new Rectangle(destination.X - (destination.Width * 2), destination.Y, destination.Width * 2, destination.Height);
                 }
                 playerStateEffects = PlayerStateEffects.Attack;
+                otherTimeCounter = 0; //resets time counter 
 
             }
             timerCurrent -= gt.ElapsedGameTime.TotalSeconds;
@@ -483,7 +489,7 @@ namespace Project_AXES
             //This is intentionally layered so that the effects display will always
             //take priority over movement display--but both can exit simultaneously 
 
-
+            otherTimeCounter += gameTime.ElapsedGameTime.TotalSeconds;
             //cycles through movement animations
             switch (playerStateMovement)
             {
@@ -536,7 +542,7 @@ namespace Project_AXES
                 case PlayerStateEffects.Attack:
                     cycleFrameTotal = 10;
                     playerAnimation = 0;
-                    if (playerFrame == 9) //after animation plays, returns to none
+                    if (otherTimeCounter>1) //after animation plays, returns to none
                     {
                         playerStateEffects = PlayerStateEffects.None;
                     }
