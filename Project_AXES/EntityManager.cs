@@ -40,6 +40,7 @@ namespace Project_AXES
         public bool Win
         {
             get { return win; }
+            set { win = value; }
         }
 
 

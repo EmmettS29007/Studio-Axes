@@ -30,6 +30,7 @@ namespace Project_AXES
         // Game States
         private GameState gameState;
         private bool debug;
+        private bool hasntReset;
 
         //screen specs
         private int screenWidth;
@@ -104,6 +105,7 @@ namespace Project_AXES
             enemies = new List<Enemy>();
             gameState = GameState.Menu;
             debug = false;
+            hasntReset = true;
 
             base.Initialize();
         }
@@ -185,10 +187,20 @@ namespace Project_AXES
             switch (gameState)
             {
                 case GameState.Menu:
+                    camera.Reset();
                     gameState = menu.Update();
+                    if(gameState == GameState.Game)
+                    {
+                        hasntReset = true;
+                    }
                     break;
 
                 case GameState.Game:
+                    if (hasntReset)
+                    {
+                        entityManager = new EntityManager(enemies, enemySprite, player, npc);
+                        hasntReset = false;
+                    }
                     // Updates the player and checks collision
                     player.Update(gameTime);
                     player.PreCollision();

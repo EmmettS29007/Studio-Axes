@@ -602,5 +602,14 @@ namespace Project_AXES
                 timeCounter -= secondsPerFrame;
             }
         }
+
+        /// <summary>
+        /// This method simply resets the player back to it's original starting position
+        /// </summary>
+        public void Reset()
+        {
+            destination.Y = -100;
+            destination.X = 0;
+        }
     }
 }

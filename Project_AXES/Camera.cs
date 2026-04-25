@@ -84,7 +84,8 @@ namespace Project_AXES
             }
 
             //Gets the player's right position and moves it with the camera's border
-            if (player.Position.X + player.Position.Width >= cameraRect.X + width - width / 4 && rightBorder > cameraRect.Width)
+            if (player.Position.X + player.Position.Width >= cameraRect.X + width - width / 4 &&
+                rightBorder > cameraRect.Width)
             {
                 foreach (Tile tiles in tile)
                 {
@@ -169,6 +170,28 @@ namespace Project_AXES
                     bottomBorder = tiles.Position.Y + tiles.Position.Height;
                 }
             }
+        }
+
+
+        /// <summary>
+        /// This method resets the camera, player, map, npc, and eventually enemies
+        /// </summary>
+        public void Reset()
+        {
+            while(leftBorder < 1) //While the border is not in it's correct location
+            {
+                //all tiles and the boarder
+                foreach (Tile tiles in tile)
+                {
+                    tiles.Push(8, 0);
+                }
+                leftBorder += 8;
+            }        
+
+            //then reset the player and npc as they have set starting values!
+            player.Reset();
+            npc.X = 900;
+            npc.Y = 750;
         }
 
     }
