@@ -202,7 +202,7 @@ namespace Project_AXES
                 case GameState.Game:
                     if (hasntReset)
                     {
-                        entityManager = new EntityManager(enemies, enemySprite, player, npc);
+                        entityManager = new EntityManager(enemies, milkSprite, player, npc);
                         hasntReset = false;
                     }
                     // Updates the player and checks collision
