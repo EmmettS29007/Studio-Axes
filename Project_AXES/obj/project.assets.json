@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\misty\\.nuget\\packages\\": {},
+    "C:\\Users\\chlo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "projectUniqueName": "C:\\Users\\chlo\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
       "projectName": "Project_AXES",
-      "projectPath": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
-      "packagesPath": "C:\\Users\\misty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
+      "projectPath": "C:\\Users\\chlo\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Project_AXES.csproj",
+      "packagesPath": "C:\\Users\\chlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chlo\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\misty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -320,7 +320,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -367,24 +366,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.26, 8.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
