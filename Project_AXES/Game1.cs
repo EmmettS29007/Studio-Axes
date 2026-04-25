@@ -48,7 +48,7 @@ namespace Project_AXES
 
         //Dialogue Manager
         private DialogueManager dialogueManager;
-        private SpriteFont arial12;
+        private SpriteFont arial16;
         private Texture2D textBox;
         private bool test;
 
@@ -66,6 +66,7 @@ namespace Project_AXES
         //HUD
         private HUD hud;
         private Texture2D heart;
+        private SpriteFont arial24;
 
         // Temporary task string for hud
         private string[] task;
@@ -75,6 +76,7 @@ namespace Project_AXES
         private Texture2D titleScreen;
         private Texture2D controlsGuide;
         private Texture2D gameOver;
+        private Texture2D winScreen;
 
         //Camera
         private Camera camera;
@@ -137,16 +139,18 @@ namespace Project_AXES
             myBackground = Content.Load<Texture2D>("10");
 
             //Dialogue Box
-            arial12 = Content.Load<SpriteFont>("arial-12");
-            textBox = Content.Load<Texture2D>("purple_txt_box");
-            dialogueManager = new DialogueManager(arial12,
+            arial16 = Content.Load<SpriteFont>("arial-12");
+            textBox = Content.Load<Texture2D>("HUD Text Box");
+            dialogueManager = new DialogueManager(arial16,
                 textBox,
                 _graphics.PreferredBackBufferWidth,
                 _graphics.PreferredBackBufferHeight);
 
             //HUD Initialization
             heart = Content.Load<Texture2D>("heart");
-            hud = new HUD(heart, task, arial12, player);
+            arial24 = Content.Load<SpriteFont>("arial-24");
+            hud = new HUD(heart, task, arial24, player);
+
 
             //NPC Setup
             npcSpritesheet = Content.Load<Texture2D>("npc_idle");
@@ -169,8 +173,9 @@ namespace Project_AXES
             // Menu & Win / Loss
             titleScreen = Content.Load<Texture2D>("titleScreen");
             controlsGuide = Content.Load<Texture2D>("controls_guide");
-            menu = new Menu(arial12, textBox, titleScreen, controlsGuide, screenWidth, screenHeight);
+            menu = new Menu(arial24, textBox, titleScreen, controlsGuide, screenWidth, screenHeight);
             gameOver = Content.Load<Texture2D>("game_over_screen");
+            winScreen = Content.Load<Texture2D>("win_screen");
         }
 
         protected override void Update(GameTime gameTime)
@@ -287,7 +292,7 @@ namespace Project_AXES
                     //this is layered for view!! do not change layering!
                     _spriteBatch.Draw(myBackground, Vector2.Zero, Color.White); //bg
                     myTileManager.DisplayTiles(); //tiles
-                    player.Draw(_spriteBatch); //player
+                    player.Draw(_spriteBatch, debug); //player
                     hud.Draw(_spriteBatch, screenHeight);
                     entityManager.Draw(_spriteBatch);
                     dialogueManager.Draw(_spriteBatch);
@@ -305,10 +310,9 @@ namespace Project_AXES
                         Color.White);
                     break;
                 case GameState.Win:
-                    _spriteBatch.DrawString(arial12, 
-                        "YOU GOT DA MILK :D" +
-                        "\nPRESS ENTER TO PLAY AGAIN", 
-                        Vector2.Zero, Color.White);
+                    _spriteBatch.Draw(winScreen,
+                        new Rectangle(0, 0, screenWidth, screenHeight),
+                        Color.White);
                     break;
             }
 
@@ -321,15 +325,15 @@ namespace Project_AXES
         private void DrawDebug (SpriteBatch sb)
         {
             sb.DrawString
-                (arial12,
+                (arial24,
                 "Press P to see test dialogue",
                 new Vector2
-                    (screenWidth/2 - arial12.MeasureString("Press P to see test dialogue").X,
+                    (screenWidth/2 - arial16.MeasureString("Press P to see test dialogue").X,
                     screenHeight - 70),
                 Color.Pink);
 
             sb.DrawString
-                (arial12,
+                (arial24,
                 $"Player Coords - X: {player.Position.X}, Y: {player.Position.Y}",
                 new Vector2
                     (20,
@@ -337,7 +341,7 @@ namespace Project_AXES
                 Color.Pink);
 
             sb.DrawString
-                (arial12,
+                (arial24,
                 "Press TAB to exit debug mode",
                 new Vector2
                     (20,
@@ -345,7 +349,7 @@ namespace Project_AXES
                 Color.Pink);
 
             sb.DrawString
-                (arial12,
+                (arial24,
                 $"Enemies Left {enemies.Count}",
                 new Vector2
                     (20,

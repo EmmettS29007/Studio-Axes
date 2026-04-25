@@ -161,12 +161,15 @@ namespace Project_AXES
         /// Draws the player
         /// </summary>
         /// <param name="sb">The spritebatch</param>
-        public void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb, bool debug)
         {
             DrawPlayer(sb, SpriteEffects.None);
-            DebugLib.DrawRectOutline(sb, destination, 3, myColor);
-            DebugLib.DrawRectOutline(sb, attack, 3, myColor);
-            DebugLib.DrawRectOutline(sb, playerMidline, 3, myColor);
+            if (debug)
+            {
+                DebugLib.DrawRectOutline(sb, destination, 3, myColor);
+                DebugLib.DrawRectOutline(sb, attack, 3, myColor);
+                DebugLib.DrawRectOutline(sb, playerMidline, 3, myColor);
+            }
         }
 
         /// <summary>

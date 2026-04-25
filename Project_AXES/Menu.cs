@@ -106,18 +106,18 @@ namespace Project_AXES
             "START GAME",
             new Vector2(((button.Width - font.MeasureString("START GAME").X) / 2) + buttonList[0].X,
             button.Height / 2 + buttonList[0].Y),
-            Color.MonoGameOrange);
+            Color.IndianRed);
 
             // Draws the text for the help button
             sb.DrawString(font,
             "CONTROLS / HELP",
             new Vector2(((button.Width - font.MeasureString("CONTROLS / HELP").X) / 2) + buttonList[1].X,
             button.Height / 2 + buttonList[1].Y),
-            Color.MonoGameOrange);
+            Color.IndianRed);
 
             if (!controlsGuide.IsEmpty)
             {
-                sb.Draw(controls, controlsGuide, Color.MonoGameOrange);
+                sb.Draw(controls, controlsGuide, Color.IndianRed);
             }
         }
     }
