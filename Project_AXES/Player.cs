@@ -139,6 +139,7 @@ namespace Project_AXES
         public int Max { get { return MaxHealth; } }
 
         public Color PlayerColor { get { return playerColor; } set { playerColor = value; } }
+
         public Rectangle Attack { get { return attack; } }
 
 

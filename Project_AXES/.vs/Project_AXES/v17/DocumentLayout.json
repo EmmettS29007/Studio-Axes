@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\collisiontile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:collisiontile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\content\\content.mgcb||{3EC6CBD1-65BD-4B26-A758-3B207D048872}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:content\\content.mgcb||{3EC6CBD1-65BD-4B26-A758-3B207D048872}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\debuglib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:debuglib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -48,10 +52,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\collisiontile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:collisiontile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,10 +66,6 @@
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|d:\\users\\misty\\documents\\github\\studio-axes\\project_axes\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06DC900E-A6B3-4294-90F5-23800A2D5369}|Project_AXES.csproj|solutionrelative:idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -81,24 +77,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ICollidable.cs",
-              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\ICollidable.cs",
-              "RelativeDocumentMoniker": "ICollidable.cs",
-              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\ICollidable.cs",
-              "RelativeToolTip": "ICollidable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:20:15.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "HUD.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\HUD.cs",
               "RelativeDocumentMoniker": "HUD.cs",
@@ -110,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\EntityManager.cs",
               "RelativeDocumentMoniker": "EntityManager.cs",
@@ -118,25 +101,24 @@
               "RelativeToolTip": "EntityManager.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAqwKgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:20:12.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T17:20:12.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAwwM8AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAgwM8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T17:20:11.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\DialogueManager.cs",
               "RelativeDocumentMoniker": "DialogueManager.cs",
@@ -149,33 +131,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DebugLib.cs",
-              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\DebugLib.cs",
-              "RelativeDocumentMoniker": "DebugLib.cs",
-              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\DebugLib.cs",
-              "RelativeToolTip": "DebugLib.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:20:10.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Game1.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAACEBAAAAAAAAAAAUwDABAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAADwvx4BAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T17:19:47.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Camera.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Camera.cs",
               "RelativeDocumentMoniker": "Camera.cs",
@@ -188,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "CollisionTile.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\CollisionTile.cs",
               "RelativeDocumentMoniker": "CollisionTile.cs",
@@ -196,24 +165,25 @@
               "RelativeToolTip": "CollisionTile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:20:09.407Z"
+              "WhenOpened": "2026-04-22T17:20:09.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAIwIwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAA0wI0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T17:19:47.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -223,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Content.mgcb",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Content\\Content.mgcb",
               "RelativeDocumentMoniker": "Content\\Content.mgcb",
@@ -234,7 +204,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAowGoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:19:47.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICollidable.cs",
+              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\ICollidable.cs",
+              "RelativeDocumentMoniker": "ICollidable.cs",
+              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\ICollidable.cs",
+              "RelativeToolTip": "ICollidable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:20:15.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "IDamageable.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\IDamageable.cs",
               "RelativeDocumentMoniker": "IDamageable.cs",
@@ -258,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "NPC.cs",
               "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\NPC.cs",
               "RelativeDocumentMoniker": "NPC.cs",
@@ -278,8 +273,7 @@
               "RelativeToolTip": "Content\\Content.mgcb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-22T23:55:51.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T23:55:51.903Z"
             },
             {
               "$type": "Document",
@@ -292,18 +286,6 @@
               "ViewState": "AgIAACYAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T17:20:20.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Menu.cs",
-              "RelativeDocumentMoniker": "Menu.cs",
-              "ToolTip": "D:\\Users\\Misty\\Documents\\GitHub\\Studio-Axes\\Project_AXES\\Menu.cs",
-              "RelativeToolTip": "Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:19:47.611Z"
             }
           ]
         }

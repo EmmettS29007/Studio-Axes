@@ -52,6 +52,11 @@ namespace Project_AXES
                         button.Height));
             }
         }
+
+        /// <summary>
+        /// Updates the menu and gameState based on the given input
+        /// </summary>
+        /// <returns>A new value for gameState depending on the button pressed</returns>
         public GameState Update()
         {
             previousMouse = mouse;
@@ -90,6 +95,11 @@ namespace Project_AXES
             // Else, stay in the menu when doing nothing
             return GameState.Menu;
         }
+
+        /// <summary>
+        /// Draws the buttons and text for the main menu
+        /// </summary>
+        /// <param name="sb">The spritebatch which holds the textures and fonts</param>
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(title, 

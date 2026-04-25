@@ -305,11 +305,13 @@ namespace Project_AXES
                     break;
 
                 case GameState.GameOver:
+                    // Draws the loss screen
                     _spriteBatch.Draw(gameOver,
                         new Rectangle(0, 0, screenWidth, screenHeight),
                         Color.White);
                     break;
                 case GameState.Win:
+                    // Draws the win screen
                     _spriteBatch.Draw(winScreen,
                         new Rectangle(0, 0, screenWidth, screenHeight),
                         Color.White);
