@@ -19,6 +19,10 @@ namespace Project_AXES
         private List<Vector2> startingPositions;
         private Enemy milk;
 
+        // I-Frames
+        private double invincibilityTimer;
+        private double invincibilityDuration = 1;
+
         //NPC
         private NPC npc;
 
@@ -118,27 +122,37 @@ namespace Project_AXES
                     // If the player is touching the enemy...
                     if (player.Position.Intersects(enemies[i].Position))
                     {
-                        // If the player's health is greater than 0...
-                        if (player.Health > 0)
+                        // If the player's health is at it's maximum...
+                        if (player.Health == player.Max)
                         {
                             // Subtract one from the player's health
                             player.Health--;
+                            invincibilityTimer = invincibilityDuration;
                         }
-
+                        // if the player's health is zero and their i-frames have ran out...
+                        else if (invincibilityTimer <= 0 && player.Health > 0 && player.Health < player.Max)
+                        {
+                            player.Health--;
+                            invincibilityTimer = invincibilityDuration;
+                        }
                         // Otherwise...
-                        else
+                        else if (player.Health <= 0)
                         {
                             // The player should die
                             player.Die();
                         }
                     }
+                    invincibilityTimer -= gameTime.ElapsedGameTime.TotalSeconds;
 
                     // If the player's attack intersects the enemy...
-                    if (player.Attack.Intersects(enemies[i].Position))
+                    if (player.Attack.Intersects(enemies[i].Position) && (enemies[i].IFrames == null || enemies[i].IFrames <= 0))
                     {
                         // That enemy should take damage
                         enemies[i].TakeDamage();
+                        enemies[i].IFrames = enemies[i].ImmunityTime;
+
                     }
+                    enemies[i].IFrames -= gameTime.ElapsedGameTime.TotalSeconds;
                 }
 
             }
