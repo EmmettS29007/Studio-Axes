@@ -70,10 +70,11 @@ namespace Project_AXES
         // Temporary task string for hud
         private string[] task;
 
-        // Menu
+        // Menu and Win / Loss screens
         private Menu menu;
         private Texture2D titleScreen;
         private Texture2D controlsGuide;
+        private Texture2D gameOver;
 
         //Camera
         private Camera camera;
@@ -165,13 +166,11 @@ namespace Project_AXES
             //Camera
             camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
 
-            // Menu
+            // Menu & Win / Loss
             titleScreen = Content.Load<Texture2D>("titleScreen");
             controlsGuide = Content.Load<Texture2D>("controls_guide");
             menu = new Menu(arial12, textBox, titleScreen, controlsGuide, screenWidth, screenHeight);
-
-
-
+            gameOver = Content.Load<Texture2D>("game_over_screen");
         }
 
         protected override void Update(GameTime gameTime)
@@ -301,10 +300,9 @@ namespace Project_AXES
                     break;
 
                 case GameState.GameOver:
-                    _spriteBatch.DrawString(arial12, 
-                        "YOU DIED BEFORE U GOT DA MILK D:" +
-                        "\nPRESS ENTER TO PLAY AGAIN", 
-                        Vector2.Zero, Color.White);
+                    _spriteBatch.Draw(gameOver,
+                        new Rectangle(0, 0, screenWidth, screenHeight),
+                        Color.White);
                     break;
                 case GameState.Win:
                     _spriteBatch.DrawString(arial12, 

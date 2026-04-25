@@ -54,3 +54,4 @@ D:\Users\Misty\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\refint
 D:\Users\Misty\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.pdb
 D:\Users\Misty\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.genruntimeconfig.cache
 D:\Users\Misty\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\ref\Project_AXES.dll
+D:\Users\Misty\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\game_over_screen.xnb

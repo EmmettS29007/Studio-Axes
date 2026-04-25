@@ -143,6 +143,14 @@ namespace Project_AXES
                             player.Die();
                         }
                     }
+                    if (invincibilityTimer > 0)
+                    {
+                        player.PlayerColor = Color.White * 0.5f;
+                    }
+                    else
+                    {
+                        player.PlayerColor = Color.White;
+                    }
                     invincibilityTimer -= gameTime.ElapsedGameTime.TotalSeconds;
 
                     // If the player's attack intersects the enemy...
@@ -152,6 +160,14 @@ namespace Project_AXES
                         enemies[i].TakeDamage();
                         enemies[i].IFrames = enemies[i].ImmunityTime;
 
+                    }
+                    if (enemies[i].IFrames > 0)
+                    {
+                        enemies[i].EnemyColor = Color.White * 0.5f;
+                    }
+                    else
+                    {
+                        enemies[i].EnemyColor = Color.White;
                     }
                     enemies[i].IFrames -= gameTime.ElapsedGameTime.TotalSeconds;
                 }

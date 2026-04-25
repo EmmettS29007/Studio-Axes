@@ -11,6 +11,7 @@
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/attack.mp3</File>
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/backgroundmusicforvideos-game-gaming-background-music-385611.mp3</File>
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/controls_guide.png</File>
+    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/game_over_screen.png</File>
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</File>
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/KABLOOEY.PNG</File>
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/knightSpriteSheet.png</File>
@@ -22,6 +23,7 @@
     <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/titleScreen.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

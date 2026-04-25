@@ -29,6 +29,17 @@ namespace Project_AXES
         private double secondsPerFrame = .1;
         private bool toFlip = false;
 
+        // Colors
+        private Color enemyColor;
+
+        /// <summary>
+        /// Returns the color of the enemy
+        /// </summary>
+        public Color EnemyColor 
+        { 
+            get { return enemyColor; } 
+            set { enemyColor = value; } 
+        }
 
         /// <summary>
         /// Returns the enemySprite
@@ -201,7 +212,7 @@ namespace Project_AXES
                     enemyAnimation * 64,        // - Top of sprite sheet
                     64,                                         // - Width 
                     64),                        // - Height
-                Color.White,                                    // Color
+                enemyColor,                                    // Color
                 0.0f,                                           // No rotation
                 Vector2.Zero,                                   // Start origin at (0, 0) of sprite sheet 
                 2.5f,                                           // Scale
