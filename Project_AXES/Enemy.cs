@@ -11,6 +11,10 @@ namespace Project_AXES
         private int health;
         private Vector2 position;
 
+        // Invincibility timers!
+        private double enemyInvinTimer;
+        private double enemyInvinDuration = 1;
+
         private bool moving;
         private float range;
         private float distanceTraveled = 0;
@@ -32,6 +36,23 @@ namespace Project_AXES
         public Texture2D getSprite
         {
             get { return enemySprite; }
+        }
+
+        /// <summary>
+        /// Returns the enemy's invincibility timer 
+        /// </summary>
+        public double IFrames 
+        { 
+            get { return enemyInvinTimer; } 
+            set { enemyInvinTimer = value; } 
+        }
+
+        /// <summary>
+        /// Returns how long an enemy can stay invincibile for
+        /// </summary>
+        public double ImmunityTime
+        {
+            get { return enemyInvinDuration; }
         }
 
         /// <summary>

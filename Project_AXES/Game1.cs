@@ -192,15 +192,6 @@ namespace Project_AXES
                     // Checks collision for each player
                     myTileManager.CollisionCheck(player);
 
-                    // Dialogue Debugging
-                    if (debug && kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
-                    {
-                        test = true;
-                        if (test)
-                        {
-                            dialogueManager.FileName = "Content/example_dialogue.txt";
-                        }
-                    }
                     dialogueManager.Update(gameTime, test);
                     entityManager.Update(gameTime);
                     camera.Update();
@@ -224,12 +215,27 @@ namespace Project_AXES
                     {
                         debug = !debug;
                     }
+                    // Dialogue Debugging
+                    if (debug && kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    {
+                        test = true;
+                        if (test)
+                        {
+                            dialogueManager.FileName = "Content/example_dialogue.txt";
+                        }
+                    }
+
+                    // If the player health is zero...
                     if (player.Health <= 0)
                     {
+                        // Enter GameOver state
+                        player.Health = player.Max;
                         gameState = GameState.GameOver;
                     }
+                    // If the milk is collected...
                     if (entityManager.Win)
                     {
+                        // Enter Win state
                         gameState = GameState.Win;
                     }
                     break;

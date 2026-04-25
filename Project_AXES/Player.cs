@@ -48,6 +48,8 @@ namespace Project_AXES
     }
     public class Player : ICollidable, IDamageable
     {
+        // Players maximum health
+        const int MaxHealth = 3;
         //Sprites/Textures
         private Texture2D playerSpriteSheet;
         private int widthOfSingleSprite = 128;
@@ -132,6 +134,8 @@ namespace Project_AXES
         //Properties
 
         public int Health { get { return health; } set { health = value; } }
+
+        public int Max { get { return MaxHealth; } }
         public Rectangle Attack { get { return attack; } }
 
 
