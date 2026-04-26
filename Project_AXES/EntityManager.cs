@@ -56,7 +56,6 @@ namespace Project_AXES
 
             // Set up the milk
             this.milk = milk;
-            milk.isDead = false;
 
             // Set up the player
             this.player = player;
@@ -164,17 +163,15 @@ namespace Project_AXES
 
             }
 
-            System.Diagnostics.Debug.Write(milk.isDead);
             // If the player touches the milk...
             if (player.Position.Intersects(milk.Position))
             {
-                // Kill da milk
-                milk.Die();
+                win = true;
             }
 
             if (milk.isDead)
             {
-                win = true;
+                
             }
 
             //Updates npc frame

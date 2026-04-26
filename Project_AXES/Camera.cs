@@ -177,7 +177,12 @@ namespace Project_AXES
         /// </summary>
         public void Reset()
         {
-            while(leftBorder < 1) //While the border is not in it's correct location
+            // reset the npc as they have set starting values!
+            npc.X = 900;
+            npc.Y = 750;
+            milk.Reset();
+
+            while (leftBorder < 1) //While the border is not in it's correct location
             {
                 //all tiles and the boarder
                 foreach (Tile tiles in tile)
@@ -185,12 +190,8 @@ namespace Project_AXES
                     tiles.Push(1, 0);
                 }
                 leftBorder += 1;
-            }        
+            }
 
-            //then reset the player and npc as they have set starting values!
-            player.Reset();
-            npc.X = 900;
-            npc.Y = 750;
         }
 
     }

@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Project_Axes;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.Serialization.Formatters;
 using static System.Net.Mime.MediaTypeNames;
@@ -167,7 +168,7 @@ namespace Project_AXES
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("KABLOOEY");
 
-            enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
+            enemy = new Enemy(enemySprite, 3, new Vector2(3000, 500), 76);
             enemies.Add(enemy);
 
             entityManager = new EntityManager(enemies, milkSprite, milk, player, npc);
@@ -196,6 +197,13 @@ namespace Project_AXES
             switch (gameState)
             {
                 case GameState.Menu:
+                    //Resets game state in menu
+                    player.Reset();
+                    //camera ia made new so it doesn't
+                    //spawn in where the last one was
+                    camera = new(player, enemies, entityManager.Milk, 
+                        npc, myTileManager.TileList, screenWidth, screenHeight);
+                    //reset is run to re-reposition everything
                     camera.Reset();
                     gameState = menu.Update();
                     if(gameState == GameState.Game)
@@ -211,6 +219,7 @@ namespace Project_AXES
                         foreach(Enemy enemy in enemies)
                         {
                             enemy.Reset();
+                            
                         }
                         player.Health = 3;
                         hasntReset = false;
@@ -230,7 +239,6 @@ namespace Project_AXES
                     // Checks if player is in interact range w/ npc
                     if (npc.Interact(player))
                     {
-                        // Dialogue Debugging
                         if (kbPrevState.IsKeyDown(Keys.E) && kbState.IsKeyUp(Keys.E))
                         {
                             test = true;
@@ -239,6 +247,12 @@ namespace Project_AXES
                                 dialogueManager.FileName = "Content/npc_dialogue.txt";
                             }
                         }
+                    }
+
+                    //Win state debug
+                    if (kbPrevState.IsKeyDown(Keys.X) && kbState.IsKeyUp(Keys.X))
+                    {
+                        entityManager.Win = true;
                     }
 
                     if (kbPrevState.IsKeyDown(Keys.Tab) && kbState.IsKeyUp(Keys.Tab))
