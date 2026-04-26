@@ -172,15 +172,9 @@ namespace Project_AXES
                 }
             }
 
-            //if there is no god mode, uses normal movement
-            if (!godMode)
-            {
-                Movement();
-            }
-            else
-            {
-                GodModeMovement();
-            }
+            //Checks what type of movement to use
+            if (!godMode) { Movement();}
+            else { GodModeMovement(); }
             Attacking(gt);
             UpdateAnimation(gt);
             UpdateAnimationFrame(gt);
@@ -328,6 +322,12 @@ namespace Project_AXES
                 this.TakeDamage(1);
             }
 
+
+            //---OUT OF BOUNDS CHECK---
+            if (Position.Y >= 3000)
+            {
+                health = 0;
+            }
             playerMidline.X = destination.X + 8;
             playerMidline.Y = destination.Y;
         }
@@ -699,9 +699,11 @@ namespace Project_AXES
 
         /// <summary>
         /// This method simply resets the player back to it's original starting position
+        /// and resets animation type 
         /// </summary>
         public void Reset()
         {
+            playerStateEffects = PlayerStateEffects.None;
             destination.Y = -100;
             destination.X = 0;
         }
