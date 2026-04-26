@@ -155,7 +155,32 @@ namespace Project_AXES
         public void Update(GameTime gt)
         {
             keyboard = Keyboard.GetState();
-            Movement();
+
+            //checks for god mode activation
+            if (keyboard.IsKeyDown(Keys.G) && previousKeyboard.IsKeyUp(Keys.G))
+            {
+                godMode = !godMode;
+                if (godMode)
+                {
+                    prevHealth = health; //preserves original health value
+                    health = 1000;
+
+                }
+                else if (!godMode)
+                {
+                    health = prevHealth;
+                }
+            }
+
+            //if there is no god mode, uses normal movement
+            if (!godMode)
+            {
+                Movement();
+            }
+            else
+            {
+                GodModeMovement();
+            }
             Attacking(gt);
             UpdateAnimation(gt);
             UpdateAnimationFrame(gt);
@@ -181,6 +206,8 @@ namespace Project_AXES
         /// Gets the positioning of the rectangle
         /// </summary>
         public Rectangle Position { get { return destination; } }
+
+        //****----MOVEMENT----****
 
         /// <summary>
         /// Tests for movement
@@ -301,25 +328,60 @@ namespace Project_AXES
                 this.TakeDamage(1);
             }
 
-            //---GODMODE---
-
-            if (keyboard.IsKeyDown(Keys.G) && previousKeyboard.IsKeyUp(Keys.G))
-            {
-                godMode = !godMode;
-                if (godMode)
-                {
-                    prevHealth = health; //preserves original health value
-                    health = 1000;
-                    
-                }
-                else if (!godMode)
-                {
-                    health = prevHealth;
-                }
-            }
-
             playerMidline.X = destination.X + 8;
             playerMidline.Y = destination.Y;
+        }
+
+        /// <summary>
+        /// movement if player is in godmode
+        /// no regard for gravity
+        /// </summary>
+        public void GodModeMovement()
+        {
+            //---LEFT AND RIGHT RUN---
+
+            //If D, move right
+            if (keyboard.IsKeyDown(Keys.D))
+            {
+                playerStateMovement = PlayerStateMovement.FacingRight;
+                destination.X += xSpeed;
+            }
+            //If A, move left
+            else if (keyboard.IsKeyDown(Keys.A))
+            {
+                playerStateMovement = PlayerStateMovement.FacingLeft;
+                destination.X -= xSpeed;
+            }
+
+            //---JUMP---
+
+            //If W, go up       
+            if (keyboard.IsKeyDown(Keys.W))
+            {
+                if (keyboard.IsKeyDown(Keys.D))
+                {
+                    playerStateMovement = PlayerStateMovement.JumpRight;
+                }
+                else if (keyboard.IsKeyDown(Keys.A))
+                {
+                    playerStateMovement = PlayerStateMovement.JumpLeft;
+                }
+                destination.Y -= (int)currentYSpeed;
+            }
+            //s, go down
+            else if (keyboard.IsKeyDown(Keys.S))
+            {
+                if (keyboard.IsKeyDown(Keys.D))
+                {
+                    playerStateMovement = PlayerStateMovement.JumpRight;
+                }
+                else if (keyboard.IsKeyDown(Keys.A))
+                {
+                    playerStateMovement = PlayerStateMovement.JumpLeft;
+                }
+                destination.Y += (int)currentYSpeed;
+            }
+
         }
 
         //******----------------COLLISIONS--------------------******
