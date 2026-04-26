@@ -18,6 +18,7 @@ namespace Project_AXES
     enum GameState
     {
         Menu,
+        Credits,
         Game,
         GameOver,
         Win
@@ -73,12 +74,13 @@ namespace Project_AXES
         // Temporary task string for hud
         private string[] task;
 
-        // Menu and Win / Loss screens
+        // Menu, Credits and Win / Loss screens
         private Menu menu;
         private Texture2D titleScreen;
         private Texture2D controlsGuide;
         private Texture2D gameOver;
         private Texture2D winScreen;
+        private string[] credits;
 
         //...milk
         private Enemy milk;
@@ -184,6 +186,26 @@ namespace Project_AXES
             menu = new Menu(arial24, textBox, titleScreen, controlsGuide, screenWidth, screenHeight);
             gameOver = Content.Load<Texture2D>("game_over_screen");
             winScreen = Content.Load<Texture2D>("win_screen");
+
+            // Credits
+            // Manually add all credits
+            credits = new string[]
+            {"CREDITS",
+            "CODING",
+            "Emmet Sier, Sebastian Greco, Xeno Nguyen, Andrew Viera",
+            "ASSET CREATORS @ ITCH.IO",
+            "pimen - Enemy Death Animation",
+            "Atomic Realm - Tileset",
+            "ansimuz - Cyberpunk Girl",
+            "Nicole Marie T - Heart / Health",
+            "craftpix.net - Background",
+            "Maxime Nourry - Enemy Robot",
+            "Gabry Pixel - Knight / Player",
+            "jellytempo - Collectible Milk",
+            "Runica - Text Box",
+            "gnomocaqui - Box Boy (in End Screen)",
+            "PRESS [ENTER] TO RETURN TO MENU"};
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -212,6 +234,16 @@ namespace Project_AXES
                     {
                         hasntReset = true;
                     }
+                    if (kbPrevState.IsKeyDown(Keys.P) && kbState.IsKeyUp(Keys.P))
+                    {
+                        gameState = GameState.Credits;
+                    }
+                    break;
+                case GameState.Credits:
+                    if (kbPrevState.IsKeyDown(Keys.Enter) && kbState.IsKeyUp(Keys.Enter))
+                    {
+                        gameState = GameState.Menu;
+                    }
                     break;
 
                 case GameState.Game:
@@ -221,7 +253,6 @@ namespace Project_AXES
                         foreach(Enemy enemy in enemies)
                         {
                             enemy.Reset();
-                            
                         }
                         hud.Reset();
                         player.Health = 3;
@@ -314,6 +345,25 @@ namespace Project_AXES
             {
                 case GameState.Menu:
                     menu.Draw(_spriteBatch);
+                    _spriteBatch.DrawString
+                        (arial24,
+                        $"PRESS P TO SEE CREDITS",
+                        Vector2.Zero,
+                        Color.Pink);
+                    break;
+
+                case GameState.Credits:
+                    for (int i = 0; i < credits.Length; i++)
+                    {
+                        GraphicsDevice.Clear(Color.Black);
+                        _spriteBatch.DrawString
+                        (arial24,
+                        credits[i],
+                        new Vector2(((screenWidth - arial24.MeasureString(credits[i]).X) / 2),
+                        i*50),
+                        Color.White);
+                    }
+
                     break;
 
                 case GameState.Game:
