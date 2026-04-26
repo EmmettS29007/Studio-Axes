@@ -82,13 +82,16 @@ namespace Project_AXES
         private float gravity;
         private float maxYSpeed;
 
+        //God Mode/Debug
+        private bool godMode;
+        private int prevHealth;
+
         //Basic Data
         private Color myColor;
         private int health;
         private Color playerColor;
 
         //Animation Fields
-
         private int playerAnimation = 0; //type of cycle playing--i.e run, jump
         private int playerFrame = 0; //frame in said cycle
         private int cycleFrameTotal = 11; //frame total in the cycle
@@ -130,6 +133,7 @@ namespace Project_AXES
             attackDuration = 0.25;
             this.hit = hit;
             sideCollision = false;
+            godMode = false;
         }
 
         //Properties
@@ -290,11 +294,28 @@ namespace Project_AXES
 
             }
 
-            //---DAMAGE---
+            //---DAMAGE DEBUG---
 
             if (keyboard.IsKeyDown(Keys.V) && previousKeyboard.IsKeyUp(Keys.V))
             {
                 this.TakeDamage(1);
+            }
+
+            //---GODMODE---
+
+            if (keyboard.IsKeyDown(Keys.G) && previousKeyboard.IsKeyUp(Keys.G))
+            {
+                godMode = !godMode;
+                if (godMode)
+                {
+                    prevHealth = health; //preserves original health value
+                    health = 1000;
+                    
+                }
+                else if (!godMode)
+                {
+                    health = prevHealth;
+                }
             }
 
             playerMidline.X = destination.X + 8;
