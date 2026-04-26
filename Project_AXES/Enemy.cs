@@ -10,8 +10,10 @@ namespace Project_AXES
 
         // Field
         private int health;
+
         private Vector2 position;
         private Vector2 ogPosition;
+        private Vector2 resetPosition;
 
         // Invincibility timers!
         private double enemyInvinTimer;
@@ -146,8 +148,11 @@ namespace Project_AXES
         {
             this.enemySprite = enemySprite;
             this.health = health;
+
             this.position = position;
             this.ogPosition = position;
+            this.resetPosition = position;
+
             this.range = range;
         }
 
@@ -196,8 +201,9 @@ namespace Project_AXES
         public void Reset()
         {
             dead = false;
+            health = 3;
             enemyAnimation = 0;
-            position = ogPosition;
+            position = resetPosition;
         }
 
         //*****--------------------ANIMATION-------------------****
