@@ -356,14 +356,6 @@ namespace Project_AXES
         {
             sb.DrawString
                 (arial24,
-                "Press P to see test dialogue",
-                new Vector2
-                    (screenWidth/2 - arial16.MeasureString("Press P to see test dialogue").X,
-                    screenHeight - 70),
-                Color.Pink);
-
-            sb.DrawString
-                (arial24,
                 $"Player Coords - X: {player.Position.X}, Y: {player.Position.Y}",
                 new Vector2
                     (20,
@@ -384,6 +376,14 @@ namespace Project_AXES
                 new Vector2
                     (20,
                     screenHeight - 190),
+                Color.Pink);
+
+            sb.DrawString
+                (arial24,
+                $"G - God Mode // P - Test Dialogue // V - Damage // X - Win ",
+                new Vector2
+                    (20,
+                    screenHeight - 100),
                 Color.Pink);
         }
     }

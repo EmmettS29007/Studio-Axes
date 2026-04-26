@@ -334,7 +334,7 @@ namespace Project_AXES
 
         /// <summary>
         /// movement if player is in godmode
-        /// no regard for gravity
+        /// no regard for gravity--lets player fly
         /// </summary>
         public void GodModeMovement()
         {
@@ -354,6 +354,11 @@ namespace Project_AXES
             }
 
             //---JUMP---
+
+            //sets speed to 8 so that when players
+            //turn to god mode from a standing position
+            //(y = 0), it still functions
+            currentYSpeed = 8;
 
             //If W, go up       
             if (keyboard.IsKeyDown(Keys.W))
