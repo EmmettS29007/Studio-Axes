@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.IO;
 
 namespace Project_AXES
 {
@@ -18,6 +19,7 @@ namespace Project_AXES
 
         private bool moving;
         private float range;
+        private float pushDistance = 0;
         private bool pushed;
 
         private bool dead;
@@ -82,6 +84,12 @@ namespace Project_AXES
             }
         }
 
+        public float OGPosition
+        {
+            get { return ogPosition.X; }
+            set { ogPosition.X = value; }
+        }
+
         /// <summary>
         /// Returns range
         /// </summary>
@@ -97,15 +105,6 @@ namespace Project_AXES
         {
             get { return moving; }
             set { moving = value; }
-        }
-
-        /// <summary>
-        /// Allows for checking to see whether or not the enemy has been pushed
-        /// </summary>
-        public bool beingPushed
-        {
-            get { return pushed; }
-            set { pushed = value; }
         }
 
         /// <summary>
@@ -167,6 +166,8 @@ namespace Project_AXES
         {
             this.X += x;
             this.position.Y += y;
+            ogPosition.X += x;
+            ogPosition.Y += y;
         }
 
 

@@ -213,8 +213,8 @@ namespace Project_AXES
                     myTileManager.CollisionCheck(player);
 
                     dialogueManager.Update(gameTime, test);
-                    entityManager.Update(gameTime);
                     camera.Update();
+                    entityManager.Update(gameTime);
 
                     //NPC stuff
                     // Checks if player is in interact range w/ npc

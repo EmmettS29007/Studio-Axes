@@ -16,7 +16,6 @@ namespace Project_AXES
 
         // Enemies
         private List<Enemy> enemies;
-        private List<Vector2> startingPositions;
         private Enemy milk;
 
         // I-Frames
@@ -55,16 +54,6 @@ namespace Project_AXES
             // Set up the local list of enemies
             this.enemies = enemies;
 
-            // Initialize the startingPositions
-            startingPositions = new List<Vector2>();
-
-            // For each enemy in the enemies List...
-            foreach (Enemy enemy in this.enemies)
-            {
-                // Add that enemy's starting position to startingPositions
-                startingPositions.Add(new Vector2(enemy.Position.X, enemy.Position.Y));
-            }
-
             // Set up the milk
             milk = new Enemy(milkSprite, 1, new Vector2(900, 500), 0);
 
@@ -88,7 +77,7 @@ namespace Project_AXES
                 enemies[i].UpdateEnemyFrame(gameTime); //updates the frame for movement
 
                 // If an enemy's current x coord equals their starting x coord...
-                if (enemies[i].X == startingPositions[i].X && enemies[i].beingPushed == false)
+                if (enemies[i].X == enemies[i].OGPosition)
                 {
                     // Tell the enemy to start moving right
                     enemies[i].Moving = true;
@@ -96,7 +85,7 @@ namespace Project_AXES
                 }
 
                 // If the enemy has reached their range...
-                if (enemies[i].X == startingPositions[i].X + enemies[i].Range && enemies[i].beingPushed == false)
+                if (enemies[i].X >= enemies[i].OGPosition + enemies[i].Range)
                 {
                     // Tell the enemy to start moving left
                     enemies[i].Moving = false;
@@ -111,7 +100,7 @@ namespace Project_AXES
                 }
 
                 // If not...
-                else
+                if (enemies[i].Moving == false)
                 {
                     // Subtract 2 to their x coord to move them left
                     enemies[i].X -= 2;

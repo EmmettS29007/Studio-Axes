@@ -74,12 +74,13 @@ namespace Project_AXES
                 rightBorder += 8;
                 player.Push(8, 0);
 
+                milk.Push(8, 0);
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].Push(8, 0);
                 }
 
-                milk.Push(8, 0);
                 npc.X += 8; //moves npc out of way as well
             }
 
@@ -95,12 +96,13 @@ namespace Project_AXES
                 rightBorder -= 8;
                 player.Push(-8, 0);
 
+                milk.Push(8, 0);
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].Push(-8, 0);
                 }
 
-                milk.Push(-8, 0);
                 npc.X -= 8;  //moves npc out of way as well
             }
 
@@ -116,7 +118,6 @@ namespace Project_AXES
                 player.Push(0, 8);
                 npc.Push(0, 8);
             }
-
 
             //Check all Tiles
             CheckInCamera();
