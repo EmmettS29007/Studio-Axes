@@ -74,14 +74,13 @@ namespace Project_AXES
                 rightBorder += 8;
                 player.Push(8, 0);
 
-                milk.Push(8, 0);
-
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].Push(8, 0);
                 }
 
                 npc.X += 8; //moves npc out of way as well
+                milk.X += 8;
             }
 
             //Gets the player's right position and moves it with the camera's border
@@ -96,14 +95,13 @@ namespace Project_AXES
                 rightBorder -= 8;
                 player.Push(-8, 0);
 
-                milk.Push(8, 0);
-
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].Push(-8, 0);
                 }
 
                 npc.X -= 8;  //moves npc out of way as well
+                milk.X -= 8;
             }
 
             //Bottom Border

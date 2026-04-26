@@ -249,7 +249,7 @@ namespace Project_AXES
                 //sets up death
                 if (isDead == true && enemyFrame >= cycleFrameTotal)
                 {
-                    enemyFrame = cycleFrameTotal; //freezes enemy in an invisible sprite
+                    //enemyFrame = cycleFrameTotal; //freezes enemy in an invisible sprite
                 }
                 else if (enemyFrame >= cycleFrameTotal)
                 {
