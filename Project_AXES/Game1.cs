@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Media;
 using Project_Axes;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.Serialization.Formatters;
 using static System.Net.Mime.MediaTypeNames;
 
 
@@ -203,6 +204,11 @@ namespace Project_AXES
                     if (hasntReset)
                     {
                         entityManager = new EntityManager(enemies, milkSprite, player, npc);
+                        foreach(Enemy enemy in enemies)
+                        {
+                            enemy.Reset();
+                        }
+                        player.Health = 3;
                         hasntReset = false;
                     }
                     // Updates the player and checks collision
