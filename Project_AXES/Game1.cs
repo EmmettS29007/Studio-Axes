@@ -5,7 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Project_Axes;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.Serialization.Formatters;
@@ -172,8 +174,7 @@ namespace Project_AXES
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("KABLOOEY");
 
-            enemy = new Enemy(enemySprite, 3, new Vector2(3000, 500), 76);
-            enemies.Add(enemy);
+            SetupEnemy("../../../enemyPositionData.txt");
 
             entityManager = new EntityManager(enemies, milkSprite, milk, player, npc);
 
@@ -399,6 +400,10 @@ namespace Project_AXES
             base.Draw(gameTime);
         }
 
+        /// <summary>
+        /// Draws debug information (player position, enemies left, etc)
+        /// </summary>
+        /// <param name="sb"></param>
         private void DrawDebug (SpriteBatch sb)
         {
             sb.DrawString
@@ -417,9 +422,18 @@ namespace Project_AXES
                     screenHeight - 160),
                 Color.Pink);
 
+            int aliveEnemies = 0;
+            foreach(Enemy enemy in enemies)
+            {
+                if (enemy.isDead == false)
+                {
+                    aliveEnemies++;
+                }
+            }
+
             sb.DrawString
                 (arial24,
-                $"Enemies Left {enemies.Count}",
+                $"Enemies Left: {aliveEnemies}",
                 new Vector2
                     (20,
                     screenHeight - 190),
@@ -432,6 +446,65 @@ namespace Project_AXES
                     (20,
                     screenHeight - 100),
                 Color.Pink);
+
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy.isDead == false)
+                {
+                    DebugLib.DrawRectOutline(
+                        sb,
+                        enemy.Position,
+                        3,
+                        Color.Red);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets up the enemy
+        /// </summary>
+        /// <param name="filename"> The filename to setup enemy! </param>
+        /// <exception cref="Exception"> The exception</exception>
+        private void SetupEnemy(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                System.Diagnostics.Debug.WriteLine($"Error: Cannot find file '{filename}' in the output directory!");
+                System.Diagnostics.Debug.WriteLine($"       Did you remember to add the file to the MGCB Editor AND set its Build Action to 'Copy'?");
+                System.Diagnostics.Debug.WriteLine($"       Remember to format the file correctly as well according to the guide document!");
+
+            }
+            else
+            {
+                StreamReader reader = null;
+                string line = "";
+                try
+                {
+                    reader = new StreamReader(filename);
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] enemyData = new string[3];
+                        enemyData = line.Trim().Split(",");
+                        enemies.Add(new Enemy(
+                            enemySprite, 
+                            3,
+                            new Vector2(float.Parse(enemyData[0]), float.Parse(enemyData[1])), float.Parse(enemyData[2])));
+                    }
+                }
+                catch
+                {
+                    throw new Exception("There was an error retrieving the file. " +
+                        "Did you remember to add the file to the MGCB Editor AND set its Build Action to 'Copy'?");
+                }
+                finally
+                {
+                    // If the reader was opened, close it and reset the filename to null
+                    if (reader != null)
+                    {
+                        reader.Close();
+                    }
+                }
+            }
         }
     }
 }

@@ -81,8 +81,8 @@ namespace Project_AXES
                 return new Rectangle(
                 (int)position.X,
                 (int)position.Y,
-                72,
-                78);
+                120,
+                160);
             }
         }
 

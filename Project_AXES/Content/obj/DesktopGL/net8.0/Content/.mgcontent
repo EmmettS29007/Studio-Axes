@@ -4,26 +4,26 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/1_Industrial_Tileset_1B.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/10.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-12.spritefont</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-24.spritefont</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/attack.mp3</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/backgroundmusicforvideos-game-gaming-background-music-385611.mp3</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/controls_guide.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/game_over_screen.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/HUD Text Box.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/KABLOOEY.PNG</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/knightSpriteSheet.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/milk.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/npc_idle.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/Skeleton Idle.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/tempEnemySprite.jpg</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/titleScreen.png</File>
-    <File>D:/Users/Misty/Documents/GitHub/Studio-Axes/Project_AXES/Content/win_screen.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/_Run.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/1_Industrial_Tileset_1B.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/10.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-12.spritefont</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/arial-24.spritefont</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/attack.mp3</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/backgroundmusicforvideos-game-gaming-background-music-385611.mp3</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/controls_guide.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/game_over_screen.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/heart.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/HUD Text Box.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/KABLOOEY.PNG</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/knightSpriteSheet.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/milk.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/npc_idle.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/purple_txt_box.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/Skeleton Idle.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/tempEnemySprite.jpg</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/titleScreen.png</File>
+    <File>C:/Users/andre/OneDrive/Documents/GitHub/Studio-Axes/Project_AXES/Content/win_screen.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

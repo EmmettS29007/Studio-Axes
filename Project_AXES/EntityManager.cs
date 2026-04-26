@@ -20,7 +20,7 @@ namespace Project_AXES
 
         // I-Frames
         private double invincibilityTimer;
-        private double invincibilityDuration = 1;
+        private double invincibilityDuration = 3;
 
         //NPC
         private NPC npc;
