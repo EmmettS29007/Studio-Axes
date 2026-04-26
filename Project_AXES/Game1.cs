@@ -106,8 +106,10 @@ namespace Project_AXES
             _graphics.ApplyChanges();
 
             task = new string[2];
-            string task1 = "Try out the game! (WIP)";
+            string task1 = "Talk to thy maiden!";
+            string task2 = "Get thy milk!";
             task[0] = task1;
+            task[1] = task2;
 
             enemies = new List<Enemy>();
             gameState = GameState.Menu;
@@ -212,6 +214,7 @@ namespace Project_AXES
                         {
                             enemy.Reset();
                         }
+                        hud.Reset();
                         player.Health = 3;
                         hasntReset = false;
                     }
@@ -238,6 +241,7 @@ namespace Project_AXES
                             {
                                 dialogueManager.FileName = "Content/npc_dialogue.txt";
                             }
+                            hud.Update();
                         }
                     }
 
