@@ -144,7 +144,14 @@ namespace Project_AXES
             get { return dead; }
             set { dead = value;  }
         }
-
+        
+        /// <summary>
+        /// Constructor for enemy
+        /// </summary>
+        /// <param name="enemySprite"> The enemy's sprite </param>
+        /// <param name="health"> The enemy's health </param>
+        /// <param name="position"> The enemy's position </param>
+        /// <param name="range"> The enemy's range </param>
         public Enemy(Texture2D enemySprite, int health, Vector2 position, float range)
         {
             this.enemySprite = enemySprite;
@@ -205,6 +212,7 @@ namespace Project_AXES
             health = 3;
             enemyAnimation = 0;
             position = resetPosition;
+            ogPosition = resetPosition;
         }
 
         //*****--------------------ANIMATION-------------------****

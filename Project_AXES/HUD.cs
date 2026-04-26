@@ -33,6 +33,11 @@ namespace Project_AXES
             taskIndex++;
         }
 
+        public void Reset()
+        {
+            taskIndex = 0;
+        }
+
         public void Draw(SpriteBatch sb, int y)
         {
             // Draw hearts in top left, use Player health int for how many hearts,
