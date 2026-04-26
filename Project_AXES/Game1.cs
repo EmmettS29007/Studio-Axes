@@ -325,10 +325,7 @@ namespace Project_AXES
                     entityManager.Draw(_spriteBatch);
                     dialogueManager.Draw(_spriteBatch);
 
-                    if (debug == true)
-                    {
-                        DrawDebug(_spriteBatch);
-                    }
+                    if (debug == true) { DrawDebug(_spriteBatch); } //debug writing
 
                     break;
 

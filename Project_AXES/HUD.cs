@@ -53,8 +53,7 @@ namespace Project_AXES
                     Color.Red);
             }
 
-            sb.DrawString(arial32, "Current Task: ", new Vector2(20, y - 75), Color.White);
-            sb.DrawString(arial32, tasks[taskIndex], new Vector2(20, y - 50), Color.White);
+            sb.DrawString(arial32, "Current Task: "+ tasks[taskIndex], new Vector2(20, 65), Color.Cyan);
         }
     }
 }
