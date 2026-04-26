@@ -142,6 +142,7 @@ namespace Project_AXES
         public bool isDead
         {
             get { return dead; }
+            set { dead = value;  }
         }
 
         public Enemy(Texture2D enemySprite, int health, Vector2 position, float range)

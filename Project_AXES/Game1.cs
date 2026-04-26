@@ -79,6 +79,9 @@ namespace Project_AXES
         private Texture2D gameOver;
         private Texture2D winScreen;
 
+        //...milk
+        private Enemy milk;
+
         //Camera
         private Camera camera;
 
@@ -159,6 +162,7 @@ namespace Project_AXES
 
             //...milk
             milkSprite = Content.Load<Texture2D>("milk");
+            milk = new Enemy(milkSprite, 1, new Vector2(8085, 335), 0);
 
             //Enemy and EntityManager Setup
             enemySprite = Content.Load<Texture2D>("KABLOOEY");
@@ -166,7 +170,7 @@ namespace Project_AXES
             enemy = new Enemy(enemySprite, 3, new Vector2(1200, 750), 76);
             enemies.Add(enemy);
 
-            entityManager = new EntityManager(enemies, milkSprite, player, npc);
+            entityManager = new EntityManager(enemies, milkSprite, milk, player, npc);
 
             //Camera
             camera = new(player, enemies, entityManager.Milk, npc, myTileManager.TileList, screenWidth, screenHeight);
@@ -203,7 +207,7 @@ namespace Project_AXES
                 case GameState.Game:
                     if (hasntReset)
                     {
-                        entityManager = new EntityManager(enemies, milkSprite, player, npc);
+                        entityManager = new EntityManager(enemies, milkSprite, milk, player, npc);
                         foreach(Enemy enemy in enemies)
                         {
                             enemy.Reset();

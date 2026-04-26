@@ -49,13 +49,14 @@ namespace Project_AXES
         /// <param name="enemies"> A list of enemies to manage </param>
         /// <param name="milkSprite"> The milk's sprite </param>
         /// <param name="player"> The player </param>
-        public EntityManager(List<Enemy> enemies, Texture2D milkSprite, Player player, NPC npc)
+        public EntityManager(List<Enemy> enemies, Texture2D milkSprite, Enemy milk, Player player, NPC npc)
         {
             // Set up the local list of enemies
             this.enemies = enemies;
 
             // Set up the milk
-            milk = new Enemy(milkSprite, 1, new Vector2(900, 500), 0);
+            this.milk = milk;
+            milk.isDead = false;
 
             // Set up the player
             this.player = player;
@@ -163,6 +164,7 @@ namespace Project_AXES
 
             }
 
+            System.Diagnostics.Debug.Write(milk.isDead);
             // If the player touches the milk...
             if (player.Position.Intersects(milk.Position))
             {
