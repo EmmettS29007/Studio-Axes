@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Project_AXES
 {
-    public class Enemy : ICollidable, IDamageable
+    public class Enemy : ICollidable
     {
         private Texture2D enemySprite;
 
