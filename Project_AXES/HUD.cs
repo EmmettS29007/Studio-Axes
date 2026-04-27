@@ -30,7 +30,7 @@ namespace Project_AXES
 
         public void Update()
         {
-            taskIndex++;
+            taskIndex = 1;
         }
 
         public void Reset()

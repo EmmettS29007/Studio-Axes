@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Project_AXES
 {
-    public class Enemy : ICollidable, IDamageable
+    public class Enemy : ICollidable
     {
         private Texture2D enemySprite;
 
@@ -81,8 +81,8 @@ namespace Project_AXES
                 return new Rectangle(
                 (int)position.X,
                 (int)position.Y,
-                72,
-                78);
+                120,
+                160);
             }
         }
 

@@ -46,7 +46,7 @@ namespace Project_AXES
         Attack,
         Dead,
     }
-    public class Player : ICollidable, IDamageable
+    public class Player : ICollidable
     {
         // Players maximum health
         const int MaxHealth = 3;
