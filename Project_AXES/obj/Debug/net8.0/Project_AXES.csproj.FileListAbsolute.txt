@@ -295,3 +295,6 @@ C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8
 C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.pdb
 C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\Project_AXES.genruntimeconfig.cache
 C:\Users\kylas\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\obj\Debug\net8.0\ref\Project_AXES.dll
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\arial-24.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\HUD Text Box.xnb
+C:\Users\Bashe\OneDrive\Documents\GitHub\Studio-Axes\Project_AXES\bin\Debug\net8.0\Content\win_screen.xnb
